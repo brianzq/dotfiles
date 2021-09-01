@@ -1,0 +1,5198 @@
+# Configuration for Alacritty, the GPU enhanced terminal emulator.
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+# env:
+  # TERM variable
+  #
+  # This value is used to set the `$TERM` environment variable for
+  # each instance of Alacritty. If it is not present, alacritty will
+  # check the local terminfo database and use 'alacritty' if it is
+  # available, otherwise 'xterm-256color' is used.
+  # TERM: xterm-16color
+
+window:
+  # Window dimensions (changes require restart)
+  #
+  # Specified in number of columns/lines, not pixels.
+  # If both are `0`, this setting is ignored.
+  dimensions:
+    columns: 205
+    lines: 60
+
+  # Window padding (changes require restart)
+  #
+  # Blank space added around the window in pixels. This padding is scaled
+  # by DPI and the specified value is always added at both opposing sides.
+  padding:
+    x: 4
+    y: 4
+
+  # Spread additional padding evenly around the terminal content.
+  dynamic_padding: false
+
+  # Window decorations
+  #
+  # Available values:
+  # - `full`: Window with title bar and title bar buttons
+  # - `none`: Window without title bar, rounded corners, or drop shadow
+  # - `transparent`: Window with title bar with transparent background and title
+  #   bar buttons
+  # - `buttonless`: Window with title bar with transparent background and no
+  #   title bar buttons
+  # Window decorations
+  #
+  # Values for `decorations`:
+  #     - full: Borders and title bar
+  #     - none: Neither borders nor title bar
+  #     - buttonless: Title bar, transparent background and title bar buttons
+  #     - transparent: Title bar, transparent background, but no title bar buttons
+  decorations: none
+
+  # Startup Mode (changes require restart)
+  #
+  # Values for `startup_mode`:
+  #   - Windowed
+  #   - Maximized
+  #   - Fullscreen
+  #
+  # Values for `startup_mode` (macOS only):
+  #   - SimpleFullscreen
+  startup_mode: Windowed
+
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
+
+  # Faux Scrolling
+  #
+  # The `g controls the number of lines the terminal
+  # should scroll when the alternate screen buffer is active. This is used
+  # to allow mouse scrolling for applications like `man`.
+  #
+  # Specifying `0` will disable faux scrolling.
+  multiplier: 3
+
+# Spaces per Tab (changes require restart)
+#
+# This setting defines the width of a tab in cells.
+
+font:
+  # The normal (roman) font face to use.
+  normal:
+    family: FuraCode Nerd Font
+    style: Regular
+
+  # The bold font face
+  bold:
+    family: FuraCode Nerd Font
+    style: Medium
+
+  # The italic font face
+  italic:
+    family: FuraCode Nerd Font
+    style: Light
+
+  # Point size of the font
+  size: 13
+
+  # Offset is the extra space around each character. `offset.y` can be thought of
+  # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increasing `x` moves the glyph to the right,
+  # increasing `y` moves the glyph upwards.
+  glyph_offset:
+    x: 0
+    y: 0
+
+  # Thin stroke font rendering (OS X only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`
+  #
+  # macOS >= 10.14.x:
+  #
+  # If the font quality on non-retina display looks bad then set
+  # `use_thin_strokes` to `true` and enable font smoothing by running the
+  # following command:
+  #   `defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO`
+  #
+  # This is a global setting and will require a log out or restart to take
+  # effect.
+  use_thin_strokes: true
+
+debug:
+  # Display the time it takes to redraw each frame.
+  render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - None
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  log_level: Warn
+
+  # Print all received window events.
+  print_events: false
+
+  # Record all characters and escape sequences as test data.
+  ref_test: false
+
+
+# Background opacity
+#
+# Window opacity as a floating point number from `0.0` to `1.0`.
+# The value `0.0` is completely transparent and `1.0` is opaque.
+background_opacity: 1.0
+
+# Mouse bindings
+#
+# Available fields:
+#   - mouse
+#   - action
+#   - mods (optional)
+#
+# Values for `mouse`:
+#   - Middle
+#   - Left
+#   - Right
+#   - Numeric identifier such as `5`
+#
+# All available `mods` and `action` values are documented in the key binding
+# section.
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+
+mouse:
+  # Click settings
+  #
+  # The `double_click` and `triple_click` settings control the time
+  # alacritty should wait for accepting multiple clicks as one double
+  # or triple click.
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
+
+  # If this is `true`, the cursor is temporarily hidden when typing.
+  hide_when_typing: false
+
+  hints:
+    # URL launcher
+    #
+    # This program is executed when clicking on a text which is recognized as a URL.
+    # The URL is always added to the command as the last parameter.
+    launcher: open
+
+    # URL modifiers
+    #
+    # These are the modifiers that need to be held down for opening URLs when clicking
+    # on them. The available modifiers are documented in the key binding section.
+    #modifiers: Control|Shift
+
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+
+  # When set to `true`, selected text will be copied to the primary clipboard.
+  save_to_clipboard: false
+
+cursor:
+  # Cursor style
+  #
+  # Values for 'style':
+  #   - ▇ Block
+  #   - _ Underline
+  #   - | Beam
+  style: Block
+
+  # If this is `true`, the cursor will be rendered as a hollow box when the
+  # window is not focused.
+  unfocused_hollow: true
+
+# Live config reload (changes require restart)
+live_config_reload: true
+
+# Shell
+#
+# You can set `shell.program` to the path of your favorite shell, e.g. `/bin/fish`.
+# Entries in `shell.args` are passed unmodified as arguments to the shell.
+#shell:
+#  program: /bin/bash
+#  args:
+#    - --login
+
+# Key bindings
+#
+# Key bindings are specified as a list of objects. Each binding will specify
+# a key and modifiers required to trigger it, terminal modes where the binding
+# is applicable, and what should be done when the key binding fires. It can
+# either send a byte sequnce to the running application (`chars`), execute
+# a predefined action (`action`) or fork and execute a specified command plus
+# arguments (`command`).
+#
+# Example:
+#   `- { key: V, mods: Command, action: Paste }`
+#
+# Available fields:
+#   - key
+#   - mods (optional)
+#   - chars | action | command (exactly one required)
+#   - mode (optional)
+#
+# Values for `key`:
+#   - `A` -> `Z`
+#   - `F1` -> `F12`
+#   - `Key1` -> `Key0`
+#
+#   A full list with available key codes can be found here:
+#   https://docs.rs/glutin/*/glutin/enum.VirtualKeyCode.html#variants
+#
+#   Instead of using the name of the keys, the `key` field also supports using
+#   the scancode of the desired key. Scancodes have to be specified as a
+#   decimal number.
+#   This command will allow you to display the hex scancodes for certain keys:
+#     `showkey --scancodes`
+#
+# Values for `mods`:
+#   - Command
+#   - Control
+#   - Shift
+#   - Alt
+#
+#   Multiple `mods` can be combined using `|` like this: `mods: Control|Shift`.
+#   Whitespace and capitalization is relevant and must match the example.
+#
+# Values for `chars`:
+#   The `chars` field writes the specified string to the terminal. This makes
+#   it possible to pass escape sequences.
+#   To find escape codes for bindings like `PageUp` ("\x1b[5~"), you can run
+#   the command `showkey -a` outside of tmux.
+#   Note that applications use terminfo to map escape sequences back to
+#   keys. It is therefore required to update the terminfo when
+#   changing an escape sequence.
+#
+# Values for `action`:
+#   - Paste
+#   - PasteSelection
+#   - Copy
+#   - IncreaseFontSize
+#   - DecreaseFontSize
+#   - ResetFontSize
+#   - ScrollPageUp
+#   - ScrollPageDown
+#   - ScrollToTop
+#   - ScrollToBottom
+#   - ClearHistory
+#   - Hide
+#   - Quit
+#   - ClearLogNotice
+#
+# Values for `command`:
+#   The `command` field must be a map containing a `program` string and
+#   an `args` array of command line parameter strings.
+#
+#   Example:
+#       `command: { program: "alacritty", args: ["-e", "vttest"] }`
+#
+# Values for `mode`:
+#   - ~AppCursor
+#   - AppCursor
+#   - ~AppKeypad
+#   - AppKeypad
+key_bindings:
+  - { key: V,        mods: Command, action: Paste                        }
+  - { key: C,        mods: Command, action: Copy                         }
+  - { key: Paste,                   action: Paste                        }
+  - { key: Copy,                    action: Copy                         }
+  - { key: H,        mods: Command, action: Hide                         }
+  - { key: Q,        mods: Command, action: Quit                         }
+  - { key: W,        mods: Command, action: Quit                         }
+  - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
+  - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
+  - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
+  - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
+  - { key: Key0,     mods: Command, action: ResetFontSize                }
+  - { key: Equals,   mods: Command, action: IncreaseFontSize             }
+  - { key: Minus,    mods: Command, action: DecreaseFontSize             }
+  - { key: K,        mods: Command, action: ClearHistory                 }
+  - { key: K,        mods: Command, chars: "\x0c"                        }
+  # - { key: L,        mods: Control, action: ClearLogNotice               }
+  - { key: L,        mods: Control, chars: "\x0c"                        }
+  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
+  - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
+  - { key: PageUp,                  chars: "\x1b[5~"                     }
+  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
+  - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
+  - { key: PageDown,                chars: "\x1b[6~"                     }
+  - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
+  - { key: Back,                    chars: "\x7f"                        }
+  - { key: Back,     mods: Alt,     chars: "\x1b\x7f"                    }
+  - { key: Insert,                  chars: "\x1b[2~"                     }
+  - { key: Delete,                  chars: "\x1b[3~"                     }
+  - { key: Left,     mods: Shift,   chars: "\x1b[1;2D"                   }
+  - { key: Left,     mods: Control, chars: "\x1b[1;5D"                   }
+  - { key: Left,     mods: Alt,     chars: "\x1b[1;3D"                   }
+  - { key: Left,                    chars: "\x1b[D",   mode: ~AppCursor  }
+  - { key: Left,                    chars: "\x1bOD",   mode: AppCursor   }
+  - { key: Right,    mods: Shift,   chars: "\x1b[1;2C"                   }
+  - { key: Right,    mods: Control, chars: "\x1b[1;5C"                   }
+  - { key: Right,    mods: Alt,     chars: "\x1b[1;3C"                   }
+  - { key: Right,                   chars: "\x1b[C",   mode: ~AppCursor  }
+  - { key: Right,                   chars: "\x1bOC",   mode: AppCursor   }
+  - { key: Up,       mods: Shift,   chars: "\x1b[1;2A"                   }
+  - { key: Up,       mods: Control, chars: "\x1b[1;5A"                   }
+  - { key: Up,       mods: Alt,     chars: "\x1b[1;3A"                   }
+  - { key: Up,                      chars: "\x1b[A",   mode: ~AppCursor  }
+  - { key: Up,                      chars: "\x1bOA",   mode: AppCursor   }
+  - { key: Down,     mods: Shift,   chars: "\x1b[1;2B"                   }
+  - { key: Down,     mods: Control, chars: "\x1b[1;5B"                   }
+  - { key: Down,     mods: Alt,     chars: "\x1b[1;3B"                   }
+  - { key: Down,                    chars: "\x1b[B",   mode: ~AppCursor  }
+  - { key: Down,                    chars: "\x1bOB",   mode: AppCursor   }
+  - { key: F1,                      chars: "\x1bOP"                      }
+  - { key: F2,                      chars: "\x1bOQ"                      }
+  - { key: F3,                      chars: "\x1bOR"                      }
+  - { key: F4,                      chars: "\x1bOS"                      }
+  - { key: F5,                      chars: "\x1b[15~"                    }
+  - { key: F6,                      chars: "\x1b[17~"                    }
+  - { key: F7,                      chars: "\x1b[18~"                    }
+  - { key: F8,                      chars: "\x1b[19~"                    }
+  - { key: F9,                      chars: "\x1b[20~"                    }
+  - { key: F10,                     chars: "\x1b[21~"                    }
+  - { key: F11,                     chars: "\x1b[23~"                    }
+  - { key: F12,                     chars: "\x1b[24~"                    }
+  - { key: F1,       mods: Shift,   chars: "\x1b[1;2P"                   }
+  - { key: F2,       mods: Shift,   chars: "\x1b[1;2Q"                   }
+  - { key: F3,       mods: Shift,   chars: "\x1b[1;2R"                   }
+  - { key: F4,       mods: Shift,   chars: "\x1b[1;2S"                   }
+  - { key: F5,       mods: Shift,   chars: "\x1b[15;2~"                  }
+  - { key: F6,       mods: Shift,   chars: "\x1b[17;2~"                  }
+  - { key: F7,       mods: Shift,   chars: "\x1b[18;2~"                  }
+  - { key: F8,       mods: Shift,   chars: "\x1b[19;2~"                  }
+  - { key: F9,       mods: Shift,   chars: "\x1b[20;2~"                  }
+  - { key: F10,      mods: Shift,   chars: "\x1b[21;2~"                  }
+  - { key: F11,      mods: Shift,   chars: "\x1b[23;2~"                  }
+  - { key: F12,      mods: Shift,   chars: "\x1b[24;2~"                  }
+  - { key: F1,       mods: Control, chars: "\x1b[1;5P"                   }
+  - { key: F2,       mods: Control, chars: "\x1b[1;5Q"                   }
+  - { key: F3,       mods: Control, chars: "\x1b[1;5R"                   }
+  - { key: F4,       mods: Control, chars: "\x1b[1;5S"                   }
+  - { key: F5,       mods: Control, chars: "\x1b[15;5~"                  }
+  - { key: F6,       mods: Control, chars: "\x1b[17;5~"                  }
+  - { key: F7,       mods: Control, chars: "\x1b[18;5~"                  }
+  - { key: F8,       mods: Control, chars: "\x1b[19;5~"                  }
+  - { key: F9,       mods: Control, chars: "\x1b[20;5~"                  }
+  - { key: F10,      mods: Control, chars: "\x1b[21;5~"                  }
+  - { key: F11,      mods: Control, chars: "\x1b[23;5~"                  }
+  - { key: F12,      mods: Control, chars: "\x1b[24;5~"                  }
+  - { key: F1,       mods: Alt,     chars: "\x1b[1;6P"                   }
+  - { key: F2,       mods: Alt,     chars: "\x1b[1;6Q"                   }
+  - { key: F3,       mods: Alt,     chars: "\x1b[1;6R"                   }
+  - { key: F4,       mods: Alt,     chars: "\x1b[1;6S"                   }
+  - { key: F5,       mods: Alt,     chars: "\x1b[15;6~"                  }
+  - { key: F6,       mods: Alt,     chars: "\x1b[17;6~"                  }
+  - { key: F7,       mods: Alt,     chars: "\x1b[18;6~"                  }
+  - { key: F8,       mods: Alt,     chars: "\x1b[19;6~"                  }
+  - { key: F9,       mods: Alt,     chars: "\x1b[20;6~"                  }
+  - { key: F10,      mods: Alt,     chars: "\x1b[21;6~"                  }
+  - { key: F11,      mods: Alt,     chars: "\x1b[23;6~"                  }
+  - { key: F12,      mods: Alt,     chars: "\x1b[24;6~"                  }
+  - { key: F1,       mods: Command, chars: "\x1b[1;3P"                   }
+  - { key: F2,       mods: Command, chars: "\x1b[1;3Q"                   }
+  - { key: F3,       mods: Command, chars: "\x1b[1;3R"                   }
+  - { key: F4,       mods: Command, chars: "\x1b[1;3S"                   }
+  - { key: F5,       mods: Command, chars: "\x1b[15;3~"                  }
+  - { key: F6,       mods: Command, chars: "\x1b[17;3~"                  }
+  - { key: F7,       mods: Command, chars: "\x1b[18;3~"                  }
+  - { key: F8,       mods: Command, chars: "\x1b[19;3~"                  }
+  - { key: F9,       mods: Command, chars: "\x1b[20;3~"                  }
+  - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
+  - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
+  - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
+  - { key: NumpadEnter,             chars: "\n"                          }
+  # Custom
+  - { key: B,        mods: Alt,     chars: "\x1bb"                       }
+  - { key: F,        mods: Alt,     chars: "\x1bf"                       }
+  - { key: C,        mods: Alt,     chars: "\x1bc"                       }
+  - { key: P,        mods: Alt,     action: ToggleSimpleFullscreen       }
+
+# ========================================================================
+# Colors
+# If `true`, bold text is drawn using the bright color variants.
+draw_bold_text_with_bright_colors: false
+colors__3024__dark:
+# Base16 3024 - alacritty color config
+# Jan T. Sott (http://github.com/idleberg)
+  # Default colors
+  primary:
+    background: '0x090300'
+    foreground: '0xa5a2a2'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x090300'
+    cursor: '0xa5a2a2'
+
+  # Normal colors
+  normal:
+    black:   '0x090300'
+    red:     '0xdb2d20'
+    green:   '0x01a252'
+    yellow:  '0xfded02'
+    blue:    '0x01a0e4'
+    magenta: '0xa16a94'
+    cyan:    '0xb5e4f4'
+    white:   '0xa5a2a2'
+
+  # Bright colors
+  bright:
+    black:   '0x5c5855'
+    red:     '0xe8bbd0'
+    green:   '0x3a3432'
+    yellow:  '0x4a4543'
+    blue:    '0x807d7c'
+    magenta: '0xd6d5d4'
+    cyan:    '0xcdab53'
+    white:   '0xf7f7f7'
+
+colors__apathy__dark:
+# Base16 Apathy - alacritty color config
+# Jannik Siebert (https://github.com/janniks)
+  # Default colors
+  primary:
+    background: '0x031a16'
+    foreground: '0x81b5ac'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x031a16'
+    cursor: '0x81b5ac'
+
+  # Normal colors
+  normal:
+    black:   '0x031a16'
+    red:     '0x3e9688'
+    green:   '0x883e96'
+    yellow:  '0x3e4c96'
+    blue:    '0x96883e'
+    magenta: '0x4c963e'
+    cyan:    '0x963e4c'
+    white:   '0x81b5ac'
+
+  # Bright colors
+  bright:
+    black:   '0x2b685e'
+    red:     '0x3e7996'
+    green:   '0x0b342d'
+    yellow:  '0x184e45'
+    blue:    '0x5f9c92'
+    magenta: '0xa7cec8'
+    cyan:    '0x3e965b'
+    white:   '0xd2e7e4'
+
+colors__ashes__dark:
+# Base16 Ashes - alacritty color config
+# Jannik Siebert (https://github.com/janniks)
+  # Default colors
+  primary:
+    background: '0x1c2023'
+    foreground: '0xc7ccd1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1c2023'
+    cursor: '0xc7ccd1'
+
+  # Normal colors
+  normal:
+    black:   '0x1c2023'
+    red:     '0xc7ae95'
+    green:   '0x95c7ae'
+    yellow:  '0xaec795'
+    blue:    '0xae95c7'
+    magenta: '0xc795ae'
+    cyan:    '0x95aec7'
+    white:   '0xc7ccd1'
+
+  # Bright colors
+  bright:
+    black:   '0x747c84'
+    red:     '0xc7c795'
+    green:   '0x393f45'
+    yellow:  '0x565e65'
+    blue:    '0xadb3ba'
+    magenta: '0xdfe2e5'
+    cyan:    '0xc79595'
+    white:   '0xf3f4f5'
+
+colors__atelier-cave-light__light:
+# Base16 Atelier Cave Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xefecf4'
+    foreground: '0x585260'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xefecf4'
+    cursor: '0x585260'
+
+  # Normal colors
+  normal:
+    black:   '0xefecf4'
+    red:     '0xbe4678'
+    green:   '0x2a9292'
+    yellow:  '0xa06e3b'
+    blue:    '0x576ddb'
+    magenta: '0x955ae7'
+    cyan:    '0x398bc6'
+    white:   '0x585260'
+
+  # Bright colors
+  bright:
+    black:   '0x7e7887'
+    red:     '0xaa573c'
+    green:   '0xe2dfe7'
+    yellow:  '0x8b8792'
+    blue:    '0x655f6d'
+    magenta: '0x26232a'
+    cyan:    '0xbf40bf'
+    white:   '0x19171c'
+
+colors__atelier-cave__dark:
+# Base16 Atelier Cave - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x19171c'
+    foreground: '0x8b8792'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x19171c'
+    cursor: '0x8b8792'
+
+  # Normal colors
+  normal:
+    black:   '0x19171c'
+    red:     '0xbe4678'
+    green:   '0x2a9292'
+    yellow:  '0xa06e3b'
+    blue:    '0x576ddb'
+    magenta: '0x955ae7'
+    cyan:    '0x398bc6'
+    white:   '0x8b8792'
+
+  # Bright colors
+  bright:
+    black:   '0x655f6d'
+    red:     '0xaa573c'
+    green:   '0x26232a'
+    yellow:  '0x585260'
+    blue:    '0x7e7887'
+    magenta: '0xe2dfe7'
+    cyan:    '0xbf40bf'
+    white:   '0xefecf4'
+
+colors__atelier-dune-light__light:
+# Base16 Atelier Dune Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xfefbec'
+    foreground: '0x6e6b5e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfefbec'
+    cursor: '0x6e6b5e'
+
+  # Normal colors
+  normal:
+    black:   '0xfefbec'
+    red:     '0xd73737'
+    green:   '0x60ac39'
+    yellow:  '0xae9513'
+    blue:    '0x6684e1'
+    magenta: '0xb854d4'
+    cyan:    '0x1fad83'
+    white:   '0x6e6b5e'
+
+  # Bright colors
+  bright:
+    black:   '0x999580'
+    red:     '0xb65611'
+    green:   '0xe8e4cf'
+    yellow:  '0xa6a28c'
+    blue:    '0x7d7a68'
+    magenta: '0x292824'
+    cyan:    '0xd43552'
+    white:   '0x20201d'
+
+colors__atelier-dune__dark:
+# Base16 Atelier Dune - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x20201d'
+    foreground: '0xa6a28c'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x20201d'
+    cursor: '0xa6a28c'
+
+  # Normal colors
+  normal:
+    black:   '0x20201d'
+    red:     '0xd73737'
+    green:   '0x60ac39'
+    yellow:  '0xae9513'
+    blue:    '0x6684e1'
+    magenta: '0xb854d4'
+    cyan:    '0x1fad83'
+    white:   '0xa6a28c'
+
+  # Bright colors
+  bright:
+    black:   '0x7d7a68'
+    red:     '0xb65611'
+    green:   '0x292824'
+    yellow:  '0x6e6b5e'
+    blue:    '0x999580'
+    magenta: '0xe8e4cf'
+    cyan:    '0xd43552'
+    white:   '0xfefbec'
+
+colors__atelier-estuary-light__light:
+# Base16 Atelier Estuary Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xf4f3ec'
+    foreground: '0x5f5e4e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf4f3ec'
+    cursor: '0x5f5e4e'
+
+  # Normal colors
+  normal:
+    black:   '0xf4f3ec'
+    red:     '0xba6236'
+    green:   '0x7d9726'
+    yellow:  '0xa5980d'
+    blue:    '0x36a166'
+    magenta: '0x5f9182'
+    cyan:    '0x5b9d48'
+    white:   '0x5f5e4e'
+
+  # Bright colors
+  bright:
+    black:   '0x878573'
+    red:     '0xae7313'
+    green:   '0xe7e6df'
+    yellow:  '0x929181'
+    blue:    '0x6c6b5a'
+    magenta: '0x302f27'
+    cyan:    '0x9d6c7c'
+    white:   '0x22221b'
+
+colors__atelier-estuary__dark:
+# Base16 Atelier Estuary - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x22221b'
+    foreground: '0x929181'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x22221b'
+    cursor: '0x929181'
+
+  # Normal colors
+  normal:
+    black:   '0x22221b'
+    red:     '0xba6236'
+    green:   '0x7d9726'
+    yellow:  '0xa5980d'
+    blue:    '0x36a166'
+    magenta: '0x5f9182'
+    cyan:    '0x5b9d48'
+    white:   '0x929181'
+
+  # Bright colors
+  bright:
+    black:   '0x6c6b5a'
+    red:     '0xae7313'
+    green:   '0x302f27'
+    yellow:  '0x5f5e4e'
+    blue:    '0x878573'
+    magenta: '0xe7e6df'
+    cyan:    '0x9d6c7c'
+    white:   '0xf4f3ec'
+
+colors__atelier-forest-light__light:
+# Base16 Atelier Forest Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xf1efee'
+    foreground: '0x68615e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf1efee'
+    cursor: '0x68615e'
+
+  # Normal colors
+  normal:
+    black:   '0xf1efee'
+    red:     '0xf22c40'
+    green:   '0x7b9726'
+    yellow:  '0xc38418'
+    blue:    '0x407ee7'
+    magenta: '0x6666ea'
+    cyan:    '0x3d97b8'
+    white:   '0x68615e'
+
+  # Bright colors
+  bright:
+    black:   '0x9c9491'
+    red:     '0xdf5320'
+    green:   '0xe6e2e0'
+    yellow:  '0xa8a19f'
+    blue:    '0x766e6b'
+    magenta: '0x2c2421'
+    cyan:    '0xc33ff3'
+    white:   '0x1b1918'
+
+colors__atelier-forest__dark:
+# Base16 Atelier Forest - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x1b1918'
+    foreground: '0xa8a19f'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1b1918'
+    cursor: '0xa8a19f'
+
+  # Normal colors
+  normal:
+    black:   '0x1b1918'
+    red:     '0xf22c40'
+    green:   '0x7b9726'
+    yellow:  '0xc38418'
+    blue:    '0x407ee7'
+    magenta: '0x6666ea'
+    cyan:    '0x3d97b8'
+    white:   '0xa8a19f'
+
+  # Bright colors
+  bright:
+    black:   '0x766e6b'
+    red:     '0xdf5320'
+    green:   '0x2c2421'
+    yellow:  '0x68615e'
+    blue:    '0x9c9491'
+    magenta: '0xe6e2e0'
+    cyan:    '0xc33ff3'
+    white:   '0xf1efee'
+
+colors__atelier-heath-light__light:
+# Base16 Atelier Heath Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xf7f3f7'
+    foreground: '0x695d69'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf7f3f7'
+    cursor: '0x695d69'
+
+  # Normal colors
+  normal:
+    black:   '0xf7f3f7'
+    red:     '0xca402b'
+    green:   '0x918b3b'
+    yellow:  '0xbb8a35'
+    blue:    '0x516aec'
+    magenta: '0x7b59c0'
+    cyan:    '0x159393'
+    white:   '0x695d69'
+
+  # Bright colors
+  bright:
+    black:   '0x9e8f9e'
+    red:     '0xa65926'
+    green:   '0xd8cad8'
+    yellow:  '0xab9bab'
+    blue:    '0x776977'
+    magenta: '0x292329'
+    cyan:    '0xcc33cc'
+    white:   '0x1b181b'
+
+colors__atelier-heath__dark:
+# Base16 Atelier Heath - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x1b181b'
+    foreground: '0xab9bab'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1b181b'
+    cursor: '0xab9bab'
+
+  # Normal colors
+  normal:
+    black:   '0x1b181b'
+    red:     '0xca402b'
+    green:   '0x918b3b'
+    yellow:  '0xbb8a35'
+    blue:    '0x516aec'
+    magenta: '0x7b59c0'
+    cyan:    '0x159393'
+    white:   '0xab9bab'
+
+  # Bright colors
+  bright:
+    black:   '0x776977'
+    red:     '0xa65926'
+    green:   '0x292329'
+    yellow:  '0x695d69'
+    blue:    '0x9e8f9e'
+    magenta: '0xd8cad8'
+    cyan:    '0xcc33cc'
+    white:   '0xf7f3f7'
+
+colors__atelier-lakeside-light__light:
+# Base16 Atelier Lakeside Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xebf8ff'
+    foreground: '0x516d7b'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xebf8ff'
+    cursor: '0x516d7b'
+
+  # Normal colors
+  normal:
+    black:   '0xebf8ff'
+    red:     '0xd22d72'
+    green:   '0x568c3b'
+    yellow:  '0x8a8a0f'
+    blue:    '0x257fad'
+    magenta: '0x6b6bb8'
+    cyan:    '0x2d8f6f'
+    white:   '0x516d7b'
+
+  # Bright colors
+  bright:
+    black:   '0x7195a8'
+    red:     '0x935c25'
+    green:   '0xc1e4f6'
+    yellow:  '0x7ea2b4'
+    blue:    '0x5a7b8c'
+    magenta: '0x1f292e'
+    cyan:    '0xb72dd2'
+    white:   '0x161b1d'
+
+colors__atelier-lakeside__dark:
+# Base16 Atelier Lakeside - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x161b1d'
+    foreground: '0x7ea2b4'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x161b1d'
+    cursor: '0x7ea2b4'
+
+  # Normal colors
+  normal:
+    black:   '0x161b1d'
+    red:     '0xd22d72'
+    green:   '0x568c3b'
+    yellow:  '0x8a8a0f'
+    blue:    '0x257fad'
+    magenta: '0x6b6bb8'
+    cyan:    '0x2d8f6f'
+    white:   '0x7ea2b4'
+
+  # Bright colors
+  bright:
+    black:   '0x5a7b8c'
+    red:     '0x935c25'
+    green:   '0x1f292e'
+    yellow:  '0x516d7b'
+    blue:    '0x7195a8'
+    magenta: '0xc1e4f6'
+    cyan:    '0xb72dd2'
+    white:   '0xebf8ff'
+
+colors__atelier-plateau-light__light:
+# Base16 Atelier Plateau Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xf4ecec'
+    foreground: '0x585050'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf4ecec'
+    cursor: '0x585050'
+
+  # Normal colors
+  normal:
+    black:   '0xf4ecec'
+    red:     '0xca4949'
+    green:   '0x4b8b8b'
+    yellow:  '0xa06e3b'
+    blue:    '0x7272ca'
+    magenta: '0x8464c4'
+    cyan:    '0x5485b6'
+    white:   '0x585050'
+
+  # Bright colors
+  bright:
+    black:   '0x7e7777'
+    red:     '0xb45a3c'
+    green:   '0xe7dfdf'
+    yellow:  '0x8a8585'
+    blue:    '0x655d5d'
+    magenta: '0x292424'
+    cyan:    '0xbd5187'
+    white:   '0x1b1818'
+
+colors__atelier-plateau__dark:
+# Base16 Atelier Plateau - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x1b1818'
+    foreground: '0x8a8585'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1b1818'
+    cursor: '0x8a8585'
+
+  # Normal colors
+  normal:
+    black:   '0x1b1818'
+    red:     '0xca4949'
+    green:   '0x4b8b8b'
+    yellow:  '0xa06e3b'
+    blue:    '0x7272ca'
+    magenta: '0x8464c4'
+    cyan:    '0x5485b6'
+    white:   '0x8a8585'
+
+  # Bright colors
+  bright:
+    black:   '0x655d5d'
+    red:     '0xb45a3c'
+    green:   '0x292424'
+    yellow:  '0x585050'
+    blue:    '0x7e7777'
+    magenta: '0xe7dfdf'
+    cyan:    '0xbd5187'
+    white:   '0xf4ecec'
+
+colors__atelier-savanna-light__light:
+# Base16 Atelier Savanna Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xecf4ee'
+    foreground: '0x526057'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xecf4ee'
+    cursor: '0x526057'
+
+  # Normal colors
+  normal:
+    black:   '0xecf4ee'
+    red:     '0xb16139'
+    green:   '0x489963'
+    yellow:  '0xa07e3b'
+    blue:    '0x478c90'
+    magenta: '0x55859b'
+    cyan:    '0x1c9aa0'
+    white:   '0x526057'
+
+  # Bright colors
+  bright:
+    black:   '0x78877d'
+    red:     '0x9f713c'
+    green:   '0xdfe7e2'
+    yellow:  '0x87928a'
+    blue:    '0x5f6d64'
+    magenta: '0x232a25'
+    cyan:    '0x867469'
+    white:   '0x171c19'
+
+colors__atelier-savanna__dark:
+# Base16 Atelier Savanna - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x171c19'
+    foreground: '0x87928a'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x171c19'
+    cursor: '0x87928a'
+
+  # Normal colors
+  normal:
+    black:   '0x171c19'
+    red:     '0xb16139'
+    green:   '0x489963'
+    yellow:  '0xa07e3b'
+    blue:    '0x478c90'
+    magenta: '0x55859b'
+    cyan:    '0x1c9aa0'
+    white:   '0x87928a'
+
+  # Bright colors
+  bright:
+    black:   '0x5f6d64'
+    red:     '0x9f713c'
+    green:   '0x232a25'
+    yellow:  '0x526057'
+    blue:    '0x78877d'
+    magenta: '0xdfe7e2'
+    cyan:    '0x867469'
+    white:   '0xecf4ee'
+
+colors__atelier-seaside-light__light:
+# Base16 Atelier Seaside Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xf4fbf4'
+    foreground: '0x5e6e5e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf4fbf4'
+    cursor: '0x5e6e5e'
+
+  # Normal colors
+  normal:
+    black:   '0xf4fbf4'
+    red:     '0xe6193c'
+    green:   '0x29a329'
+    yellow:  '0x98981b'
+    blue:    '0x3d62f5'
+    magenta: '0xad2bee'
+    cyan:    '0x1999b3'
+    white:   '0x5e6e5e'
+
+  # Bright colors
+  bright:
+    black:   '0x809980'
+    red:     '0x87711d'
+    green:   '0xcfe8cf'
+    yellow:  '0x8ca68c'
+    blue:    '0x687d68'
+    magenta: '0x242924'
+    cyan:    '0xe619c3'
+    white:   '0x131513'
+
+colors__atelier-seaside__dark:
+# Base16 Atelier Seaside - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x131513'
+    foreground: '0x8ca68c'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x131513'
+    cursor: '0x8ca68c'
+
+  # Normal colors
+  normal:
+    black:   '0x131513'
+    red:     '0xe6193c'
+    green:   '0x29a329'
+    yellow:  '0x98981b'
+    blue:    '0x3d62f5'
+    magenta: '0xad2bee'
+    cyan:    '0x1999b3'
+    white:   '0x8ca68c'
+
+  # Bright colors
+  bright:
+    black:   '0x687d68'
+    red:     '0x87711d'
+    green:   '0x242924'
+    yellow:  '0x5e6e5e'
+    blue:    '0x809980'
+    magenta: '0xcfe8cf'
+    cyan:    '0xe619c3'
+    white:   '0xf4fbf4'
+
+colors__atelier-sulphurpool-light__light:
+# Base16 Atelier Sulphurpool Light - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0xf5f7ff'
+    foreground: '0x5e6687'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf5f7ff'
+    cursor: '0x5e6687'
+
+  # Normal colors
+  normal:
+    black:   '0xf5f7ff'
+    red:     '0xc94922'
+    green:   '0xac9739'
+    yellow:  '0xc08b30'
+    blue:    '0x3d8fd1'
+    magenta: '0x6679cc'
+    cyan:    '0x22a2c9'
+    white:   '0x5e6687'
+
+  # Bright colors
+  bright:
+    black:   '0x898ea4'
+    red:     '0xc76b29'
+    green:   '0xdfe2f1'
+    yellow:  '0x979db4'
+    blue:    '0x6b7394'
+    magenta: '0x293256'
+    cyan:    '0x9c637a'
+    white:   '0x202746'
+
+colors__atelier-sulphurpool__dark:
+# Base16 Atelier Sulphurpool - alacritty color config
+# Bram de Haan (http://atelierbramdehaan.nl)
+  # Default colors
+  primary:
+    background: '0x202746'
+    foreground: '0x979db4'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x202746'
+    cursor: '0x979db4'
+
+  # Normal colors
+  normal:
+    black:   '0x202746'
+    red:     '0xc94922'
+    green:   '0xac9739'
+    yellow:  '0xc08b30'
+    blue:    '0x3d8fd1'
+    magenta: '0x6679cc'
+    cyan:    '0x22a2c9'
+    white:   '0x979db4'
+
+  # Bright colors
+  bright:
+    black:   '0x6b7394'
+    red:     '0xc76b29'
+    green:   '0x293256'
+    yellow:  '0x5e6687'
+    blue:    '0x898ea4'
+    magenta: '0xdfe2f1'
+    cyan:    '0x9c637a'
+    white:   '0xf5f7ff'
+
+colors__atlas__dark:
+# Base16 Atlas - alacritty color config
+# Alex Lende (https://ajlende.com)
+  # Default colors
+  primary:
+    background: '0x002635'
+    foreground: '0xa1a19a'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x002635'
+    cursor: '0xa1a19a'
+
+  # Normal colors
+  normal:
+    black:   '0x002635'
+    red:     '0xff5a67'
+    green:   '0x7fc06e'
+    yellow:  '0xffcc1b'
+    blue:    '0x5dd7b9'
+    magenta: '0x9a70a4'
+    cyan:    '0x14747e'
+    white:   '0xa1a19a'
+
+  # Bright colors
+  bright:
+    black:   '0x6c8b91'
+    red:     '0xf08e48'
+    green:   '0x00384d'
+    yellow:  '0x517f8d'
+    blue:    '0x869696'
+    magenta: '0xe6e6dc'
+    cyan:    '0xc43060'
+    white:   '0xfafaf8'
+
+colors__bespin__dark:
+# Base16 Bespin - alacritty color config
+# Jan T. Sott
+  # Default colors
+  primary:
+    background: '0x28211c'
+    foreground: '0x8a8986'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x28211c'
+    cursor: '0x8a8986'
+
+  # Normal colors
+  normal:
+    black:   '0x28211c'
+    red:     '0xcf6a4c'
+    green:   '0x54be0d'
+    yellow:  '0xf9ee98'
+    blue:    '0x5ea6ea'
+    magenta: '0x9b859d'
+    cyan:    '0xafc4db'
+    white:   '0x8a8986'
+
+  # Bright colors
+  bright:
+    black:   '0x666666'
+    red:     '0xcf7d34'
+    green:   '0x36312e'
+    yellow:  '0x5e5d5c'
+    blue:    '0x797977'
+    magenta: '0x9d9b97'
+    cyan:    '0x937121'
+    white:   '0xbaae9e'
+
+colors__black-metal-bathory__dark:
+# Base16 Black Metal (Bathory) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xfbcb97'
+    yellow:  '0xe78a53'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-burzum__dark:
+# Base16 Black Metal (Burzum) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xddeecc'
+    yellow:  '0x99bbaa'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-dark-funeral__dark:
+# Base16 Black Metal (Dark Funeral) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xd0dfee'
+    yellow:  '0x5f81a5'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-gorgoroth__dark:
+# Base16 Black Metal (Gorgoroth) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0x9b8d7f'
+    yellow:  '0x8c7f70'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-immortal__dark:
+# Base16 Black Metal (Immortal) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0x7799bb'
+    yellow:  '0x556677'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-khold__dark:
+# Base16 Black Metal (Khold) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xeceee3'
+    yellow:  '0x974b46'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-marduk__dark:
+# Base16 Black Metal (Marduk) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xa5aaa7'
+    yellow:  '0x626b67'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-mayhem__dark:
+# Base16 Black Metal (Mayhem) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xf3ecd4'
+    yellow:  '0xeecc6c'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-nile__dark:
+# Base16 Black Metal (Nile) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xaa9988'
+    yellow:  '0x777755'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal-venom__dark:
+# Base16 Black Metal (Venom) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xf8f7f2'
+    yellow:  '0x79241f'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__black-metal__dark:
+# Base16 Black Metal - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc1c1c1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc1c1c1'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0x5f8787'
+    green:   '0xdd9999'
+    yellow:  '0xa06666'
+    blue:    '0x888888'
+    magenta: '0x999999'
+    cyan:    '0xaaaaaa'
+    white:   '0xc1c1c1'
+
+  # Bright colors
+  bright:
+    black:   '0x333333'
+    red:     '0xaaaaaa'
+    green:   '0x121212'
+    yellow:  '0x222222'
+    blue:    '0x999999'
+    magenta: '0x999999'
+    cyan:    '0x444444'
+    white:   '0xc1c1c1'
+
+colors__brewer__dark:
+# Base16 Brewer - alacritty color config
+# Timothée Poisot (http://github.com/tpoisot)
+  # Default colors
+  primary:
+    background: '0x0c0d0e'
+    foreground: '0xb7b8b9'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0c0d0e'
+    cursor: '0xb7b8b9'
+
+  # Normal colors
+  normal:
+    black:   '0x0c0d0e'
+    red:     '0xe31a1c'
+    green:   '0x31a354'
+    yellow:  '0xdca060'
+    blue:    '0x3182bd'
+    magenta: '0x756bb1'
+    cyan:    '0x80b1d3'
+    white:   '0xb7b8b9'
+
+  # Bright colors
+  bright:
+    black:   '0x737475'
+    red:     '0xe6550d'
+    green:   '0x2e2f30'
+    yellow:  '0x515253'
+    blue:    '0x959697'
+    magenta: '0xdadbdc'
+    cyan:    '0xb15928'
+    white:   '0xfcfdfe'
+
+colors__bright__dark:
+# Base16 Bright - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xe0e0e0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xe0e0e0'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xfb0120'
+    green:   '0xa1c659'
+    yellow:  '0xfda331'
+    blue:    '0x6fb3d2'
+    magenta: '0xd381c3'
+    cyan:    '0x76c7b7'
+    white:   '0xe0e0e0'
+
+  # Bright colors
+  bright:
+    black:   '0xb0b0b0'
+    red:     '0xfc6d24'
+    green:   '0x303030'
+    yellow:  '0x505050'
+    blue:    '0xd0d0d0'
+    magenta: '0xf5f5f5'
+    cyan:    '0xbe643c'
+    white:   '0xffffff'
+
+colors__brogrammer__dark:
+# Base16 Brogrammer - alacritty color config
+# Vik Ramanujam (http://github.com/piggyslasher)
+  # Default colors
+  primary:
+    background: '0x1f1f1f'
+    foreground: '0x4e5ab7'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1f1f1f'
+    cursor: '0x4e5ab7'
+
+  # Normal colors
+  normal:
+    black:   '0x1f1f1f'
+    red:     '0xd6dbe5'
+    green:   '0xf3bd09'
+    yellow:  '0x1dd361'
+    blue:    '0x5350b9'
+    magenta: '0x0f7ddb'
+    cyan:    '0x1081d6'
+    white:   '0x4e5ab7'
+
+  # Bright colors
+  bright:
+    black:   '0xecba0f'
+    red:     '0xde352e'
+    green:   '0xf81118'
+    yellow:  '0x2dc55e'
+    blue:    '0x2a84d2'
+    magenta: '0x1081d6'
+    cyan:    '0xffffff'
+    white:   '0xd6dbe5'
+
+colors__brushtrees-dark__dark:
+# Base16 Brush Trees Dark - alacritty color config
+# Abraham White &lt;abelincoln.white@gmail.com&gt;
+  # Default colors
+  primary:
+    background: '0x485867'
+    foreground: '0xb0c5c8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x485867'
+    cursor: '0xb0c5c8'
+
+  # Normal colors
+  normal:
+    black:   '0x485867'
+    red:     '0xb38686'
+    green:   '0x87b386'
+    yellow:  '0xaab386'
+    blue:    '0x868cb3'
+    magenta: '0xb386b2'
+    cyan:    '0x86b3b3'
+    white:   '0xb0c5c8'
+
+  # Bright colors
+  bright:
+    black:   '0x8299a1'
+    red:     '0xd8bba2'
+    green:   '0x5a6d7a'
+    yellow:  '0x6d828e'
+    blue:    '0x98afb5'
+    magenta: '0xc9dbdc'
+    cyan:    '0xb39f9f'
+    white:   '0xe3efef'
+
+colors__brushtrees__dark:
+# Base16 Brush Trees - alacritty color config
+# Abraham White &lt;abelincoln.white@gmail.com&gt;
+  # Default colors
+  primary:
+    background: '0xe3efef'
+    foreground: '0x6d828e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xe3efef'
+    cursor: '0x6d828e'
+
+  # Normal colors
+  normal:
+    black:   '0xe3efef'
+    red:     '0xb38686'
+    green:   '0x87b386'
+    yellow:  '0xaab386'
+    blue:    '0x868cb3'
+    magenta: '0xb386b2'
+    cyan:    '0x86b3b3'
+    white:   '0x6d828e'
+
+  # Bright colors
+  bright:
+    black:   '0x98afb5'
+    red:     '0xd8bba2'
+    green:   '0xc9dbdc'
+    yellow:  '0xb0c5c8'
+    blue:    '0x8299a1'
+    magenta: '0x5a6d7a'
+    cyan:    '0xb39f9f'
+    white:   '0x485867'
+
+colors__chalk__dark:
+# Base16 Chalk - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x151515'
+    foreground: '0xd0d0d0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x151515'
+    cursor: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+    black:   '0x151515'
+    red:     '0xfb9fb1'
+    green:   '0xacc267'
+    yellow:  '0xddb26f'
+    blue:    '0x6fc2ef'
+    magenta: '0xe1a3ee'
+    cyan:    '0x12cfc0'
+    white:   '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black:   '0x505050'
+    red:     '0xeda987'
+    green:   '0x202020'
+    yellow:  '0x303030'
+    blue:    '0xb0b0b0'
+    magenta: '0xe0e0e0'
+    cyan:    '0xdeaf8f'
+    white:   '0xf5f5f5'
+
+colors__circus__dark:
+# Base16 Circus - alacritty color config
+# Stephan Boyer (https://github.com/stepchowfun) and Esther Wang (https://github.com/ewang12)
+  # Default colors
+  primary:
+    background: '0x191919'
+    foreground: '0xa7a7a7'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x191919'
+    cursor: '0xa7a7a7'
+
+  # Normal colors
+  normal:
+    black:   '0x191919'
+    red:     '0xdc657d'
+    green:   '0x84b97c'
+    yellow:  '0xc3ba63'
+    blue:    '0x639ee4'
+    magenta: '0xb888e2'
+    cyan:    '0x4bb1a7'
+    white:   '0xa7a7a7'
+
+  # Bright colors
+  bright:
+    black:   '0x5f5a60'
+    red:     '0x4bb1a7'
+    green:   '0x202020'
+    yellow:  '0x303030'
+    blue:    '0x505050'
+    magenta: '0x808080'
+    cyan:    '0xb888e2'
+    white:   '0xffffff'
+
+colors__classic-dark__dark:
+# Base16 Classic Dark - alacritty color config
+# Jason Heeris (http://heeris.id.au)
+  # Default colors
+  primary:
+    background: '0x151515'
+    foreground: '0xd0d0d0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x151515'
+    cursor: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+    black:   '0x151515'
+    red:     '0xac4142'
+    green:   '0x90a959'
+    yellow:  '0xf4bf75'
+    blue:    '0x6a9fb5'
+    magenta: '0xaa759f'
+    cyan:    '0x75b5aa'
+    white:   '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black:   '0x505050'
+    red:     '0xd28445'
+    green:   '0x202020'
+    yellow:  '0x303030'
+    blue:    '0xb0b0b0'
+    magenta: '0xe0e0e0'
+    cyan:    '0x8f5536'
+    white:   '0xf5f5f5'
+
+colors__classic-light__light:
+# Base16 Classic Light - alacritty color config
+# Jason Heeris (http://heeris.id.au)
+  # Default colors
+  primary:
+    background: '0xf5f5f5'
+    foreground: '0x303030'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf5f5f5'
+    cursor: '0x303030'
+
+  # Normal colors
+  normal:
+    black:   '0xf5f5f5'
+    red:     '0xac4142'
+    green:   '0x90a959'
+    yellow:  '0xf4bf75'
+    blue:    '0x6a9fb5'
+    magenta: '0xaa759f'
+    cyan:    '0x75b5aa'
+    white:   '0x303030'
+
+  # Bright colors
+  bright:
+    black:   '0xb0b0b0'
+    red:     '0xd28445'
+    green:   '0xe0e0e0'
+    yellow:  '0xd0d0d0'
+    blue:    '0x505050'
+    magenta: '0x202020'
+    cyan:    '0x8f5536'
+    white:   '0x151515'
+
+colors__codeschool__dark:
+# Base16 Codeschool - alacritty color config
+# blockloop
+  # Default colors
+  primary:
+    background: '0x232c31'
+    foreground: '0x9ea7a6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x232c31'
+    cursor: '0x9ea7a6'
+
+  # Normal colors
+  normal:
+    black:   '0x232c31'
+    red:     '0x2a5491'
+    green:   '0x237986'
+    yellow:  '0xa03b1e'
+    blue:    '0x484d79'
+    magenta: '0xc59820'
+    cyan:    '0xb02f30'
+    white:   '0x9ea7a6'
+
+  # Bright colors
+  bright:
+    black:   '0x3f4944'
+    red:     '0x43820d'
+    green:   '0x1c3657'
+    yellow:  '0x2a343a'
+    blue:    '0x84898c'
+    magenta: '0xa7cfa3'
+    cyan:    '0xc98344'
+    white:   '0xb5d8f6'
+
+colors__cupcake__dark:
+# Base16 Cupcake - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0xfbf1f2'
+    foreground: '0x8b8198'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfbf1f2'
+    cursor: '0x8b8198'
+
+  # Normal colors
+  normal:
+    black:   '0xfbf1f2'
+    red:     '0xd57e85'
+    green:   '0xa3b367'
+    yellow:  '0xdcb16c'
+    blue:    '0x7297b9'
+    magenta: '0xbb99b4'
+    cyan:    '0x69a9a7'
+    white:   '0x8b8198'
+
+  # Bright colors
+  bright:
+    black:   '0xbfb9c6'
+    red:     '0xebb790'
+    green:   '0xf2f1f4'
+    yellow:  '0xd8d5dd'
+    blue:    '0xa59daf'
+    magenta: '0x72677e'
+    cyan:    '0xbaa58c'
+    white:   '0x585062'
+
+colors__cupertino__dark:
+# Base16 Cupertino - alacritty color config
+# Defman21
+  # Default colors
+  primary:
+    background: '0xffffff'
+    foreground: '0x404040'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0x404040'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xc41a15'
+    green:   '0x007400'
+    yellow:  '0x826b28'
+    blue:    '0x0000ff'
+    magenta: '0xa90d91'
+    cyan:    '0x318495'
+    white:   '0x404040'
+
+  # Bright colors
+  bright:
+    black:   '0x808080'
+    red:     '0xeb8500'
+    green:   '0xc0c0c0'
+    yellow:  '0xc0c0c0'
+    blue:    '0x808080'
+    magenta: '0x404040'
+    cyan:    '0x826b28'
+    white:   '0x5e5e5e'
+
+colors__darktooth__dark:
+# Base16 Darktooth - alacritty color config
+# Jason Milkins (https://github.com/jasonm23)
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xa89984'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d2021'
+    cursor: '0xa89984'
+
+  # Normal colors
+  normal:
+    black:   '0x1d2021'
+    red:     '0xfb543f'
+    green:   '0x95c085'
+    yellow:  '0xfac03b'
+    blue:    '0x0d6678'
+    magenta: '0x8f4673'
+    cyan:    '0x8ba59b'
+    white:   '0xa89984'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xfe8625'
+    green:   '0x32302f'
+    yellow:  '0x504945'
+    blue:    '0x928374'
+    magenta: '0xd5c4a1'
+    cyan:    '0xa87322'
+    white:   '0xfdf4c1'
+
+colors__decaf__dark:
+# Base16 Decaf - alacritty color config
+# Alex Mirrington (https://github.com/alexmirrington)
+  # Default colors
+  primary:
+    background: '0x2d2d2d'
+    foreground: '0xcccccc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2d2d2d'
+    cursor: '0xcccccc'
+
+  # Normal colors
+  normal:
+    black:   '0x2d2d2d'
+    red:     '0xff7f7b'
+    green:   '0xbeda78'
+    yellow:  '0xffd67c'
+    blue:    '0x90bee1'
+    magenta: '0xefb3f7'
+    cyan:    '0xbed6ff'
+    white:   '0xcccccc'
+
+  # Bright colors
+  bright:
+    black:   '0x777777'
+    red:     '0xffbf70'
+    green:   '0x393939'
+    yellow:  '0x515151'
+    blue:    '0xb4b7b4'
+    magenta: '0xe0e0e0'
+    cyan:    '0xff93b3'
+    white:   '0xffffff'
+
+colors__default-dark__dark:
+# Base16 Default Dark - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x181818'
+    foreground: '0xd8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x181818'
+    cursor: '0xd8d8d8'
+
+  # Normal colors
+  normal:
+    black:   '0x181818'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0xd8d8d8'
+
+  # Bright colors
+  bright:
+    black:   '0x585858'
+    red:     '0xdc9656'
+    green:   '0x282828'
+    yellow:  '0x383838'
+    blue:    '0xb8b8b8'
+    magenta: '0xe8e8e8'
+    cyan:    '0xa16946'
+    white:   '0xf8f8f8'
+
+colors__default-light__light:
+# Base16 Default Light - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0xf8f8f8'
+    foreground: '0x383838'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf8f8f8'
+    cursor: '0x383838'
+
+  # Normal colors
+  normal:
+    black:   '0xf8f8f8'
+    red:     '0xab4642'
+    green:   '0xa1b56c'
+    yellow:  '0xf7ca88'
+    blue:    '0x7cafc2'
+    magenta: '0xba8baf'
+    cyan:    '0x86c1b9'
+    white:   '0x383838'
+
+  # Bright colors
+  bright:
+    black:   '0xb8b8b8'
+    red:     '0xdc9656'
+    green:   '0xe8e8e8'
+    yellow:  '0xd8d8d8'
+    blue:    '0x585858'
+    magenta: '0x282828'
+    cyan:    '0xa16946'
+    white:   '0x181818'
+
+colors__dracula__dark:
+# Base16 Dracula - alacritty color config
+# Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+  # Default colors
+  primary:
+    background: '0x282936'
+    foreground: '0xe9e9f4'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x282936'
+    cursor: '0xe9e9f4'
+
+  # Normal colors
+  normal:
+    black:   '0x282936'
+    red:     '0xea51b2'
+    green:   '0xebff87'
+    yellow:  '0x00f769'
+    blue:    '0x62d6e8'
+    magenta: '0xb45bcf'
+    cyan:    '0xa1efe4'
+    white:   '0xe9e9f4'
+
+  # Bright colors
+  bright:
+    black:   '0x626483'
+    red:     '0xb45bcf'
+    green:   '0x3a3c4e'
+    yellow:  '0x4d4f68'
+    blue:    '0x62d6e8'
+    magenta: '0xf1f2f8'
+    cyan:    '0x00f769'
+    white:   '0xf7f7fb'
+
+colors__eighties__dark:
+# Base16 Eighties - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x2d2d2d'
+    foreground: '0xd3d0c8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2d2d2d'
+    cursor: '0xd3d0c8'
+
+  # Normal colors
+  normal:
+    black:   '0x2d2d2d'
+    red:     '0xf2777a'
+    green:   '0x99cc99'
+    yellow:  '0xffcc66'
+    blue:    '0x6699cc'
+    magenta: '0xcc99cc'
+    cyan:    '0x66cccc'
+    white:   '0xd3d0c8'
+
+  # Bright colors
+  bright:
+    black:   '0x747369'
+    red:     '0xf99157'
+    green:   '0x393939'
+    yellow:  '0x515151'
+    blue:    '0xa09f93'
+    magenta: '0xe8e6df'
+    cyan:    '0xd27b53'
+    white:   '0xf2f0ec'
+
+colors__embers__dark:
+# Base16 Embers - alacritty color config
+# Jannik Siebert (https://github.com/janniks)
+  # Default colors
+  primary:
+    background: '0x16130f'
+    foreground: '0xa39a90'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x16130f'
+    cursor: '0xa39a90'
+
+  # Normal colors
+  normal:
+    black:   '0x16130f'
+    red:     '0x826d57'
+    green:   '0x57826d'
+    yellow:  '0x6d8257'
+    blue:    '0x6d5782'
+    magenta: '0x82576d'
+    cyan:    '0x576d82'
+    white:   '0xa39a90'
+
+  # Bright colors
+  bright:
+    black:   '0x5a5047'
+    red:     '0x828257'
+    green:   '0x2c2620'
+    yellow:  '0x433b32'
+    blue:    '0x8a8075'
+    magenta: '0xbeb6ae'
+    cyan:    '0x825757'
+    white:   '0xdbd6d1'
+
+colors__espresso__dark:
+# Base16 Espresso - alacritty color config
+# Alex Mirrington (https://github.com/alexmirrington)
+  # Default colors
+  primary:
+    background: '0x2d2d2d'
+    foreground: '0xcccccc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2d2d2d'
+    cursor: '0xcccccc'
+
+  # Normal colors
+  normal:
+    black:   '0x2d2d2d'
+    red:     '0xd25252'
+    green:   '0xa5c261'
+    yellow:  '0xffc66d'
+    blue:    '0x6c99bb'
+    magenta: '0xd197d9'
+    cyan:    '0xbed6ff'
+    white:   '0xcccccc'
+
+  # Bright colors
+  bright:
+    black:   '0x777777'
+    red:     '0xf9a959'
+    green:   '0x393939'
+    yellow:  '0x515151'
+    blue:    '0xb4b7b4'
+    magenta: '0xe0e0e0'
+    cyan:    '0xf97394'
+    white:   '0xffffff'
+
+colors__flat__dark:
+# Base16 Flat - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x2c3e50'
+    foreground: '0xe0e0e0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2c3e50'
+    cursor: '0xe0e0e0'
+
+  # Normal colors
+  normal:
+    black:   '0x2c3e50'
+    red:     '0xe74c3c'
+    green:   '0x2ecc71'
+    yellow:  '0xf1c40f'
+    blue:    '0x3498db'
+    magenta: '0x9b59b6'
+    cyan:    '0x1abc9c'
+    white:   '0xe0e0e0'
+
+  # Bright colors
+  bright:
+    black:   '0x95a5a6'
+    red:     '0xe67e22'
+    green:   '0x34495e'
+    yellow:  '0x7f8c8d'
+    blue:    '0xbdc3c7'
+    magenta: '0xf5f5f5'
+    cyan:    '0xbe643c'
+    white:   '0xecf0f1'
+
+colors__framer__dark:
+# Base16 Framer - alacritty color config
+# Framer (Maintained by Jesse Hoyos)
+  # Default colors
+  primary:
+    background: '0x181818'
+    foreground: '0xd0d0d0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x181818'
+    cursor: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+    black:   '0x181818'
+    red:     '0xfd886b'
+    green:   '0x32ccdc'
+    yellow:  '0xfecb6e'
+    blue:    '0x20bcfc'
+    magenta: '0xba8cfc'
+    cyan:    '0xacddfd'
+    white:   '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black:   '0x747474'
+    red:     '0xfc4769'
+    green:   '0x151515'
+    yellow:  '0x464646'
+    blue:    '0xb9b9b9'
+    magenta: '0xe8e8e8'
+    cyan:    '0xb15f4a'
+    white:   '0xeeeeee'
+
+colors__fruit-soda__dark:
+# Base16 Fruit Soda - alacritty color config
+# jozip
+  # Default colors
+  primary:
+    background: '0xf1ecf1'
+    foreground: '0x515151'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf1ecf1'
+    cursor: '0x515151'
+
+  # Normal colors
+  normal:
+    black:   '0xf1ecf1'
+    red:     '0xfe3e31'
+    green:   '0x47f74c'
+    yellow:  '0xf7e203'
+    blue:    '0x2931df'
+    magenta: '0x611fce'
+    cyan:    '0x0f9cfd'
+    white:   '0x515151'
+
+  # Bright colors
+  bright:
+    black:   '0xb5b4b6'
+    red:     '0xfe6d08'
+    green:   '0xe0dee0'
+    yellow:  '0xd8d5d5'
+    blue:    '0x979598'
+    magenta: '0x474545'
+    cyan:    '0xb16f40'
+    white:   '0x2d2c2c'
+
+colors__github__dark:
+# Base16 Github - alacritty color config
+# Defman21
+  # Default colors
+  primary:
+    background: '0xffffff'
+    foreground: '0x333333'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0x333333'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xed6a43'
+    green:   '0x183691'
+    yellow:  '0x795da3'
+    blue:    '0x795da3'
+    magenta: '0xa71d5d'
+    cyan:    '0x183691'
+    white:   '0x333333'
+
+  # Bright colors
+  bright:
+    black:   '0x969896'
+    red:     '0x0086b3'
+    green:   '0xf5f5f5'
+    yellow:  '0xc8c8fa'
+    blue:    '0xe8e8e8'
+    magenta: '0xffffff'
+    cyan:    '0x333333'
+    white:   '0xffffff'
+
+colors__google-dark__dark:
+# Base16 Google Dark - alacritty color config
+# Seth Wright (http://sethawright.com)
+  # Default colors
+  primary:
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d1f21'
+    cursor: '0xc5c8c6'
+
+  # Normal colors
+  normal:
+    black:   '0x1d1f21'
+    red:     '0xcc342b'
+    green:   '0x198844'
+    yellow:  '0xfba922'
+    blue:    '0x3971ed'
+    magenta: '0xa36ac7'
+    cyan:    '0x3971ed'
+    white:   '0xc5c8c6'
+
+  # Bright colors
+  bright:
+    black:   '0x969896'
+    red:     '0xf96a38'
+    green:   '0x282a2e'
+    yellow:  '0x373b41'
+    blue:    '0xb4b7b4'
+    magenta: '0xe0e0e0'
+    cyan:    '0x3971ed'
+    white:   '0xffffff'
+
+colors__google-light__light:
+# Base16 Google Light - alacritty color config
+# Seth Wright (http://sethawright.com)
+  # Default colors
+  primary:
+    background: '0xffffff'
+    foreground: '0x373b41'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0x373b41'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xcc342b'
+    green:   '0x198844'
+    yellow:  '0xfba922'
+    blue:    '0x3971ed'
+    magenta: '0xa36ac7'
+    cyan:    '0x3971ed'
+    white:   '0x373b41'
+
+  # Bright colors
+  bright:
+    black:   '0xb4b7b4'
+    red:     '0xf96a38'
+    green:   '0xe0e0e0'
+    yellow:  '0xc5c8c6'
+    blue:    '0x969896'
+    magenta: '0x282a2e'
+    cyan:    '0x3971ed'
+    white:   '0x1d1f21'
+
+colors__grayscale-dark__dark:
+# Base16 Grayscale Dark - alacritty color config
+# Alexandre Gavioli (https://github.com/Alexx2/)
+  # Default colors
+  primary:
+    background: '0x101010'
+    foreground: '0xb9b9b9'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x101010'
+    cursor: '0xb9b9b9'
+
+  # Normal colors
+  normal:
+    black:   '0x101010'
+    red:     '0x7c7c7c'
+    green:   '0x8e8e8e'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0x747474'
+    cyan:    '0x868686'
+    white:   '0xb9b9b9'
+
+  # Bright colors
+  bright:
+    black:   '0x525252'
+    red:     '0x999999'
+    green:   '0x252525'
+    yellow:  '0x464646'
+    blue:    '0xababab'
+    magenta: '0xe3e3e3'
+    cyan:    '0x5e5e5e'
+    white:   '0xf7f7f7'
+
+colors__grayscale-light__light:
+# Base16 Grayscale Light - alacritty color config
+# Alexandre Gavioli (https://github.com/Alexx2/)
+  # Default colors
+  primary:
+    background: '0xf7f7f7'
+    foreground: '0x464646'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf7f7f7'
+    cursor: '0x464646'
+
+  # Normal colors
+  normal:
+    black:   '0xf7f7f7'
+    red:     '0x7c7c7c'
+    green:   '0x8e8e8e'
+    yellow:  '0xa0a0a0'
+    blue:    '0x686868'
+    magenta: '0x747474'
+    cyan:    '0x868686'
+    white:   '0x464646'
+
+  # Bright colors
+  bright:
+    black:   '0xababab'
+    red:     '0x999999'
+    green:   '0xe3e3e3'
+    yellow:  '0xb9b9b9'
+    blue:    '0x525252'
+    magenta: '0x252525'
+    cyan:    '0x5e5e5e'
+    white:   '0x101010'
+
+colors__greenscreen__dark:
+# Base16 Green Screen - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x001100'
+    foreground: '0x00bb00'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x001100'
+    cursor: '0x00bb00'
+
+  # Normal colors
+  normal:
+    black:   '0x001100'
+    red:     '0x007700'
+    green:   '0x00bb00'
+    yellow:  '0x007700'
+    blue:    '0x009900'
+    magenta: '0x00bb00'
+    cyan:    '0x005500'
+    white:   '0x00bb00'
+
+  # Bright colors
+  bright:
+    black:   '0x007700'
+    red:     '0x009900'
+    green:   '0x003300'
+    yellow:  '0x005500'
+    blue:    '0x009900'
+    magenta: '0x00dd00'
+    cyan:    '0x005500'
+    white:   '0x00ff00'
+
+colors__gruvbox-dark-hard__dark:
+# Base16 Gruvbox dark, hard - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xd5c4a1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d2021'
+    cursor: '0xd5c4a1'
+
+  # Normal colors
+  normal:
+    black:   '0x1d2021'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xd5c4a1'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xfe8019'
+    green:   '0x3c3836'
+    yellow:  '0x504945'
+    blue:    '0xbdae93'
+    magenta: '0xebdbb2'
+    cyan:    '0xd65d0e'
+    white:   '0xfbf1c7'
+
+colors__gruvbox-dark-medium__dark:
+# Base16 Gruvbox dark, medium - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  # Default colors
+  primary:
+    background: '0x282828'
+    foreground: '0xd5c4a1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x282828'
+    cursor: '0xd5c4a1'
+
+  # Normal colors
+  normal:
+    black:   '0x282828'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xd5c4a1'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xfe8019'
+    green:   '0x3c3836'
+    yellow:  '0x504945'
+    blue:    '0xbdae93'
+    magenta: '0xebdbb2'
+    cyan:    '0xd65d0e'
+    white:   '0xfbf1c7'
+
+colors__gruvbox-dark-pale__dark:
+# Base16 Gruvbox dark, pale - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  # Default colors
+  primary:
+    background: '0x262626'
+    foreground: '0xdab997'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x262626'
+    cursor: '0xdab997'
+
+  # Normal colors
+  normal:
+    black:   '0x262626'
+    red:     '0xd75f5f'
+    green:   '0xafaf00'
+    yellow:  '0xffaf00'
+    blue:    '0x83adad'
+    magenta: '0xd485ad'
+    cyan:    '0x85ad85'
+    white:   '0xdab997'
+
+  # Bright colors
+  bright:
+    black:   '0x8a8a8a'
+    red:     '0xff8700'
+    green:   '0x3a3a3a'
+    yellow:  '0x4e4e4e'
+    blue:    '0x949494'
+    magenta: '0xd5c4a1'
+    cyan:    '0xd65d0e'
+    white:   '0xebdbb2'
+
+colors__gruvbox-dark-soft__dark:
+# Base16 Gruvbox dark, soft - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  # Default colors
+  primary:
+    background: '0x32302f'
+    foreground: '0xd5c4a1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x32302f'
+    cursor: '0xd5c4a1'
+
+  # Normal colors
+  normal:
+    black:   '0x32302f'
+    red:     '0xfb4934'
+    green:   '0xb8bb26'
+    yellow:  '0xfabd2f'
+    blue:    '0x83a598'
+    magenta: '0xd3869b'
+    cyan:    '0x8ec07c'
+    white:   '0xd5c4a1'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xfe8019'
+    green:   '0x3c3836'
+    yellow:  '0x504945'
+    blue:    '0xbdae93'
+    magenta: '0xebdbb2'
+    cyan:    '0xd65d0e'
+    white:   '0xfbf1c7'
+
+colors__gruvbox-light-hard__light:
+# Base16 Gruvbox light, hard - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  # Default colors
+  primary:
+    background: '0xf9f5d7'
+    foreground: '0x504945'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf9f5d7'
+    cursor: '0x504945'
+
+  # Normal colors
+  normal:
+    black:   '0xf9f5d7'
+    red:     '0x9d0006'
+    green:   '0x79740e'
+    yellow:  '0xb57614'
+    blue:    '0x076678'
+    magenta: '0x8f3f71'
+    cyan:    '0x427b58'
+    white:   '0x504945'
+
+  # Bright colors
+  bright:
+    black:   '0xbdae93'
+    red:     '0xaf3a03'
+    green:   '0xebdbb2'
+    yellow:  '0xd5c4a1'
+    blue:    '0x665c54'
+    magenta: '0x3c3836'
+    cyan:    '0xd65d0e'
+    white:   '0x282828'
+
+colors__gruvbox-light-medium__light:
+# Base16 Gruvbox light, medium - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  # Default colors
+  primary:
+    background: '0xfbf1c7'
+    foreground: '0x504945'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfbf1c7'
+    cursor: '0x504945'
+
+  # Normal colors
+  normal:
+    black:   '0xfbf1c7'
+    red:     '0x9d0006'
+    green:   '0x79740e'
+    yellow:  '0xb57614'
+    blue:    '0x076678'
+    magenta: '0x8f3f71'
+    cyan:    '0x427b58'
+    white:   '0x504945'
+
+  # Bright colors
+  bright:
+    black:   '0xbdae93'
+    red:     '0xaf3a03'
+    green:   '0xebdbb2'
+    yellow:  '0xd5c4a1'
+    blue:    '0x665c54'
+    magenta: '0x3c3836'
+    cyan:    '0xd65d0e'
+    white:   '0x282828'
+
+colors__gruvbox-light-soft__light:
+# Base16 Gruvbox light, soft - alacritty color config
+# Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+  # Default colors
+  primary:
+    background: '0xf2e5bc'
+    foreground: '0x504945'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf2e5bc'
+    cursor: '0x504945'
+
+  # Normal colors
+  normal:
+    black:   '0xf2e5bc'
+    red:     '0x9d0006'
+    green:   '0x79740e'
+    yellow:  '0xb57614'
+    blue:    '0x076678'
+    magenta: '0x8f3f71'
+    cyan:    '0x427b58'
+    white:   '0x504945'
+
+  # Bright colors
+  bright:
+    black:   '0xbdae93'
+    red:     '0xaf3a03'
+    green:   '0xebdbb2'
+    yellow:  '0xd5c4a1'
+    blue:    '0x665c54'
+    magenta: '0x3c3836'
+    cyan:    '0xd65d0e'
+    white:   '0x282828'
+
+colors__harmonic-dark__dark:
+# Base16 Harmonic16 Dark - alacritty color config
+# Jannik Siebert (https://github.com/janniks)
+  # Default colors
+  primary:
+    background: '0x0b1c2c'
+    foreground: '0xcbd6e2'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0b1c2c'
+    cursor: '0xcbd6e2'
+
+  # Normal colors
+  normal:
+    black:   '0x0b1c2c'
+    red:     '0xbf8b56'
+    green:   '0x56bf8b'
+    yellow:  '0x8bbf56'
+    blue:    '0x8b56bf'
+    magenta: '0xbf568b'
+    cyan:    '0x568bbf'
+    white:   '0xcbd6e2'
+
+  # Bright colors
+  bright:
+    black:   '0x627e99'
+    red:     '0xbfbf56'
+    green:   '0x223b54'
+    yellow:  '0x405c79'
+    blue:    '0xaabcce'
+    magenta: '0xe5ebf1'
+    cyan:    '0xbf5656'
+    white:   '0xf7f9fb'
+
+colors__harmonic-light__light:
+# Base16 Harmonic16 Light - alacritty color config
+# Jannik Siebert (https://github.com/janniks)
+  # Default colors
+  primary:
+    background: '0xf7f9fb'
+    foreground: '0x405c79'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf7f9fb'
+    cursor: '0x405c79'
+
+  # Normal colors
+  normal:
+    black:   '0xf7f9fb'
+    red:     '0xbf8b56'
+    green:   '0x56bf8b'
+    yellow:  '0x8bbf56'
+    blue:    '0x8b56bf'
+    magenta: '0xbf568b'
+    cyan:    '0x568bbf'
+    white:   '0x405c79'
+
+  # Bright colors
+  bright:
+    black:   '0xaabcce'
+    red:     '0xbfbf56'
+    green:   '0xe5ebf1'
+    yellow:  '0xcbd6e2'
+    blue:    '0x627e99'
+    magenta: '0x223b54'
+    cyan:    '0xbf5656'
+    white:   '0x0b1c2c'
+
+colors__heetch-light__light:
+# Base16 Heetch Light - alacritty color config
+# Geoffrey Teale (tealeg@gmail.com)
+  # Default colors
+  primary:
+    background: '0xfeffff'
+    foreground: '0x5a496e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfeffff'
+    cursor: '0x5a496e'
+
+  # Normal colors
+  normal:
+    black:   '0xfeffff'
+    red:     '0x27d9d5'
+    green:   '0xf80059'
+    yellow:  '0x5ba2b6'
+    blue:    '0x47f9f5'
+    magenta: '0xbd0152'
+    cyan:    '0xc33678'
+    white:   '0x5a496e'
+
+  # Bright colors
+  bright:
+    black:   '0x9c92a8'
+    red:     '0xbdb6c5'
+    green:   '0x392551'
+    yellow:  '0x7b6d8b'
+    blue:    '0xddd6e5'
+    magenta: '0x470546'
+    cyan:    '0xdedae2'
+    white:   '0x190134'
+
+colors__heetch__dark:
+# Base16 Heetch Dark - alacritty color config
+# Geoffrey Teale (tealeg@gmail.com)
+  # Default colors
+  primary:
+    background: '0x190134'
+    foreground: '0xbdb6c5'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x190134'
+    cursor: '0xbdb6c5'
+
+  # Normal colors
+  normal:
+    black:   '0x190134'
+    red:     '0x27d9d5'
+    green:   '0xc33678'
+    yellow:  '0x8f6c97'
+    blue:    '0xbd0152'
+    magenta: '0x82034c'
+    cyan:    '0xf80059'
+    white:   '0xbdb6c5'
+
+  # Bright colors
+  bright:
+    black:   '0x7b6d8b'
+    red:     '0x5ba2b6'
+    green:   '0x392551'
+    yellow:  '0x5a496e'
+    blue:    '0x9c92a8'
+    magenta: '0xdedae2'
+    cyan:    '0x470546'
+    white:   '0xfeffff'
+
+colors__helios__dark:
+# Base16 Helios - alacritty color config
+# Alex Meyer (https://github.com/reyemxela)
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xd5d5d5'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d2021'
+    cursor: '0xd5d5d5'
+
+  # Normal colors
+  normal:
+    black:   '0x1d2021'
+    red:     '0xd72638'
+    green:   '0x88b92d'
+    yellow:  '0xf19d1a'
+    blue:    '0x1e8bac'
+    magenta: '0xbe4264'
+    cyan:    '0x1ba595'
+    white:   '0xd5d5d5'
+
+  # Bright colors
+  bright:
+    black:   '0x6f7579'
+    red:     '0xeb8413'
+    green:   '0x383c3e'
+    yellow:  '0x53585b'
+    blue:    '0xcdcdcd'
+    magenta: '0xdddddd'
+    cyan:    '0xc85e0d'
+    white:   '0xe5e5e5'
+
+colors__hopscotch__dark:
+# Base16 Hopscotch - alacritty color config
+# Jan T. Sott
+  # Default colors
+  primary:
+    background: '0x322931'
+    foreground: '0xb9b5b8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x322931'
+    cursor: '0xb9b5b8'
+
+  # Normal colors
+  normal:
+    black:   '0x322931'
+    red:     '0xdd464c'
+    green:   '0x8fc13e'
+    yellow:  '0xfdcc59'
+    blue:    '0x1290bf'
+    magenta: '0xc85e7c'
+    cyan:    '0x149b93'
+    white:   '0xb9b5b8'
+
+  # Bright colors
+  bright:
+    black:   '0x797379'
+    red:     '0xfd8b19'
+    green:   '0x433b42'
+    yellow:  '0x5c545b'
+    blue:    '0x989498'
+    magenta: '0xd5d3d5'
+    cyan:    '0xb33508'
+    white:   '0xffffff'
+
+colors__horizon-dark__dark:
+# Base16 Horizon Dark - alacritty color config
+# Michaël Ball (http://github.com/michael-ball/)
+  # Default colors
+  primary:
+    background: '0x1c1e26'
+    foreground: '0xcbced0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1c1e26'
+    cursor: '0xcbced0'
+
+  # Normal colors
+  normal:
+    black:   '0x1c1e26'
+    red:     '0xe93c58'
+    green:   '0xefaf8e'
+    yellow:  '0xefb993'
+    blue:    '0xdf5273'
+    magenta: '0xb072d1'
+    cyan:    '0x24a8b4'
+    white:   '0xcbced0'
+
+  # Bright colors
+  bright:
+    black:   '0x6f6f70'
+    red:     '0xe58d7d'
+    green:   '0x232530'
+    yellow:  '0x2e303e'
+    blue:    '0x9da0a2'
+    magenta: '0xdcdfe4'
+    cyan:    '0xe4a382'
+    white:   '0xe3e6ee'
+
+colors__horizon-light__light:
+# Base16 Horizon Light - alacritty color config
+# Michaël Ball (http://github.com/michael-ball/)
+  # Default colors
+  primary:
+    background: '0xfdf0ed'
+    foreground: '0x403c3d'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfdf0ed'
+    cursor: '0x403c3d'
+
+  # Normal colors
+  normal:
+    black:   '0xfdf0ed'
+    red:     '0xf7939b'
+    green:   '0x94e1b0'
+    yellow:  '0xfbe0d9'
+    blue:    '0xda103f'
+    magenta: '0x1d8991'
+    cyan:    '0xdc3318'
+    white:   '0x403c3d'
+
+  # Bright colors
+  bright:
+    black:   '0xbdb3b1'
+    red:     '0xf6661e'
+    green:   '0xfadad1'
+    yellow:  '0xf9cbbe'
+    blue:    '0x948c8a'
+    magenta: '0x302c2d'
+    cyan:    '0xe58c92'
+    white:   '0x201c1d'
+
+colors__horizon-terminal-dark__dark:
+# Base16 Horizon Dark - alacritty color config
+# Michaël Ball (http://github.com/michael-ball/)
+  # Default colors
+  primary:
+    background: '0x1c1e26'
+    foreground: '0xcbced0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1c1e26'
+    cursor: '0xcbced0'
+
+  # Normal colors
+  normal:
+    black:   '0x1c1e26'
+    red:     '0xe95678'
+    green:   '0x29d398'
+    yellow:  '0xfac29a'
+    blue:    '0x26bbd9'
+    magenta: '0xee64ac'
+    cyan:    '0x59e1e3'
+    white:   '0xcbced0'
+
+  # Bright colors
+  bright:
+    black:   '0x6f6f70'
+    red:     '0xfab795'
+    green:   '0x232530'
+    yellow:  '0x2e303e'
+    blue:    '0x9da0a2'
+    magenta: '0xdcdfe4'
+    cyan:    '0xf09383'
+    white:   '0xe3e6ee'
+
+colors__horizon-terminal-light__light:
+# Base16 Horizon Light - alacritty color config
+# Michaël Ball (http://github.com/michael-ball/)
+  # Default colors
+  primary:
+    background: '0xfdf0ed'
+    foreground: '0x403c3d'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfdf0ed'
+    cursor: '0x403c3d'
+
+  # Normal colors
+  normal:
+    black:   '0xfdf0ed'
+    red:     '0xe95678'
+    green:   '0x29d398'
+    yellow:  '0xfadad1'
+    blue:    '0x26bbd9'
+    magenta: '0xee64ac'
+    cyan:    '0x59e1e3'
+    white:   '0x403c3d'
+
+  # Bright colors
+  bright:
+    black:   '0xbdb3b1'
+    red:     '0xf9cec3'
+    green:   '0xfadad1'
+    yellow:  '0xf9cbbe'
+    blue:    '0x948c8a'
+    magenta: '0x302c2d'
+    cyan:    '0xf9cbbe'
+    white:   '0x201c1d'
+
+colors__ia-dark__dark:
+# Base16 iA Dark - alacritty color config
+# iA Inc. (modified by aramisgithub)
+  # Default colors
+  primary:
+    background: '0x1a1a1a'
+    foreground: '0xcccccc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1a1a1a'
+    cursor: '0xcccccc'
+
+  # Normal colors
+  normal:
+    black:   '0x1a1a1a'
+    red:     '0xd88568'
+    green:   '0x83a471'
+    yellow:  '0xb99353'
+    blue:    '0x8eccdd'
+    magenta: '0xb98eb2'
+    cyan:    '0x7c9cae'
+    white:   '0xcccccc'
+
+  # Bright colors
+  bright:
+    black:   '0x767676'
+    red:     '0xd86868'
+    green:   '0x222222'
+    yellow:  '0x1d414d'
+    blue:    '0xb8b8b8'
+    magenta: '0xe8e8e8'
+    cyan:    '0x8b6c37'
+    white:   '0xf8f8f8'
+
+colors__ia-light__light:
+# Base16 iA Light - alacritty color config
+# iA Inc. (modified by aramisgithub)
+  # Default colors
+  primary:
+    background: '0xf6f6f6'
+    foreground: '0x181818'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf6f6f6'
+    cursor: '0x181818'
+
+  # Normal colors
+  normal:
+    black:   '0xf6f6f6'
+    red:     '0x9c5a02'
+    green:   '0x38781c'
+    yellow:  '0xc48218'
+    blue:    '0x48bac2'
+    magenta: '0xa94598'
+    cyan:    '0x2d6bb1'
+    white:   '0x181818'
+
+  # Bright colors
+  bright:
+    black:   '0x898989'
+    red:     '0xc43e18'
+    green:   '0xdedede'
+    yellow:  '0xbde5f2'
+    blue:    '0x767676'
+    magenta: '0xe8e8e8'
+    cyan:    '0x8b6c37'
+    white:   '0xf8f8f8'
+
+colors__icy__dark:
+# Base16 Icy Dark - alacritty color config
+# icyphox (https://icyphox.ga)
+  # Default colors
+  primary:
+    background: '0x021012'
+    foreground: '0x095b67'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x021012'
+    cursor: '0x095b67'
+
+  # Normal colors
+  normal:
+    black:   '0x021012'
+    red:     '0x16c1d9'
+    green:   '0x4dd0e1'
+    yellow:  '0x80deea'
+    blue:    '0x00bcd4'
+    magenta: '0x00acc1'
+    cyan:    '0x26c6da'
+    white:   '0x095b67'
+
+  # Bright colors
+  bright:
+    black:   '0x052e34'
+    red:     '0xb3ebf2'
+    green:   '0x031619'
+    yellow:  '0x041f23'
+    blue:    '0x064048'
+    magenta: '0x0c7c8c'
+    cyan:    '0x0097a7'
+    white:   '0x109cb0'
+
+colors__irblack__dark:
+# Base16 IR Black - alacritty color config
+# Timothée Poisot (http://timotheepoisot.fr)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xb5b3aa'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xb5b3aa'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xff6c60'
+    green:   '0xa8ff60'
+    yellow:  '0xffffb6'
+    blue:    '0x96cbfe'
+    magenta: '0xff73fd'
+    cyan:    '0xc6c5fe'
+    white:   '0xb5b3aa'
+
+  # Bright colors
+  bright:
+    black:   '0x6c6c66'
+    red:     '0xe9c062'
+    green:   '0x242422'
+    yellow:  '0x484844'
+    blue:    '0x918f88'
+    magenta: '0xd9d7cc'
+    cyan:    '0xb18a3d'
+    white:   '0xfdfbee'
+
+colors__isotope__dark:
+# Base16 Isotope - alacritty color config
+# Jan T. Sott
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xd0d0d0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xff0000'
+    green:   '0x33ff00'
+    yellow:  '0xff0099'
+    blue:    '0x0066ff'
+    magenta: '0xcc00ff'
+    cyan:    '0x00ffff'
+    white:   '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black:   '0x808080'
+    red:     '0xff9900'
+    green:   '0x404040'
+    yellow:  '0x606060'
+    blue:    '0xc0c0c0'
+    magenta: '0xe0e0e0'
+    cyan:    '0x3300ff'
+    white:   '0xffffff'
+
+colors__macintosh__dark:
+# Base16 Macintosh - alacritty color config
+# Rebecca Bettencourt (http://www.kreativekorp.com)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc0c0c0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xc0c0c0'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xdd0907'
+    green:   '0x1fb714'
+    yellow:  '0xfbf305'
+    blue:    '0x0000d3'
+    magenta: '0x4700a5'
+    cyan:    '0x02abea'
+    white:   '0xc0c0c0'
+
+  # Bright colors
+  bright:
+    black:   '0x808080'
+    red:     '0xff6403'
+    green:   '0x404040'
+    yellow:  '0x404040'
+    blue:    '0x808080'
+    magenta: '0xc0c0c0'
+    cyan:    '0x90713a'
+    white:   '0xffffff'
+
+colors__marrakesh__dark:
+# Base16 Marrakesh - alacritty color config
+# Alexandre Gavioli (http://github.com/Alexx2/)
+  # Default colors
+  primary:
+    background: '0x201602'
+    foreground: '0x948e48'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x201602'
+    cursor: '0x948e48'
+
+  # Normal colors
+  normal:
+    black:   '0x201602'
+    red:     '0xc35359'
+    green:   '0x18974e'
+    yellow:  '0xa88339'
+    blue:    '0x477ca1'
+    magenta: '0x8868b3'
+    cyan:    '0x75a738'
+    white:   '0x948e48'
+
+  # Bright colors
+  bright:
+    black:   '0x6c6823'
+    red:     '0xb36144'
+    green:   '0x302e00'
+    yellow:  '0x5f5b17'
+    blue:    '0x86813b'
+    magenta: '0xccc37a'
+    cyan:    '0xb3588e'
+    white:   '0xfaf0a5'
+
+colors__materia__dark:
+# Base16 Materia - alacritty color config
+# Defman21
+  # Default colors
+  primary:
+    background: '0x263238'
+    foreground: '0xcdd3de'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x263238'
+    cursor: '0xcdd3de'
+
+  # Normal colors
+  normal:
+    black:   '0x263238'
+    red:     '0xec5f67'
+    green:   '0x8bd649'
+    yellow:  '0xffcc00'
+    blue:    '0x89ddff'
+    magenta: '0x82aaff'
+    cyan:    '0x80cbc4'
+    white:   '0xcdd3de'
+
+  # Bright colors
+  bright:
+    black:   '0x707880'
+    red:     '0xea9560'
+    green:   '0x2c393f'
+    yellow:  '0x37474f'
+    blue:    '0xc9ccd3'
+    magenta: '0xd5dbe5'
+    cyan:    '0xec5f67'
+    white:   '0xffffff'
+
+colors__material-darker__dark:
+# Base16 Material Darker - alacritty color config
+# Nate Peterson
+  # Default colors
+  primary:
+    background: '0x212121'
+    foreground: '0xeeffff'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x212121'
+    cursor: '0xeeffff'
+
+  # Normal colors
+  normal:
+    black:   '0x212121'
+    red:     '0xf07178'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xeeffff'
+
+  # Bright colors
+  bright:
+    black:   '0x4a4a4a'
+    red:     '0xf78c6c'
+    green:   '0x303030'
+    yellow:  '0x353535'
+    blue:    '0xb2ccd6'
+    magenta: '0xeeffff'
+    cyan:    '0xff5370'
+    white:   '0xffffff'
+
+colors__material-lighter__light:
+# Base16 Material Lighter - alacritty color config
+# Nate Peterson
+  # Default colors
+  primary:
+    background: '0xfafafa'
+    foreground: '0x80cbc4'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfafafa'
+    cursor: '0x80cbc4'
+
+  # Normal colors
+  normal:
+    black:   '0xfafafa'
+    red:     '0xff5370'
+    green:   '0x91b859'
+    yellow:  '0xffb62c'
+    blue:    '0x6182b8'
+    magenta: '0x7c4dff'
+    cyan:    '0x39adb5'
+    white:   '0x80cbc4'
+
+  # Bright colors
+  bright:
+    black:   '0xccd7da'
+    red:     '0xf76d47'
+    green:   '0xe7eaec'
+    yellow:  '0xcceae7'
+    blue:    '0x8796b0'
+    magenta: '0x80cbc4'
+    cyan:    '0xe53935'
+    white:   '0xffffff'
+
+colors__material-palenight__dark:
+# Base16 Material Palenight - alacritty color config
+# Nate Peterson
+  # Default colors
+  primary:
+    background: '0x292d3e'
+    foreground: '0x959dcb'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x292d3e'
+    cursor: '0x959dcb'
+
+  # Normal colors
+  normal:
+    black:   '0x292d3e'
+    red:     '0xf07178'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0x959dcb'
+
+  # Bright colors
+  bright:
+    black:   '0x676e95'
+    red:     '0xf78c6c'
+    green:   '0x444267'
+    yellow:  '0x32374d'
+    blue:    '0x8796b0'
+    magenta: '0x959dcb'
+    cyan:    '0xff5370'
+    white:   '0xffffff'
+
+colors__material-vivid__dark:
+# Base16 Material Vivid - alacritty color config
+# joshyrobot
+  # Default colors
+  primary:
+    background: '0x202124'
+    foreground: '0x80868b'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x202124'
+    cursor: '0x80868b'
+
+  # Normal colors
+  normal:
+    black:   '0x202124'
+    red:     '0xf44336'
+    green:   '0x00e676'
+    yellow:  '0xffeb3b'
+    blue:    '0x2196f3'
+    magenta: '0x673ab7'
+    cyan:    '0x00bcd4'
+    white:   '0x80868b'
+
+  # Bright colors
+  bright:
+    black:   '0x44464d'
+    red:     '0xff9800'
+    green:   '0x27292c'
+    yellow:  '0x323639'
+    blue:    '0x676c71'
+    magenta: '0x9e9e9e'
+    cyan:    '0x8d6e63'
+    white:   '0xffffff'
+
+colors__material__dark:
+# Base16 Material - alacritty color config
+# Nate Peterson
+  # Default colors
+  primary:
+    background: '0x263238'
+    foreground: '0xeeffff'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x263238'
+    cursor: '0xeeffff'
+
+  # Normal colors
+  normal:
+    black:   '0x263238'
+    red:     '0xf07178'
+    green:   '0xc3e88d'
+    yellow:  '0xffcb6b'
+    blue:    '0x82aaff'
+    magenta: '0xc792ea'
+    cyan:    '0x89ddff'
+    white:   '0xeeffff'
+
+  # Bright colors
+  bright:
+    black:   '0x546e7a'
+    red:     '0xf78c6c'
+    green:   '0x2e3c43'
+    yellow:  '0x314549'
+    blue:    '0xb2ccd6'
+    magenta: '0xeeffff'
+    cyan:    '0xff5370'
+    white:   '0xffffff'
+
+colors__mellow-purple__dark:
+# Base16 Mellow Purple - alacritty color config
+# gidsi
+  # Default colors
+  primary:
+    background: '0x1e0528'
+    foreground: '0xffeeff'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1e0528'
+    cursor: '0xffeeff'
+
+  # Normal colors
+  normal:
+    black:   '0x1e0528'
+    red:     '0x00d9e9'
+    green:   '0x05cb0d'
+    yellow:  '0x955ae7'
+    blue:    '0x550068'
+    magenta: '0x8991bb'
+    cyan:    '0xb900b1'
+    white:   '0xffeeff'
+
+  # Bright colors
+  bright:
+    black:   '0x320f55'
+    red:     '0xaa00a3'
+    green:   '0x1a092d'
+    yellow:  '0x331354'
+    blue:    '0x873582'
+    magenta: '0xffeeff'
+    cyan:    '0x4d6fff'
+    white:   '0xf8c0ff'
+
+colors__mexico-light__light:
+# Base16 Mexico Light - alacritty color config
+# Sheldon Johnson
+  # Default colors
+  primary:
+    background: '0xf8f8f8'
+    foreground: '0x383838'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf8f8f8'
+    cursor: '0x383838'
+
+  # Normal colors
+  normal:
+    black:   '0xf8f8f8'
+    red:     '0xab4642'
+    green:   '0x538947'
+    yellow:  '0xf79a0e'
+    blue:    '0x7cafc2'
+    magenta: '0x96609e'
+    cyan:    '0x4b8093'
+    white:   '0x383838'
+
+  # Bright colors
+  bright:
+    black:   '0xb8b8b8'
+    red:     '0xdc9656'
+    green:   '0xe8e8e8'
+    yellow:  '0xd8d8d8'
+    blue:    '0x585858'
+    magenta: '0x282828'
+    cyan:    '0xa16946'
+    white:   '0x181818'
+
+colors__mocha__dark:
+# Base16 Mocha - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x3b3228'
+    foreground: '0xd0c8c6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x3b3228'
+    cursor: '0xd0c8c6'
+
+  # Normal colors
+  normal:
+    black:   '0x3b3228'
+    red:     '0xcb6077'
+    green:   '0xbeb55b'
+    yellow:  '0xf4bc87'
+    blue:    '0x8ab3b5'
+    magenta: '0xa89bb9'
+    cyan:    '0x7bbda4'
+    white:   '0xd0c8c6'
+
+  # Bright colors
+  bright:
+    black:   '0x7e705a'
+    red:     '0xd28b71'
+    green:   '0x534636'
+    yellow:  '0x645240'
+    blue:    '0xb8afad'
+    magenta: '0xe9e1dd'
+    cyan:    '0xbb9584'
+    white:   '0xf5eeeb'
+
+colors__monokai__dark:
+# Base16 Monokai - alacritty color config
+# Wimer Hazenberg (http://www.monokai.nl)
+  # Default colors
+  primary:
+    background: '0x272822'
+    foreground: '0xf8f8f2'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x272822'
+    cursor: '0xf8f8f2'
+
+  # Normal colors
+  normal:
+    black:   '0x272822'
+    red:     '0xf92672'
+    green:   '0xa6e22e'
+    yellow:  '0xf4bf75'
+    blue:    '0x66d9ef'
+    magenta: '0xae81ff'
+    cyan:    '0xa1efe4'
+    white:   '0xf8f8f2'
+
+  # Bright colors
+  bright:
+    black:   '0x75715e'
+    red:     '0xfd971f'
+    green:   '0x383830'
+    yellow:  '0x49483e'
+    blue:    '0xa59f85'
+    magenta: '0xf5f4f1'
+    cyan:    '0xcc6633'
+    white:   '0xf9f8f5'
+
+colors__nord__dark:
+# Base16 Nord - alacritty color config
+# arcticicestudio
+  # Default colors
+  primary:
+    background: '0x2e3440'
+    foreground: '0xe5e9f0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2e3440'
+    cursor: '0xe5e9f0'
+
+  # Normal colors
+  normal:
+    black:   '0x2e3440'
+    red:     '0x88c0d0'
+    green:   '0xbf616a'
+    yellow:  '0x5e81ac'
+    blue:    '0xebcb8b'
+    magenta: '0xa3be8c'
+    cyan:    '0xd08770'
+    white:   '0xe5e9f0'
+
+  # Bright colors
+  bright:
+    black:   '0x4c566a'
+    red:     '0x81a1c1'
+    green:   '0x3b4252'
+    yellow:  '0x434c5e'
+    blue:    '0xd8dee9'
+    magenta: '0xeceff4'
+    cyan:    '0xb48ead'
+    white:   '0x8fbcbb'
+
+colors__nova__dark:
+# Base16 Nova - alacritty color config
+# George Essig (https://github.com/gessig), Trevor D. Miller (https://trevordmiller.com)
+  # Default colors
+  primary:
+    background: '0x3c4c55'
+    foreground: '0xc5d4dd'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x3c4c55'
+    cursor: '0xc5d4dd'
+
+  # Normal colors
+  normal:
+    black:   '0x3c4c55'
+    red:     '0x83afe5'
+    green:   '0x7fc1ca'
+    yellow:  '0xa8ce93'
+    blue:    '0x83afe5'
+    magenta: '0x9a93e1'
+    cyan:    '0xf2c38f'
+    white:   '0xc5d4dd'
+
+  # Bright colors
+  bright:
+    black:   '0x899ba6'
+    red:     '0x7fc1ca'
+    green:   '0x556873'
+    yellow:  '0x6a7d89'
+    blue:    '0x899ba6'
+    magenta: '0x899ba6'
+    cyan:    '0xf2c38f'
+    white:   '0x556873'
+
+colors__ocean__dark:
+# Base16 Ocean - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x2b303b'
+    foreground: '0xc0c5ce'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2b303b'
+    cursor: '0xc0c5ce'
+
+  # Normal colors
+  normal:
+    black:   '0x2b303b'
+    red:     '0xbf616a'
+    green:   '0xa3be8c'
+    yellow:  '0xebcb8b'
+    blue:    '0x8fa1b3'
+    magenta: '0xb48ead'
+    cyan:    '0x96b5b4'
+    white:   '0xc0c5ce'
+
+  # Bright colors
+  bright:
+    black:   '0x65737e'
+    red:     '0xd08770'
+    green:   '0x343d46'
+    yellow:  '0x4f5b66'
+    blue:    '0xa7adba'
+    magenta: '0xdfe1e8'
+    cyan:    '0xab7967'
+    white:   '0xeff1f5'
+
+colors: # oceanicnext (dark)
+# Base16 OceanicNext - alacritty color config
+# https://github.com/voronianski/oceanic-next-color-scheme
+  # Default colors
+  primary:
+    background: '0x1b2b34'
+    foreground: '0xc0c5ce'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1b2b34'
+    cursor: '0xc0c5ce'
+
+  # Normal colors
+  normal:
+    black:   '0x1b2b34'
+    red:     '0xec5f67'
+    green:   '0x99c794'
+    yellow:  '0xfac863'
+    blue:    '0x6699cc'
+    magenta: '0xc594c5'
+    cyan:    '0x5fb3b3'
+    white:   '0xc0c5ce'
+
+  # Bright colors
+  bright:
+    black:   '0x65737e'
+    red:     '0xf99157'
+    green:   '0x343d46'
+    yellow:  '0x4f5b66'
+    blue:    '0xa7adba'
+    magenta: '0xcdd3de'
+    cyan:    '0xab7967'
+    white:   '0xd8dee9'
+
+colors__one-light__light:
+# Base16 One Light - alacritty color config
+# Daniel Pfeifer (http://github.com/purpleKarrot)
+  # Default colors
+  primary:
+    background: '0xfafafa'
+    foreground: '0x383a42'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfafafa'
+    cursor: '0x383a42'
+
+  # Normal colors
+  normal:
+    black:   '0xfafafa'
+    red:     '0xca1243'
+    green:   '0x50a14f'
+    yellow:  '0xc18401'
+    blue:    '0x4078f2'
+    magenta: '0xa626a4'
+    cyan:    '0x0184bc'
+    white:   '0x383a42'
+
+  # Bright colors
+  bright:
+    black:   '0xa0a1a7'
+    red:     '0xd75f00'
+    green:   '0xf0f0f1'
+    yellow:  '0xe5e5e6'
+    blue:    '0x696c77'
+    magenta: '0x202227'
+    cyan:    '0x986801'
+    white:   '0x090a0b'
+
+colors__onedark__dark:
+# Base16 OneDark - alacritty color config
+# Lalit Magant (http://github.com/tilal6991)
+  # Default colors
+  primary:
+    background: '0x282c34'
+    foreground: '0xabb2bf'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x282c34'
+    cursor: '0xabb2bf'
+
+  # Normal colors
+  normal:
+    black:   '0x282c34'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xe5c07b'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
+
+  # Bright colors
+  bright:
+    black:   '0x545862'
+    red:     '0xd19a66'
+    green:   '0x353b45'
+    yellow:  '0x3e4451'
+    blue:    '0x565c64'
+    magenta: '0xb6bdca'
+    cyan:    '0xbe5046'
+    white:   '0xc8ccd4'
+
+colors__outrun-dark__dark:
+# Base16 Outrun Dark - alacritty color config
+# Hugo Delahousse (http://github.com/hugodelahousse/)
+  # Default colors
+  primary:
+    background: '0x00002a'
+    foreground: '0xd0d0fa'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x00002a'
+    cursor: '0xd0d0fa'
+
+  # Normal colors
+  normal:
+    black:   '0x00002a'
+    red:     '0xff4242'
+    green:   '0x59f176'
+    yellow:  '0xf3e877'
+    blue:    '0x66b0ff'
+    magenta: '0xf10596'
+    cyan:    '0x0ef0f0'
+    white:   '0xd0d0fa'
+
+  # Bright colors
+  bright:
+    black:   '0x50507a'
+    red:     '0xfc8d28'
+    green:   '0x20204a'
+    yellow:  '0x30305a'
+    blue:    '0xb0b0da'
+    magenta: '0xe0e0ff'
+    cyan:    '0xf003ef'
+    white:   '0xf5f5ff'
+
+colors__papercolor-dark__dark:
+# Base16 PaperColor Dark - alacritty color config
+# Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
+  # Default colors
+  primary:
+    background: '0x1c1c1c'
+    foreground: '0x808080'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1c1c1c'
+    cursor: '0x808080'
+
+  # Normal colors
+  normal:
+    black:   '0x1c1c1c'
+    red:     '0x585858'
+    green:   '0xaf87d7'
+    yellow:  '0xafd700'
+    blue:    '0xff5faf'
+    magenta: '0x00afaf'
+    cyan:    '0xffaf00'
+    white:   '0x808080'
+
+  # Bright colors
+  bright:
+    black:   '0xd7af5f'
+    red:     '0x5faf5f'
+    green:   '0xaf005f'
+    yellow:  '0x5faf00'
+    blue:    '0x5fafd7'
+    magenta: '0xd7875f'
+    cyan:    '0x5f8787'
+    white:   '0xd0d0d0'
+
+colors__papercolor-light__light:
+# Base16 PaperColor Light - alacritty color config
+# Jon Leopard (http://github.com/jonleopard) based on PaperColor Theme (https://github.com/NLKNguyen/papercolor-theme)
+  # Default colors
+  primary:
+    background: '0xeeeeee'
+    foreground: '0x878787'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xeeeeee'
+    cursor: '0x878787'
+
+  # Normal colors
+  normal:
+    black:   '0xeeeeee'
+    red:     '0xbcbcbc'
+    green:   '0x8700af'
+    yellow:  '0xd70087'
+    blue:    '0xd75f00'
+    magenta: '0x005faf'
+    cyan:    '0xd75f00'
+    white:   '0x878787'
+
+  # Bright colors
+  bright:
+    black:   '0x5f8700'
+    red:     '0xd70000'
+    green:   '0xaf0000'
+    yellow:  '0x008700'
+    blue:    '0x0087af'
+    magenta: '0x005f87'
+    cyan:    '0x005f87'
+    white:   '0x444444'
+
+colors__paraiso__dark:
+# Base16 Paraiso - alacritty color config
+# Jan T. Sott
+  # Default colors
+  primary:
+    background: '0x2f1e2e'
+    foreground: '0xa39e9b'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2f1e2e'
+    cursor: '0xa39e9b'
+
+  # Normal colors
+  normal:
+    black:   '0x2f1e2e'
+    red:     '0xef6155'
+    green:   '0x48b685'
+    yellow:  '0xfec418'
+    blue:    '0x06b6ef'
+    magenta: '0x815ba4'
+    cyan:    '0x5bc4bf'
+    white:   '0xa39e9b'
+
+  # Bright colors
+  bright:
+    black:   '0x776e71'
+    red:     '0xf99b15'
+    green:   '0x41323f'
+    yellow:  '0x4f424c'
+    blue:    '0x8d8687'
+    magenta: '0xb9b6b0'
+    cyan:    '0xe96ba8'
+    white:   '0xe7e9db'
+
+colors__phd__dark:
+# Base16 PhD - alacritty color config
+# Hennig Hasemann (http://leetless.de/vim.html)
+  # Default colors
+  primary:
+    background: '0x061229'
+    foreground: '0xb8bbc2'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x061229'
+    cursor: '0xb8bbc2'
+
+  # Normal colors
+  normal:
+    black:   '0x061229'
+    red:     '0xd07346'
+    green:   '0x99bf52'
+    yellow:  '0xfbd461'
+    blue:    '0x5299bf'
+    magenta: '0x9989cc'
+    cyan:    '0x72b9bf'
+    white:   '0xb8bbc2'
+
+  # Bright colors
+  bright:
+    black:   '0x717885'
+    red:     '0xf0a000'
+    green:   '0x2a3448'
+    yellow:  '0x4d5666'
+    blue:    '0x9a99a3'
+    magenta: '0xdbdde0'
+    cyan:    '0xb08060'
+    white:   '0xffffff'
+
+colors__pico__dark:
+# Base16 Pico - alacritty color config
+# PICO-8 (http://www.lexaloffle.com/pico-8.php)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0x5f574f'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0x5f574f'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xff004d'
+    green:   '0x00e756'
+    yellow:  '0xfff024'
+    blue:    '0x83769c'
+    magenta: '0xff77a8'
+    cyan:    '0x29adff'
+    white:   '0x5f574f'
+
+  # Bright colors
+  bright:
+    black:   '0x008751'
+    red:     '0xffa300'
+    green:   '0x1d2b53'
+    yellow:  '0x7e2553'
+    blue:    '0xab5236'
+    magenta: '0xc2c3c7'
+    cyan:    '0xffccaa'
+    white:   '0xfff1e8'
+
+colors__pop__dark:
+# Base16 Pop - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xd0d0d0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x000000'
+    cursor: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+    black:   '0x000000'
+    red:     '0xeb008a'
+    green:   '0x37b349'
+    yellow:  '0xf8ca12'
+    blue:    '0x0e5a94'
+    magenta: '0xb31e8d'
+    cyan:    '0x00aabb'
+    white:   '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black:   '0x505050'
+    red:     '0xf29333'
+    green:   '0x202020'
+    yellow:  '0x303030'
+    blue:    '0xb0b0b0'
+    magenta: '0xe0e0e0'
+    cyan:    '0x7a2d00'
+    white:   '0xffffff'
+
+colors__porple__dark:
+# Base16 Porple - alacritty color config
+# Niek den Breeje (https://github.com/AuditeMarlow)
+  # Default colors
+  primary:
+    background: '0x292c36'
+    foreground: '0xd8d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x292c36'
+    cursor: '0xd8d8d8'
+
+  # Normal colors
+  normal:
+    black:   '0x292c36'
+    red:     '0xf84547'
+    green:   '0x95c76f'
+    yellow:  '0xefa16b'
+    blue:    '0x8485ce'
+    magenta: '0xb74989'
+    cyan:    '0x64878f'
+    white:   '0xd8d8d8'
+
+  # Bright colors
+  bright:
+    black:   '0x65568a'
+    red:     '0xd28e5d'
+    green:   '0x333344'
+    yellow:  '0x474160'
+    blue:    '0xb8b8b8'
+    magenta: '0xe8e8e8'
+    cyan:    '0x986841'
+    white:   '0xf8f8f8'
+
+colors__railscasts__dark:
+# Base16 Railscasts - alacritty color config
+# Ryan Bates (http://railscasts.com)
+  # Default colors
+  primary:
+    background: '0x2b2b2b'
+    foreground: '0xe6e1dc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2b2b2b'
+    cursor: '0xe6e1dc'
+
+  # Normal colors
+  normal:
+    black:   '0x2b2b2b'
+    red:     '0xda4939'
+    green:   '0xa5c261'
+    yellow:  '0xffc66d'
+    blue:    '0x6d9cbe'
+    magenta: '0xb6b3eb'
+    cyan:    '0x519f50'
+    white:   '0xe6e1dc'
+
+  # Bright colors
+  bright:
+    black:   '0x5a647e'
+    red:     '0xcc7833'
+    green:   '0x272935'
+    yellow:  '0x3a4055'
+    blue:    '0xd4cfc9'
+    magenta: '0xf4f1ed'
+    cyan:    '0xbc9458'
+    white:   '0xf9f7f3'
+
+colors__rebecca__dark:
+# Base16 Rebecca - alacritty color config
+# Victor Borja (http://github.com/vic) based on Rebecca Theme (http://github.com/vic/rebecca-theme)
+  # Default colors
+  primary:
+    background: '0x292a44'
+    foreground: '0xf1eff8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x292a44'
+    cursor: '0xf1eff8'
+
+  # Normal colors
+  normal:
+    black:   '0x292a44'
+    red:     '0xa0a0c5'
+    green:   '0x6dfedf'
+    yellow:  '0xae81ff'
+    blue:    '0x2de0a7'
+    magenta: '0x7aa5ff'
+    cyan:    '0x8eaee0'
+    white:   '0xf1eff8'
+
+  # Bright colors
+  bright:
+    black:   '0x666699'
+    red:     '0xefe4a1'
+    green:   '0x663399'
+    yellow:  '0x383a62'
+    blue:    '0xa0a0c5'
+    magenta: '0xccccff'
+    cyan:    '0xff79c6'
+    white:   '0x53495d'
+
+colors__sandcastle__dark:
+# Base16 Sandcastle - alacritty color config
+# George Essig (https://github.com/gessig)
+  # Default colors
+  primary:
+    background: '0x282c34'
+    foreground: '0xa89984'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x282c34'
+    cursor: '0xa89984'
+
+  # Normal colors
+  normal:
+    black:   '0x282c34'
+    red:     '0x83a598'
+    green:   '0x528b8b'
+    yellow:  '0xa07e3b'
+    blue:    '0x83a598'
+    magenta: '0xd75f5f'
+    cyan:    '0x83a598'
+    white:   '0xa89984'
+
+  # Bright colors
+  bright:
+    black:   '0x665c54'
+    red:     '0xa07e3b'
+    green:   '0x2c323b'
+    yellow:  '0x3e4451'
+    blue:    '0x928374'
+    magenta: '0xd5c4a1'
+    cyan:    '0xa87322'
+    white:   '0xfdf4c1'
+
+colors__seti__dark:
+# Base16 Seti UI - alacritty color config
+# 
+  # Default colors
+  primary:
+    background: '0x151718'
+    foreground: '0xd6d6d6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x151718'
+    cursor: '0xd6d6d6'
+
+  # Normal colors
+  normal:
+    black:   '0x151718'
+    red:     '0xcd3f45'
+    green:   '0x9fca56'
+    yellow:  '0xe6cd69'
+    blue:    '0x55b5db'
+    magenta: '0xa074c4'
+    cyan:    '0x55dbbe'
+    white:   '0xd6d6d6'
+
+  # Bright colors
+  bright:
+    black:   '0x41535b'
+    red:     '0xdb7b55'
+    green:   '0x282a2b'
+    yellow:  '0x3b758c'
+    blue:    '0x43a5d5'
+    magenta: '0xeeeeee'
+    cyan:    '0x8a553f'
+    white:   '0xffffff'
+
+colors__shapeshifter__dark:
+# Base16 Shapeshifter - alacritty color config
+# Tyler Benziger (http://tybenz.com)
+  # Default colors
+  primary:
+    background: '0xf9f9f9'
+    foreground: '0x102015'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xf9f9f9'
+    cursor: '0x102015'
+
+  # Normal colors
+  normal:
+    black:   '0xf9f9f9'
+    red:     '0xe92f2f'
+    green:   '0x0ed839'
+    yellow:  '0xdddd13'
+    blue:    '0x3b48e3'
+    magenta: '0xf996e2'
+    cyan:    '0x23edda'
+    white:   '0x102015'
+
+  # Bright colors
+  bright:
+    black:   '0x555555'
+    red:     '0xe09448'
+    green:   '0xe0e0e0'
+    yellow:  '0xababab'
+    blue:    '0x343434'
+    magenta: '0x040404'
+    cyan:    '0x69542d'
+    white:   '0x000000'
+
+colors__snazzy__dark:
+# Base16 Snazzy - alacritty color config
+# Chawye Hsu (https://github.com/h404bi) based on Hyper Snazzy Theme (https://github.com/sindresorhus/hyper-snazzy)
+  # Default colors
+  primary:
+    background: '0x282a36'
+    foreground: '0xe2e4e5'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x282a36'
+    cursor: '0xe2e4e5'
+
+  # Normal colors
+  normal:
+    black:   '0x282a36'
+    red:     '0xff5c57'
+    green:   '0x5af78e'
+    yellow:  '0xf3f99d'
+    blue:    '0x57c7ff'
+    magenta: '0xff6ac1'
+    cyan:    '0x9aedfe'
+    white:   '0xe2e4e5'
+
+  # Bright colors
+  bright:
+    black:   '0x78787e'
+    red:     '0xff9f43'
+    green:   '0x34353e'
+    yellow:  '0x43454f'
+    blue:    '0xa5a5a9'
+    magenta: '0xeff0eb'
+    cyan:    '0xb2643c'
+    white:   '0xf1f1f0'
+
+colors__solarflare__dark:
+# Base16 Solar Flare - alacritty color config
+# Chuck Harmston (https://chuck.harmston.ch)
+  # Default colors
+  primary:
+    background: '0x18262f'
+    foreground: '0xa6afb8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x18262f'
+    cursor: '0xa6afb8'
+
+  # Normal colors
+  normal:
+    black:   '0x18262f'
+    red:     '0xef5253'
+    green:   '0x7cc844'
+    yellow:  '0xe4b51c'
+    blue:    '0x33b5e1'
+    magenta: '0xa363d5'
+    cyan:    '0x52cbb0'
+    white:   '0xa6afb8'
+
+  # Bright colors
+  bright:
+    black:   '0x667581'
+    red:     '0xe66b2b'
+    green:   '0x222e38'
+    yellow:  '0x586875'
+    blue:    '0x85939e'
+    magenta: '0xe8e9ed'
+    cyan:    '0xd73c9a'
+    white:   '0xf5f7fa'
+
+colors__solarized-dark__dark:
+# Base16 Solarized Dark - alacritty color config
+# Ethan Schoonover (modified by aramisgithub)
+  # Default colors
+  primary:
+    background: '0x002b36'
+    foreground: '0x93a1a1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x002b36'
+    cursor: '0x93a1a1'
+
+  # Normal colors
+  normal:
+    black:   '0x002b36'
+    red:     '0xdc322f'
+    green:   '0x859900'
+    yellow:  '0xb58900'
+    blue:    '0x268bd2'
+    magenta: '0x6c71c4'
+    cyan:    '0x2aa198'
+    white:   '0x93a1a1'
+
+  # Bright colors
+  bright:
+    black:   '0x657b83'
+    red:     '0xcb4b16'
+    green:   '0x073642'
+    yellow:  '0x586e75'
+    blue:    '0x839496'
+    magenta: '0xeee8d5'
+    cyan:    '0xd33682'
+    white:   '0xfdf6e3'
+
+colors__solarized-light__light:
+# Base16 Solarized Light - alacritty color config
+# Ethan Schoonover (modified by aramisgithub)
+  # Default colors
+  primary:
+    background: '0xfdf6e3'
+    foreground: '0x586e75'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xfdf6e3'
+    cursor: '0x586e75'
+
+  # Normal colors
+  normal:
+    black:   '0xfdf6e3'
+    red:     '0xdc322f'
+    green:   '0x859900'
+    yellow:  '0xb58900'
+    blue:    '0x268bd2'
+    magenta: '0x6c71c4'
+    cyan:    '0x2aa198'
+    white:   '0x586e75'
+
+  # Bright colors
+  bright:
+    black:   '0x839496'
+    red:     '0xcb4b16'
+    green:   '0xeee8d5'
+    yellow:  '0x93a1a1'
+    blue:    '0x657b83'
+    magenta: '0x073642'
+    cyan:    '0xd33682'
+    white:   '0x002b36'
+
+colors__spacemacs__dark:
+# Base16 Spacemacs - alacritty color config
+# Nasser Alshammari (https://github.com/nashamri/spacemacs-theme)
+  # Default colors
+  primary:
+    background: '0x1f2022'
+    foreground: '0xa3a3a3'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1f2022'
+    cursor: '0xa3a3a3'
+
+  # Normal colors
+  normal:
+    black:   '0x1f2022'
+    red:     '0xf2241f'
+    green:   '0x67b11d'
+    yellow:  '0xb1951d'
+    blue:    '0x4f97d7'
+    magenta: '0xa31db1'
+    cyan:    '0x2d9574'
+    white:   '0xa3a3a3'
+
+  # Bright colors
+  bright:
+    black:   '0x585858'
+    red:     '0xffa500'
+    green:   '0x282828'
+    yellow:  '0x444155'
+    blue:    '0xb8b8b8'
+    magenta: '0xe8e8e8'
+    cyan:    '0xb03060'
+    white:   '0xf8f8f8'
+
+colors__summerfruit-dark__dark:
+# Base16 Summerfruit Dark - alacritty color config
+# Christopher Corley (http://christop.club/)
+  # Default colors
+  primary:
+    background: '0x151515'
+    foreground: '0xd0d0d0'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x151515'
+    cursor: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+    black:   '0x151515'
+    red:     '0xff0086'
+    green:   '0x00c918'
+    yellow:  '0xaba800'
+    blue:    '0x3777e6'
+    magenta: '0xad00a1'
+    cyan:    '0x1faaaa'
+    white:   '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black:   '0x505050'
+    red:     '0xfd8900'
+    green:   '0x202020'
+    yellow:  '0x303030'
+    blue:    '0xb0b0b0'
+    magenta: '0xe0e0e0'
+    cyan:    '0xcc6633'
+    white:   '0xffffff'
+
+colors__summerfruit-light__light:
+# Base16 Summerfruit Light - alacritty color config
+# Christopher Corley (http://christop.club/)
+  # Default colors
+  primary:
+    background: '0xffffff'
+    foreground: '0x101010'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0x101010'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xff0086'
+    green:   '0x00c918'
+    yellow:  '0xaba800'
+    blue:    '0x3777e6'
+    magenta: '0xad00a1'
+    cyan:    '0x1faaaa'
+    white:   '0x101010'
+
+  # Bright colors
+  bright:
+    black:   '0xb0b0b0'
+    red:     '0xfd8900'
+    green:   '0xe0e0e0'
+    yellow:  '0xd0d0d0'
+    blue:    '0x000000'
+    magenta: '0x151515'
+    cyan:    '0xcc6633'
+    white:   '0x202020'
+
+colors__synth-midnight-dark__dark:
+# Base16 Synth Midnight Dark - alacritty color config
+# Michaël Ball (http://github.com/michael-ball/)
+  # Default colors
+  primary:
+    background: '0x040404'
+    foreground: '0xdfdbdf'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x040404'
+    cursor: '0xdfdbdf'
+
+  # Normal colors
+  normal:
+    black:   '0x040404'
+    red:     '0xb53b50'
+    green:   '0x06ea61'
+    yellow:  '0xdae84d'
+    blue:    '0x03aeff'
+    magenta: '0xea5ce2'
+    cyan:    '0x7cede9'
+    white:   '0xdfdbdf'
+
+  # Bright colors
+  bright:
+    black:   '0x61507a'
+    red:     '0xe4600e'
+    green:   '0x141414'
+    yellow:  '0x242424'
+    blue:    '0xbfbbbf'
+    magenta: '0xefebef'
+    cyan:    '0x9d4d0e'
+    white:   '0xfffbff'
+
+colors__tomorrow-night-eighties__dark:
+# Base16 Tomorrow Night - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x2d2d2d'
+    foreground: '0xcccccc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2d2d2d'
+    cursor: '0xcccccc'
+
+  # Normal colors
+  normal:
+    black:   '0x2d2d2d'
+    red:     '0xf2777a'
+    green:   '0x99cc99'
+    yellow:  '0xffcc66'
+    blue:    '0x6699cc'
+    magenta: '0xcc99cc'
+    cyan:    '0x66cccc'
+    white:   '0xcccccc'
+
+  # Bright colors
+  bright:
+    black:   '0x999999'
+    red:     '0xf99157'
+    green:   '0x393939'
+    yellow:  '0x515151'
+    blue:    '0xb4b7b4'
+    magenta: '0xe0e0e0'
+    cyan:    '0xa3685a'
+    white:   '0xffffff'
+
+colors__tomorrow-night__dark:
+# Base16 Tomorrow Night - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0x1d1f21'
+    foreground: '0xc5c8c6'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1d1f21'
+    cursor: '0xc5c8c6'
+
+  # Normal colors
+  normal:
+    black:   '0x1d1f21'
+    red:     '0xcc6666'
+    green:   '0xb5bd68'
+    yellow:  '0xf0c674'
+    blue:    '0x81a2be'
+    magenta: '0xb294bb'
+    cyan:    '0x8abeb7'
+    white:   '0xc5c8c6'
+
+  # Bright colors
+  bright:
+    black:   '0x969896'
+    red:     '0xde935f'
+    green:   '0x282a2e'
+    yellow:  '0x373b41'
+    blue:    '0xb4b7b4'
+    magenta: '0xe0e0e0'
+    cyan:    '0xa3685a'
+    white:   '0xffffff'
+
+colors__tomorrow__dark:
+# Base16 Tomorrow - alacritty color config
+# Chris Kempson (http://chriskempson.com)
+  # Default colors
+  primary:
+    background: '0xffffff'
+    foreground: '0x4d4d4c'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0x4d4d4c'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xc82829'
+    green:   '0x718c00'
+    yellow:  '0xeab700'
+    blue:    '0x4271ae'
+    magenta: '0x8959a8'
+    cyan:    '0x3e999f'
+    white:   '0x4d4d4c'
+
+  # Bright colors
+  bright:
+    black:   '0x8e908c'
+    red:     '0xf5871f'
+    green:   '0xe0e0e0'
+    yellow:  '0xd6d6d6'
+    blue:    '0x969896'
+    magenta: '0x282a2e'
+    cyan:    '0xa3685a'
+    white:   '0x1d1f21'
+
+colors__tube__dark:
+# Base16 London Tube - alacritty color config
+# Jan T. Sott
+  # Default colors
+  primary:
+    background: '0x231f20'
+    foreground: '0xd9d8d8'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x231f20'
+    cursor: '0xd9d8d8'
+
+  # Normal colors
+  normal:
+    black:   '0x231f20'
+    red:     '0xee2e24'
+    green:   '0x00853e'
+    yellow:  '0xffd204'
+    blue:    '0x009ddc'
+    magenta: '0x98005d'
+    cyan:    '0x85cebc'
+    white:   '0xd9d8d8'
+
+  # Bright colors
+  bright:
+    black:   '0x737171'
+    red:     '0xf386a1'
+    green:   '0x1c3f95'
+    yellow:  '0x5a5758'
+    blue:    '0x959ca1'
+    magenta: '0xe7e7e8'
+    cyan:    '0xb06110'
+    white:   '0xffffff'
+
+colors__twilight__dark:
+# Base16 Twilight - alacritty color config
+# David Hart (https://github.com/hartbit)
+  # Default colors
+  primary:
+    background: '0x1e1e1e'
+    foreground: '0xa7a7a7'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x1e1e1e'
+    cursor: '0xa7a7a7'
+
+  # Normal colors
+  normal:
+    black:   '0x1e1e1e'
+    red:     '0xcf6a4c'
+    green:   '0x8f9d6a'
+    yellow:  '0xf9ee98'
+    blue:    '0x7587a6'
+    magenta: '0x9b859d'
+    cyan:    '0xafc4db'
+    white:   '0xa7a7a7'
+
+  # Bright colors
+  bright:
+    black:   '0x5f5a60'
+    red:     '0xcda869'
+    green:   '0x323537'
+    yellow:  '0x464b50'
+    blue:    '0x838184'
+    magenta: '0xc3c3c3'
+    cyan:    '0x9b703f'
+    white:   '0xffffff'
+
+colors__unikitty-dark__dark:
+# Base16 Unikitty Dark - alacritty color config
+# Josh W Lewis (@joshwlewis)
+  # Default colors
+  primary:
+    background: '0x2e2a31'
+    foreground: '0xbcbabe'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2e2a31'
+    cursor: '0xbcbabe'
+
+  # Normal colors
+  normal:
+    black:   '0x2e2a31'
+    red:     '0xd8137f'
+    green:   '0x17ad98'
+    yellow:  '0xdc8a0e'
+    blue:    '0x796af5'
+    magenta: '0xbb60ea'
+    cyan:    '0x149bda'
+    white:   '0xbcbabe'
+
+  # Bright colors
+  bright:
+    black:   '0x838085'
+    red:     '0xd65407'
+    green:   '0x4a464d'
+    yellow:  '0x666369'
+    blue:    '0x9f9da2'
+    magenta: '0xd8d7da'
+    cyan:    '0xc720ca'
+    white:   '0xf5f4f7'
+
+colors__unikitty-light__light:
+# Base16 Unikitty Light - alacritty color config
+# Josh W Lewis (@joshwlewis)
+  # Default colors
+  primary:
+    background: '0xffffff'
+    foreground: '0x6c696e'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0xffffff'
+    cursor: '0x6c696e'
+
+  # Normal colors
+  normal:
+    black:   '0xffffff'
+    red:     '0xd8137f'
+    green:   '0x17ad98'
+    yellow:  '0xdc8a0e'
+    blue:    '0x775dff'
+    magenta: '0xaa17e6'
+    cyan:    '0x149bda'
+    white:   '0x6c696e'
+
+  # Bright colors
+  bright:
+    black:   '0xa7a5a8'
+    red:     '0xd65407'
+    green:   '0xe1e1e2'
+    yellow:  '0xc4c3c5'
+    blue:    '0x89878b'
+    magenta: '0x4f4b51'
+    cyan:    '0xe013d0'
+    white:   '0x322d34'
+
+colors__woodland__dark:
+# Base16 Woodland - alacritty color config
+# Jay Cornwall (https://jcornwall.com)
+  # Default colors
+  primary:
+    background: '0x231e18'
+    foreground: '0xcabcb1'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x231e18'
+    cursor: '0xcabcb1'
+
+  # Normal colors
+  normal:
+    black:   '0x231e18'
+    red:     '0xd35c5c'
+    green:   '0xb7ba53'
+    yellow:  '0xe0ac16'
+    blue:    '0x88a4d3'
+    magenta: '0xbb90e2'
+    cyan:    '0x6eb958'
+    white:   '0xcabcb1'
+
+  # Bright colors
+  bright:
+    black:   '0x9d8b70'
+    red:     '0xca7f32'
+    green:   '0x302b25'
+    yellow:  '0x48413a'
+    blue:    '0xb4a490'
+    magenta: '0xd7c8bc'
+    cyan:    '0xb49368'
+    white:   '0xe4d4c8'
+
+colors__xcode-dusk__dark:
+# Base16 XCode Dusk - alacritty color config
+# Elsa Gonsiorowski (https://github.com/gonsie)
+  # Default colors
+  primary:
+    background: '0x282b35'
+    foreground: '0x939599'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x282b35'
+    cursor: '0x939599'
+
+  # Normal colors
+  normal:
+    black:   '0x282b35'
+    red:     '0xb21889'
+    green:   '0xdf0002'
+    yellow:  '0x438288'
+    blue:    '0x790ead'
+    magenta: '0xb21889'
+    cyan:    '0x00a0be'
+    white:   '0x939599'
+
+  # Bright colors
+  bright:
+    black:   '0x686a71'
+    red:     '0x786dc5'
+    green:   '0x3d4048'
+    yellow:  '0x53555d'
+    blue:    '0x7e8086'
+    magenta: '0xa9aaae'
+    cyan:    '0xc77c48'
+    white:   '0xbebfc2'
+
+colors__zenburn__dark:
+# Base16 Zenburn - alacritty color config
+# elnawe
+  # Default colors
+  primary:
+    background: '0x383838'
+    foreground: '0xdcdccc'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x383838'
+    cursor: '0xdcdccc'
+
+  # Normal colors
+  normal:
+    black:   '0x383838'
+    red:     '0xdca3a3'
+    green:   '0x5f7f5f'
+    yellow:  '0xe0cf9f'
+    blue:    '0x7cb8bb'
+    magenta: '0xdc8cc3'
+    cyan:    '0x93e0e3'
+    white:   '0xdcdccc'
+
+  # Bright colors
+  bright:
+    black:   '0x6f6f6f'
+    red:     '0xdfaf8f'
+    green:   '0x404040'
+    yellow:  '0x606060'
+    blue:    '0x808080'
+    magenta: '0xc0c0c0'
+    cyan:    '0x000000'
+    white:   '0xffffff'
+
