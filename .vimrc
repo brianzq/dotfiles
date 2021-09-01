@@ -162,8 +162,8 @@ set tw=100                          " Line length for gq to split
 
 nnoremap <C-g> :!google-chrome %<CR> " browser preview with ctrl-g
 
-if filereadable("SpecificFile")
-  source "~/.vimrc.local"
+if filereadable($HOME.'/.vimrc.local')
+  source $HOME/.vimrc.local
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -648,7 +648,7 @@ let vim_markdown_preview_github=1
 let g:mkdp_command_for_global = 1
 
 " Gutentags.
-noremap <Leader>c :GutentagsUpdate!<CR>
+" noremap <Leader>c :GutentagsUpdate!<CR>
 let g:gutentags_exclude_filetypes = ['gitcommit']
 let g:gutentags_ctags_exclude = [
   \ '.eggs',
