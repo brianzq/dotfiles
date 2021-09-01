@@ -658,6 +658,10 @@ let g:gutentags_ctags_exclude = [
   \ 'tags.temp',
   \ '.ijwb',
   \ 'bazel-*',
+  \ 'build',
+  \ 'log',
+  \ 'node_modules',
+  \ 'target',
 \ ]
 let g:gutentags_ctags_executable_ruby = 'ripper-tags'
 
