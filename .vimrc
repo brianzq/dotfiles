@@ -62,6 +62,7 @@ Plug 'sbdchd/neoformat', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mattn/emmet-vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-syntastic/syntastic'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -802,6 +803,12 @@ autocmd BufWritePre *.jsx Neoformat prettier
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-open)
 vmap gx <Plug>(openbrowser-open)
+
+" IndentLine
+let g:indentLine_char = "\ue621"
+" let g:indentLine_char = '┆'
+nnoremap <leader>i :IndentLinesToggle<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => base16_vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
