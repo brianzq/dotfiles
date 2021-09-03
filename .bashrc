@@ -202,8 +202,8 @@ function pyenv_prompt_info() {
   fi
 }
 
-ARROWS="\033[0;31m"$'\u227b'"\033[0;35m"$'\u227b'"\033[0;34m"$'\u227b'
-PS1="\033[1;34m➜ \033[1;33m\w\$(rbenv_prompt_info)\$(pyenv_prompt_info)\$(git_prompt_info)\n${ARROWS} \033[0;00m"
+ARROWS="\[\033[0;31m\]"$'\u227b'"\[\033[0;35m\]"$'\u227b'"\[\033[0;34m\]"$'\u227b'
+PS1="\033[1;34m➜ \033[1;33m\w\$(rbenv_prompt_info)\$(pyenv_prompt_info)\$(git_prompt_info)\n${ARROWS} \[\033[0;00m\]"
 export PS1
 
 # fzf -------------------------------------------------------------------------
