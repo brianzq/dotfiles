@@ -161,7 +161,7 @@ debug:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 1.0
+window.opacity: 1.0
 
 # Mouse bindings
 #
@@ -4006,7 +4006,77 @@ colors__ocean__dark:
     cyan:    '0xab7967'
     white:   '0xeff1f5'
 
-colors: # oceanicnext (dark)
+colors__danqing__dark:
+# Base16 DanQing - alacritty color config
+# Wenhan Zhu (Cosmos) (zhuwenhan950913@gmail.com)
+  # Default colors
+  primary:
+    background: '0x2d302f'
+    foreground: '0xe0f0ef'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x2d302f'
+    cursor: '0xe0f0ef'
+
+  # Normal colors
+  normal:
+    black:   '0x2d302f'
+    red:     '0xf9906f'
+    green:   '0x8ab361'
+    yellow:  '0xf0c239'
+    blue:    '0xb0a4e3'
+    magenta: '0xcca4e3'
+    cyan:    '0x30dff3'
+    white:   '0xe0f0ef'
+
+  # Bright colors
+  bright:
+    black:   '0x9da8a3'
+    red:     '0xb38a61'
+    green:   '0x434846'
+    yellow:  '0x5a605d'
+    blue:    '0xcad8d2'
+    magenta: '0xecf6f2'
+    cyan:    '0xca6924'
+    white:   '0xfcfefd'
+
+colors: # silk (dark)
+# Base16 Silk Dark - alacritty color config
+# Gabriel Fontes (https://github.com/Misterio77)
+  # Default colors
+  primary:
+    background: '0x0e3c46'
+    foreground: '0xc7dbdd'
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '0x0e3c46'
+    cursor: '0xc7dbdd'
+
+  # Normal colors
+  normal:
+    black:   '0x0e3c46'
+    red:     '0xfb6953'
+    green:   '0x73d8ad'
+    yellow:  '0xfce380'
+    blue:    '0x46bddd'
+    magenta: '0x756b8a'
+    cyan:    '0x3fb2b9'
+    white:   '0xc7dbdd'
+
+  # Bright colors
+  bright:
+    black:   '0x587073'
+    red:     '0xfcab74'
+    green:   '0x1d494e'
+    yellow:  '0x2a5054'
+    blue:    '0x9dc8cd'
+    magenta: '0xcbf2f7'
+    cyan:    '0x9b647b'
+    white:   '0xd2faff'
+
+colors__oceanicnext__dark:
 # Base16 OceanicNext - alacritty color config
 # https://github.com/voronianski/oceanic-next-color-scheme
   # Default colors

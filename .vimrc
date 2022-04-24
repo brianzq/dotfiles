@@ -35,20 +35,18 @@ Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'chriskempson/base16-vim'
-Plug 'scrooloose/nerdtree'
+" Plug 'scrooloose/nerdtree'
 Plug 'w0rp/ale'
 Plug 'tomtom/tcomment_vim'
 Plug 'larrylv/vim-vroom'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'benmills/vimux'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 Plug 'zackhsi/fzf-copy-ruby-token'
 Plug 'drmingdrmer/vim-tabbar'
 Plug 'michaeljsmith/vim-indent-object'
@@ -56,13 +54,20 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'fatih/vim-go'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': '*'}
 Plug 'sbdchd/neoformat', {'for': ['javascript', 'javascript.jsx']}
 Plug 'mattn/emmet-vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'Yggdroot/indentLine'
+if has('nvim')
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/defx.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'tag': '*'}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 
 call plug#end()
 
@@ -320,7 +325,7 @@ let g:fzf_preview_window = ['right:hidden', 'ctrl-/']
 silent! nnoremap <unique> <silent> <leader>f :Files<CR>
 nnoremap <leader>aa :Rg<Space>
 nnoremap <silent> <leader>ag :Rg <C-R><C-W><CR>
-xnoremap <silent> <leader>ag y:Rg <C-R>"<CR>"
+xnoremap <silent> <leader>ag y:Rg <C-R>"<CR>
 nnoremap <silent> <leader>AG :Rg <C-R><C-A><CR>
 silent! nnoremap <unique> <silent> <leader>bb :Buffers<CR>
 silent! nnoremap <unique> <silent> <leader>bl :BLines<CR>
@@ -378,24 +383,121 @@ let g:fzf_action = {
 " }}}
 
 " nerdtree {{{
-let NERDTreeWinSize = 50
-let NERDTreeAutoCenter=1
-let NERDTreeChDirMode=2
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeHijackNetrw=1
-let g:NERDTreeWinPos="left"
-let g:NERDTreeIgnore=['\~$']
-nnoremap <F7> :call NERDTreeToggleInCurDir()<CR>
-nnoremap <F2> :call NERDTreeToggleInCurDir()<CR>
-function! NERDTreeToggleInCurDir()
-  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-    exe ":NERDTreeClose"
-  elseif (bufname('%') == '' || bufname('%') =~ 'Startify')
-    exe ":NERDTreeToggle"
-  else
-    exe ":NERDTreeFind"
-  endif
+" let NERDTreeWinSize = 50
+" let NERDTreeAutoCenter=1
+" let NERDTreeChDirMode=2
+" let g:NERDTreeMinimalUI=1
+" let g:NERDTreeHijackNetrw=1
+" let g:NERDTreeWinPos="left"
+" let g:NERDTreeIgnore=['\~$']
+" nnoremap <F7> :call NERDTreeToggleInCurDir()<CR>
+" nnoremap <F2> :call NERDTreeToggleInCurDir()<CR>
+" function! NERDTreeToggleInCurDir()
+"   if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+"     exe ":NERDTreeClose"
+"   elseif (bufname('%') == '' || bufname('%') =~ 'Startify')
+"     exe ":NERDTreeToggle"
+"   else
+"     exe ":NERDTreeFind"
+"   endif
+" endfunction
+" }}}
+
+" defx.nvim {{{
+nnoremap <F2> :Defx `getcwd()` -search_recursive=`expand('%:p')` -resume -toggle<CR>
+" Move the cursor to the already-open Defx, and then switch back to the file
+nnoremap <leader>dn :Defx `getcwd()` -search_recursive=`expand('%:p')` -resume -no-focus<CR>
+
+let g:extra_whitespace_ignored_filetypes = ['unite']
+autocmd FileType defx call s:defx_my_settings()
+function! s:defx_my_settings() abort
+  setlocal nonu
+  setlocal norelativenumber
+
+  highlight! default link Defx_filename_root Statement
+  highlight! default link Defx_filename_root_marker Statement
+  highlight! default link Defx_icon_root_icon Statement
+  highlight! default link Defx_filename_directory Directory
+  highlight! default link Defx_icon_directory_icon Directory
+  highlight! default link Defx_icon_opened_icon Directory
+
+  " Define mappings
+  nnoremap <silent><buffer><expr> o
+        \ defx#is_directory() ?
+        \ defx#do_action('open_tree', 'toggle') :
+        \ defx#do_action('drop')
+  nnoremap <silent><buffer><expr> <CR>
+        \ defx#is_directory() ?
+        \ defx#do_action('open_tree', 'toggle') :
+        \ defx#do_action('drop')
+  nnoremap <silent><buffer><expr> c
+        \ defx#do_action('copy')
+  nnoremap <silent><buffer><expr> m
+        \ defx#do_action('move')
+  nnoremap <silent><buffer><expr> p
+        \ defx#do_action('paste')
+  nnoremap <silent><buffer><expr> i
+        \ defx#do_action('multi', [['drop', 'split']])
+  nnoremap <silent><buffer><expr> s
+        \ defx#do_action('open', 'vsplit')
+  nnoremap <silent><buffer><expr> K
+        \ defx#do_action('new_directory')
+  nnoremap <silent><buffer><expr> N
+        \ defx#do_action('new_file')
+  nnoremap <silent><buffer><expr> M
+        \ defx#do_action('new_multiple_files')
+  nnoremap <silent><buffer><expr> d
+        \ defx#do_action('remove')
+  nnoremap <silent><buffer><expr> r
+        \ defx#do_action('rename')
+  nnoremap <silent><buffer><expr> yy
+        \ defx#do_action('yank_path')
+  nnoremap <silent><buffer><expr> q
+        \ defx#do_action('quit')
+  nnoremap <silent><buffer><expr> <Space>
+        \ defx#do_action('toggle_select') . 'j'
+  nnoremap <silent><buffer><expr> *
+        \ defx#do_action('toggle_select_all')
+  nnoremap <silent><buffer><expr> j
+        \ line('.') == line('$') ? 'gg' : 'j'
+  nnoremap <silent><buffer><expr> k
+        \ line('.') == 1 ? 'G' : 'k'
+  nnoremap <silent><buffer><expr> R
+        \ defx#do_action('redraw')
+  nnoremap <silent><buffer><expr> >
+        \ defx#do_action('resize', defx#get_context().winwidth + 10)
+  nnoremap <silent><buffer><expr> <
+        \ defx#do_action('resize', defx#get_context().winwidth - 10)
+  nnoremap <silent><buffer><expr> <leader>p
+        \ defx#do_action('print')
+  nnoremap <silent><buffer><expr> P
+        \ defx#do_action('search', fnamemodify(defx#get_candidate().action__path, ':h'))
 endfunction
+
+call defx#custom#option('_', {
+      \ 'root_marker': '',
+      \ 'columns': 'indent:icon:filename',
+      \ 'winwidth': 42,
+      \ 'split': 'vertical',
+      \ 'direction': 'topleft',
+      \ 'buffer_name': 'DEFX',
+      \ })
+
+call defx#custom#column('icon', {
+      \ 'directory_icon': '▸ ',
+      \ 'file_icon': '  ',
+      \ 'opened_icon': '▾ ',
+      \ 'root_icon': '  ',
+      \ })
+
+call defx#custom#column('indent', {
+      \ 'indent': '  ',
+      \ })
+
+call defx#custom#column('filename', {
+      \ 'min_width': 80,
+      \ 'max_width': 120,
+      \ })
 " }}}
 
 " lightline.vim {{{
@@ -445,7 +547,6 @@ let g:lightline = {
       \   'mode': 'MyMode',
       \   'winnr': 'MyWinnr',
       \   'ctrlpmark': 'CtrlPMark',
-      \   'ctag': 'GetGutentagsStatus',
       \ },
       \ 'component_expand': {
       \   'linter_checking': 'lightline#ale#checking',
@@ -462,28 +563,30 @@ let g:lightline = {
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
+" Under 'component_function'
+"       \   'ctag': 'GetGutentagsStatus',
 
 " refresh status line after gutentag tag generation
-augroup MyGutentagsStatusLineRefresher
-    autocmd!
-    autocmd User GutentagsUpdating call lightline#update()
-    autocmd User GutentagsUpdated call lightline#update()
-augroup END
-
-function! s:get_gutentags_status(mods) abort
-    let l:msg = ''
-    if index(a:mods, 'ctags') >= 0
-       let l:msg .= "\uf02c"
-     endif
-     if index(a:mods, 'cscope') >= 0
-       let l:msg .= "\ue222"
-     endif
-     return l:msg
-endfunction
-
-function! GetGutentagsStatus()
-    return gutentags#statusline_cb(function('<SID>get_gutentags_status'))
-endfunction
+" augroup MyGutentagsStatusLineRefresher
+"     autocmd!
+"     autocmd User GutentagsUpdating call lightline#update()
+"     autocmd User GutentagsUpdated call lightline#update()
+" augroup END
+"
+" function! s:get_gutentags_status(mods) abort
+"     let l:msg = ''
+"     if index(a:mods, 'ctags') >= 0
+"        let l:msg .= "\uf02c"
+"      endif
+"      if index(a:mods, 'cscope') >= 0
+"        let l:msg .= "\ue222"
+"      endif
+"      return l:msg
+" endfunction
+"
+" function! GetGutentagsStatus()
+"     return gutentags#statusline_cb(function('<SID>get_gutentags_status'))
+" endfunction
 
 function! MyModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -635,7 +738,7 @@ let g:ctrlp_user_command = {
     \ },
   \ 'fallback': 'find %s -type f'
   \ }
-" let g:ctrlp_tjump_only_silent = 1
+let g:ctrlp_tjump_only_silent = 1
 "}}}
       
 " fzf-copy-ruby-token
@@ -650,21 +753,21 @@ let g:mkdp_command_for_global = 1
 
 " Gutentags.
 " noremap <Leader>c :GutentagsUpdate!<CR>
-let g:gutentags_exclude_filetypes = ['gitcommit']
-let g:gutentags_ctags_exclude = [
-  \ '.eggs',
-  \ '.mypy_cache',
-  \ 'venv',
-  \ 'tags',
-  \ 'tags.temp',
-  \ '.ijwb',
-  \ 'bazel-*',
-  \ 'build',
-  \ 'log',
-  \ 'node_modules',
-  \ 'target',
-\ ]
-let g:gutentags_ctags_executable_ruby = 'ripper-tags'
+" let g:gutentags_exclude_filetypes = ['gitcommit']
+" let g:gutentags_ctags_exclude = [
+"   \ '.eggs',
+"   \ '.mypy_cache',
+"   \ 'venv',
+"   \ 'tags',
+"   \ 'tags.temp',
+"   \ '.ijwb',
+"   \ 'bazel-*',
+"   \ 'build',
+"   \ 'log',
+"   \ 'node_modules',
+"   \ 'target',
+" \ ]
+" let g:gutentags_ctags_executable_ruby = 'ripper-tags'
 
 """ coc.nvim {{{
 " if hidden is not set, TextEdit might fail.
@@ -792,6 +895,8 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+" Restart coc
+nnoremap <silent> <space>r  :<C-u>CocRestart<CR><CR>
 "}}}
 
 " Neoformat {{{
@@ -808,18 +913,6 @@ vmap gx <Plug>(openbrowser-open)
 let g:indentLine_char = "\ue621"
 " let g:indentLine_char = '┆'
 nnoremap <leader>i :IndentLinesToggle<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => base16_vim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" function! s:base16_customize() abort
-"   call Base16hi("MatchParen", g:base16_gui05, g:base16_gui03, g:base16_cterm05, g:base16_cterm00, "bold,italic", "")
-" endfunction
-" 
-" augroup on_change_colorschema
-"   autocmd!
-"   autocmd ColorScheme * call s:base16_customize()
-" augroup END
 
 " Bind <leader>d to go-to-definition.
 nmap <silent> <leader>d <Plug>(ale_go_to_definition)
@@ -889,9 +982,6 @@ set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-
-" Ignore case when searching
-set ignorecase
 
 " When searching try to be smart about cases 
 " set smartcase
