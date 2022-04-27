@@ -18,8 +18,8 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 205
-    lines: 60
+    columns: 140
+    lines: 50
 
   # Window padding (changes require restart)
   #
@@ -87,17 +87,17 @@ scrolling:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
     style: Regular
 
   # The bold font face
   bold:
-    family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
     style: Medium
 
   # The italic font face
   italic:
-    family: FuraCode Nerd Font
+    family: FiraCode Nerd Font
     style: Light
 
   # Point size of the font
@@ -4041,7 +4041,7 @@ colors__danqing__dark:
     cyan:    '0xca6924'
     white:   '0xfcfefd'
 
-colors: # silk (dark)
+colors__silk__dark:
 # Base16 Silk Dark - alacritty color config
 # Gabriel Fontes (https://github.com/Misterio77)
   # Default colors
@@ -4076,7 +4076,7 @@ colors: # silk (dark)
     cyan:    '0x9b647b'
     white:   '0xd2faff'
 
-colors__oceanicnext__dark:
+colors: # oceanicnext (dark)
 # Base16 OceanicNext - alacritty color config
 # https://github.com/voronianski/oceanic-next-color-scheme
   # Default colors
