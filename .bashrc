@@ -1,10 +1,11 @@
 # vim:ft=sh:
 
 # alias
+alias vim='nvim'
 alias ll='ls -l'
 alias grep='grep --color=auto'
 alias fcd='cd $(fzf)'
-alias fvim='vim $(fzf)'
+alias fvim='nvim $(fzf)'
 alias subl='open -a /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
 alias co="$HOME/.toggle_color.sh"
 alias cor="$HOME/.toggle_color.sh -r"

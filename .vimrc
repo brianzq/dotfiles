@@ -82,7 +82,7 @@ set splitbelow                             " New window goes below
 set splitright
 set wildchar=<Tab>                         " Character for CLI expansion (TAB-completion)
 nmap Y y$
-map <leader>ev :e $MYVIMRC<cr>
+map <leader>ev :e $HOME/.vimrc<cr>
 map <leader>vv :vsp $MYVIMRC<cr>
 map <leader>eb :e ~/.bot<cr>
 map <leader>vb :vsp ~/.bot<cr>
@@ -322,7 +322,7 @@ set rtp+=/usr/local/opt/fzf " fzf is installed using Homebrew
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 let g:fzf_preview_window = ['right:hidden', 'ctrl-/']
 
-silent! nnoremap <unique> <silent> <leader>f :Files<CR>
+" silent! nnoremap <unique> <silent> <leader>f :Files<CR>
 nnoremap <leader>aa :Rg<Space>
 nnoremap <silent> <leader>ag :Rg <C-R><C-W><CR>
 xnoremap <silent> <leader>ag y:Rg <C-R>"<CR>
@@ -340,26 +340,29 @@ let g:fzf_action = {
   \ 'ctrl-e': 'split',
   \ 'ctrl-v': 'vsplit' }
 
-" set rtp+=/usr/local/opt/fzf " fzf is installed using Homebrew
-" silent! nnoremap <unique> <silent> <leader>f :FZF<CR>
-" nnoremap <leader>aa :Ag<Space>
-" nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
-" xnoremap <silent> <leader>ag y:Ag <C-R>"<CR>"
-" nnoremap <silent> <leader>AG :Ag <C-R><C-A><CR>
-" silent! nnoremap <unique> <silent> <leader>bb :Buffers<CR>
-" silent! nnoremap <unique> <silent> <leader>bl :BLines<CR>
-" silent! nnoremap <unique> <silent> <leader>ll :Lines<CR>
-" nnoremap <leader>tj :Tags
-" nnoremap <leader>tm :Marks<CR>
-" nnoremap <leader>ts :Tags
-" map <leader>gs :GFiles?<cr>
-"
-" let g:fzf_action = {
-"   \ 'ctrl-t': 'tab split',
-"   \ 'ctrl-x': 'split',
-"   \ 'ctrl-d': 'split',
-"   \ 'ctrl-e': 'split',
-"   \ 'ctrl-v': 'vsplit' }
+function! s:cache_list_cmd()
+  let ref = system('/usr/local/bin/git symbolic-ref -q HEAD 2>/dev/null')
+	if ref == ''
+    return $FZF_DEFAULT_COMMAND
+	endif
+
+  " trim the newline output from rev-parse
+  let head_commit = system('git rev-parse HEAD | tr -d "\n"')
+  let cache_file = '/tmp/'.head_commit.'.files'
+  if !filereadable(expand(cache_file))
+    execute 'silent !' . $FZF_DEFAULT_COMMAND . ' > '.cache_file
+  endif
+
+  let base = fnamemodify(expand('%'), ':h:.:S')
+  return base == '.' ?
+    \ printf('cat %s', cache_file) :
+    \ printf('cat %s | proximity-sort %s', cache_file, expand('%'))
+endfunction
+
+command! -bang -nargs=? -complete=dir MyFiles
+  \ call fzf#vim#files(<q-args>, {'source': s:cache_list_cmd(),
+  \                               'options': '--tiebreak=index'}, <bang>0)
+silent! nnoremap <unique> <silent> <leader>f :MyFiles<CR>
 " let s:ag_opts = {"options": ["-d:"]}
 " let g:fzf_layout = { 'down': '40%' }
 " let g:fzf_preview_window = ['right:50%', 'ctrl-/']
@@ -382,31 +385,10 @@ let g:fzf_action = {
 "   \   <bang>0)
 " }}}
 
-" nerdtree {{{
-" let NERDTreeWinSize = 50
-" let NERDTreeAutoCenter=1
-" let NERDTreeChDirMode=2
-" let g:NERDTreeMinimalUI=1
-" let g:NERDTreeHijackNetrw=1
-" let g:NERDTreeWinPos="left"
-" let g:NERDTreeIgnore=['\~$']
-" nnoremap <F7> :call NERDTreeToggleInCurDir()<CR>
-" nnoremap <F2> :call NERDTreeToggleInCurDir()<CR>
-" function! NERDTreeToggleInCurDir()
-"   if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
-"     exe ":NERDTreeClose"
-"   elseif (bufname('%') == '' || bufname('%') =~ 'Startify')
-"     exe ":NERDTreeToggle"
-"   else
-"     exe ":NERDTreeFind"
-"   endif
-" endfunction
-" }}}
-
 " defx.nvim {{{
-nnoremap <F2> :Defx `getcwd()` -search_recursive=`expand('%:p')` -resume -toggle<CR>
+nnoremap <F2> :Defx `getcwd()` -search_recursive=`expand('%:p')` -toggle<CR>
 " Move the cursor to the already-open Defx, and then switch back to the file
-nnoremap <leader>dn :Defx `getcwd()` -search_recursive=`expand('%:p')` -resume -no-focus<CR>
+nnoremap <leader>dn :Defx `getcwd()` -search_recursive=`expand('%:p')` -no-focus<CR>
 
 let g:extra_whitespace_ignored_filetypes = ['unite']
 autocmd FileType defx call s:defx_my_settings()
@@ -740,7 +722,7 @@ let g:ctrlp_user_command = {
   \ }
 let g:ctrlp_tjump_only_silent = 1
 "}}}
-      
+
 " fzf-copy-ruby-token
 nmap <leader>ry <Plug>(fzf_copy_ruby_token)
 
@@ -1066,6 +1048,16 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+" user Cmd+<num> to switch tabs
+nnoremap <M-1> 1gt
+nnoremap <M-2> 2gt
+nnoremap <M-3> 3gt
+nnoremap <M-4> 4gt
+nnoremap <M-5> 5gt
+nnoremap <M-6> 6gt
+nnoremap <M-7> 7gt
+nnoremap <M-8> 8gt
+nnoremap <M-9> 9gt
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
@@ -1149,17 +1141,17 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+" nmap <M-k> mz:m-2<cr>`z
+" nmap <M-j> mz:m+<cr>`z
+" vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+" vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
+" if has("mac") || has("macunix")
+"   nmap <D-j> <M-j>
+"   nmap <D-k> <M-k>
+"   vmap <D-j> <M-j>
+"   vmap <D-k> <M-k>
+" endif
 
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
