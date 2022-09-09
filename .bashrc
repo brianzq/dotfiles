@@ -1,5 +1,18 @@
 # vim:ft=sh:
 
+### BEGIN STRIPE
+# All Stripe related shell configuration
+# is at ~/.stripe/shellinit/bashrc and is
+# persistently managed by Chef. You shouldn't
+# remove this unless you don't want to load
+# Stripe specific shell configurations.
+#
+# Feel free to add your customizations in this
+# file (~/.bashrc) after the Stripe config
+# is sourced.
+[ -f ~/.stripe/shellinit/bashrc ] && source ~/.stripe/shellinit/bashrc
+### END STRIPE
+
 # alias
 alias vim='nvim'
 alias ll='ls -l'
@@ -11,7 +24,7 @@ alias co="$HOME/.toggle_color.sh"
 alias cor="$HOME/.toggle_color.sh -r"
 alias cof="$HOME/.toggle_color.sh -f"
 alias ta='touch ~/alacritty.yml'
-alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+alias config="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
 alias config-co='curl -L http://bit.do/e3Hqx | /bin/bash'
 
 # bash-sensible (https://github.com/mrzool/bash-sensible/blob/master/sensible.bash)
