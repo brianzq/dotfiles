@@ -1,0 +1,76 @@
+let mapleader=","
+" a lot easier than <Shift>+F6
+map <leader>re :action RenameElement<CR>
+map <leader>ct :action ChangeTypeSignature<CR>
+map <leader>mv :action Move<CR>
+" partial sync bazel build target owning the current file
+map <leader>ps :action Blaze.PartialSync<CR>
+" This one's my favorite: run tests in the current file
+map <leader>rr :action RunClass<CR>
+map <leader>fu :action FindUsages<CR>
+
+set ideajoin
+
+set clipboard+=ideaput
+set scrolloff=3
+
+
+nmap <leader>aa :action FindInPath<cr>
+vmap <leader>aa :action FindInPath<cr>
+
+nmap <leader>al :action SearchEverywhere<cr>
+vmap <leader>al :action SearchEverywhere<cr>
+
+nmap <leader>af :action GotoFile<cr>
+vmap <leader>af :action GotoFile<cr>
+nmap <leader>f :action GotoFile<cr>
+vmap <leader>f :action GotoFile<cr>
+
+nmap <leader>c :action GotoClass<cr>
+nmap <leader>s :action GotoSymbol<cr>
+nmap <leader>an :action GotoAction<cr>
+
+nmap <leader>bb :action RecentFiles<cr>
+nmap <leader>bl :action RecentLocations<cr>
+nmap <leader>bp :action Blaze.PartialSync<cr>
+
+nmap <leader>u :action FindUsages<cr>
+
+nmap <leader>g :action GotoDeclaration<cr>
+
+nmap <leader>t :action ExpressionTypeInfo<cr>
+vmap <leader>t :action ExpressionTypeInfo<cr>
+
+nnoremap <leader>vn :action RunClass<cr>
+
+nnoremap m. :action ToggleBookmark<cr>
+
+nnoremap ma :action ToggleBookmark0<cr>
+nnoremap mb :action ToggleBookmark1<cr>
+nnoremap mc :action ToggleBookmark2<cr>
+nnoremap md :action ToggleBookmark3<cr>
+nnoremap me :action ToggleBookmark4<cr>
+nnoremap mf :action ToggleBookmark5<cr>
+nnoremap mg :action ToggleBookmark6<cr>
+nnoremap mh :action ToggleBookmark7<cr>
+nnoremap mi :action ToggleBookmark8<cr>
+nnoremap mj :action ToggleBookmark9<cr>
+
+nnoremap 'a :action GotoBookmark0<cr>
+nnoremap 'b :action GotoBookmark1<cr>
+nnoremap 'c :action GotoBookmark2<cr>
+nnoremap 'd :action GotoBookmark3<cr>
+nnoremap 'e :action GotoBookmark4<cr>
+nnoremap 'f :action GotoBookmark5<cr>
+nnoremap 'g :action GotoBookmark6<cr>
+nnoremap 'h :action GotoBookmark7<cr>
+nnoremap 'i :action GotoBookmark8<cr>
+nnoremap 'j :action GotoBookmark9<cr>
+
+nmap <leader>y "*y
+vmap <leader>y "*y
+
+nmap <leader>i :action GotoImplementation<cr>
+
+nmap <C-h> :action PrevSplitter<cr>
+nmap <C-l> :action NextSplitter<cr>"
