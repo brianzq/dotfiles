@@ -39,7 +39,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'w0rp/ale'
 Plug 'tomtom/tcomment_vim'
 Plug 'larrylv/vim-vroom'
-Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim', {'commit': '6daec38c1da2cbfae43d4d0d67f6a4fa7680c2b5'}
 Plug 'maximbaz/lightline-ale'
 Plug 'benmills/vimux'
 Plug 'airblade/vim-gitgutter'
@@ -68,6 +68,7 @@ else
 endif
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'Olical/conjure'
 
 call plug#end()
 
