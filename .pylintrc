@@ -1,0 +1,2 @@
+[MESSAGES CONTROL]
+disable=locally-disabled, multiple-statements, fixme, line-too-long, too-few-public-methods, missing-class-docstring, missing-module-docstring, missing-function-docstring, missing-docstring
