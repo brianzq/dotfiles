@@ -67,6 +67,9 @@ nnoremap 'h :action GotoBookmark7<cr>
 nnoremap 'i :action GotoBookmark8<cr>
 nnoremap 'j :action GotoBookmark9<cr>
 
+nmap ]c :action VcsShowNextChangeMarker<cr>
+nmap [c :action VcsShowPrevChangeMarker<cr>
+
 nmap <leader>y "*y
 vmap <leader>y "*y
 

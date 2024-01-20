@@ -4,7 +4,7 @@
 
 DEFAULT_LIGHT_SCHEME=solarized-light
 DEFAULT_DARK_SCHEME=oceanicnext
-FAVORITE_SCHEMES="gruvbox-dark-hard\nporple\nmateria\nonedark\nhopscotch"
+FAVORITE_SCHEMES="gruvbox-dark-hard\nporple\nmateria\nonedark\nhopscotch\natelier-savanna-light\natelier-estuary-light"
 
 all_schemes() {
     grep "^colors__[a-zA-Z0-9_-]*__\(dark\|light\):$" $HOME/.alacritty.yml | gsed 's/colors__\([a-zA-Z0-9_-]*\)__\(light\|dark\):/\1/'

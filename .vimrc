@@ -27,48 +27,85 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/bundle')
 
+" Essentials {{{
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ivalkeen/vim-ctrlp-tjump'
-Plug 'FelikZ/ctrlp-py-matcher'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'chriskempson/base16-vim'
-" Plug 'scrooloose/nerdtree'
-Plug 'w0rp/ale'
-Plug 'tomtom/tcomment_vim'
-Plug 'larrylv/vim-vroom'
-Plug 'itchyny/lightline.vim', {'commit': '6daec38c1da2cbfae43d4d0d67f6a4fa7680c2b5'}
-Plug 'maximbaz/lightline-ale'
-Plug 'benmills/vimux'
-Plug 'airblade/vim-gitgutter'
-Plug 'kshenoy/vim-signature'
+Plug 'tomtom/tcomment_vim'                                                            "  gcc for comment
+Plug 'kshenoy/vim-signature'                                                          "  marks
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-" Plug 'ludovicchabant/vim-gutentags'
-Plug 'zackhsi/fzf-copy-ruby-token'
+Plug 'tpope/vim-unimpaired'                                                           "  [f for file, [q for tab, [<space> for empty line above, [e for moving line above
+Plug 'tpope/vim-obsession'                                                            "  automatically saves buffers to session
+Plug 'michaeljsmith/vim-indent-object'                                                "  >[count]ai/ii for indenting block
+Plug 'godlygeek/tabular'                                                              "  tabularize lines
+Plug 'github/copilot.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+" }}}
+
+" Appearance {{{
 Plug 'drmingdrmer/vim-tabbar'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'kana/vim-textobj-user'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'fatih/vim-go'
-Plug 'sbdchd/neoformat', {'for': ['javascript', 'javascript.jsx']}
-Plug 'mattn/emmet-vim'
-Plug 'tyru/open-browser.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'Yggdroot/indentLine'
+Plug 'chriskempson/base16-vim'
+Plug 'itchyny/lightline.vim', {'commit': '6daec38c1da2cbfae43d4d0d67f6a4fa7680c2b5'}  "  commit for base16 color fix
+Plug 'maximbaz/lightline-ale'
 if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }                           "  file browser
 else
   Plug 'Shougo/defx.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'Yggdroot/indentLine'                                                            "  display vertical lines for indentation
+" }}}
+
+" Linter & LSP {{{
+Plug 'dense-analysis/ale'                                                             "  Asynchronous Lint Engine
+Plug 'larrylv/coc.nvim'
+Plug 'antoinemadec/coc-fzf'
+Plug 'larrylv/vim-tagimposter'                                                        "  populate the tagstack when using coc to jump to definitions
+""" }}}
+
+" Git related {{{
+Plug 'tpope/vim-fugitive'                                                             "  Git wrapper, GBrowse
+Plug 'tpope/vim-rhubarb'                                                              "  Enable GBrowse to open link in browser
+Plug 'airblade/vim-gitgutter'                                                         "  show git diffs
+" }}}
+
+" Language specific {{{
+" Ruby
+Plug 'kana/vim-textobj-user'                                                          "  dependency for vim-textobj-rubyblock
+Plug 'nelstrom/vim-textobj-rubyblock'                                                 "  ar/ir for ruby block
+Plug 'benmills/vimux'
+Plug 'larrylv/vim-vroom'
+Plug 'zackhsi/fzf-copy-ruby-token'                                                    "  copy fully qualified ruby class name
+
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+
+" Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
-Plug 'Olical/conjure'
+Plug 'preservim/vim-markdown'
+Plug '907th/vim-auto-save'                                                            "  auto save files, I only use it for markdown files for notes
+
+" Yaml
+Plug 'Einenlum/yaml-revealer'                                                         "  shows yaml key hierarchy for current line
+
+" Javascript
+" Plug 'sbdchd/neoformat', {'for': ['javascript', 'javascript.jsx']}
+" Plug 'mattn/emmet-vim'
+" }}}
+"
+"
+" Legacy {{{
+" Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ivalkeen/vim-ctrlp-tjump'
+" Plug 'FelikZ/ctrlp-py-matcher'
+"
+" Plug 'AndrewRadev/splitjoin.vim'
+" Plug 'tyru/open-browser.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Plug 'nvim-treesitter/nvim-treesitter-context'                                      "  show code context
+" }}}
 
 call plug#end()
 
@@ -78,14 +115,14 @@ call plug#end()
 let mapleader=","
 set nu
 
-" set cursorline
+set cursorline
 set splitbelow                             " New window goes below
 set splitright
 set wildchar=<Tab>                         " Character for CLI expansion (TAB-completion)
 nmap Y y$
 map <leader>ev :e $HOME/.vimrc<cr>
 map <leader>vv :vsp $MYVIMRC<cr>
-map <leader>eb :e ~/.bot<cr>
+map <leader>eb :MyFiles ~/notes/2022/<cr>
 map <leader>vb :vsp ~/.bot<cr>
 
 function! NewNote()
@@ -106,22 +143,28 @@ colorscheme base16-onedark
 let g:loaded_matchparen=1
 set signcolumn=yes
 
+let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
+
 augroup general_config
   autocmd!
 
-  " set norelativenumber for insert mode
-  " autocmd InsertEnter * set norelativenumber
-  " autocmd InsertLeave * set relativenumber
-
-  " Only use cursorline in current window and not when being in insert mode
-  " autocmd WinEnter    * set cursorline
-  " autocmd WinLeave    * set nocursorline
-  " autocmd InsertEnter * set nocursorline
-  " autocmd InsertLeave * set cursorline
-
   " Remap keys for auto-completion menu {{{
-  inoremap <expr><tab>  pumvisible() ? "\<C-n>" : "\<tab>"
-  inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<s-tab>"
+  inoremap <silent><expr> <C-n>
+    \ coc#pum#visible() ? coc#pum#next(1) : "\<C-n>"
+  inoremap <silent><expr> <C-p>
+    \ coc#pum#visible() ? coc#pum#prev(1) : "\<C-p>"
+  inoremap <silent><expr> <CR>
+    \ coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+  inoremap <silent><expr> <TAB>
+    \ coc#pum#visible() ? coc#pum#next(1) :
+    \ pumvisible() ? "\<C-n>" :
+    \ "\<tab>"
+  inoremap <silent><expr> <S-TAB>
+    \ coc#pum#visible() ? coc#pum#prev(1) :
+    \ pumvisible() ? "\<C-p>" :
+    \ "\<s-tab>"
+  inoremap <silent><expr> <C-space>
+    \ coc#refresh()
   " }}}
 
   " Highlight trailing whitespace"{{{
@@ -140,7 +183,6 @@ map <silent> <leader><cr> :noh<cr>
 set relativenumber
 " map <leader>r :set relativenumber! <bar> :set scl=no<cr>
 map <leader>r :set relativenumber!<cr>
-map <silent> <C-n> <Esc>:set nu!<CR>
 
 " Quick move under insert mode (Ctrl-f, Ctrl-b)"{{{
 imap <c-f> <c-o>w
@@ -173,13 +215,14 @@ if filereadable($HOME.'/.vimrc.local')
   source $HOME/.vimrc.local
 endif
 
+set textwidth=79
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => language specific configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 au BufNewFile,BufRead *.py
-\ set tabstop=2
-\ | set softtabstop=2
-\ | set shiftwidth=2
+\ set tabstop=4
+\ | set softtabstop=4
+\ | set shiftwidth=4
 \ | set textwidth=120
 \ | set expandtab
 \ | set autoindent
@@ -189,29 +232,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
+autocmd BufNewFile,BufRead,BufEnter,TabEnter,WinEnter,VimEnter,GUIEnter *.rbi set filetype=ruby syntax=ruby
+autocmd BufNewFile,BufRead,BufEnter,TabEnter,WinEnter,VimEnter,GUIEnter *.md setlocal textwidth=100
+autocmd Filetype gitcommit setlocal textwidth=100
+autocmd Filetype gitcommit,markdown set colorcolumn=101
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugin configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" deoplete.nvim {{{
-" let g:deoplete#enable_at_startup = 0
-" call deoplete#custom#option({
-"     \ 'auto_complete_delay': v:false,
-"     \ 'max_list': 20,
-"     \ 'on_insert_enter': v:false,
-"     \ 'skip_chars': ['(', ')', '<', '>'],
-"     \ 'skip_multibyte': v:true,
-"     \ 'smart_case': v:true,
-"     \ })
-" autocmd FileType css,csv,html,json,tex,txt
-"     \ call deoplete#custom#buffer_option('auto_complete', v:false)
-" }}}
-
 " vim-rhubarb {{{
 map <leader>Gb :GBrowse<cr>
 map <leader>Gc :GBrowse!<cr>
@@ -229,7 +257,6 @@ set updatetime=100
 " }}}
 
 " vim-go
-let g:go_fmt_command = "goimports"
 let g:go_fmt_command = "goimports"
 let g:go_fmt_fail_silently = 1
 let g:go_gocode_autobuild = 0
@@ -289,20 +316,31 @@ augroup AutoALE
 augroup END
 
 let g:ale_linters = {
+      \   'python': ['pylint', 'mypy'],
       \   'ruby': ['rubocop'],
       \   'go': ['golangci-lint'],
       \   'javascript': ['eslint'],
       \}
-
+let g:ale_fixers = {
+      \   'python': ['black'],
+      \}
+let g:ale_fix_on_save = 1
 let g:ale_lint_on_text_changed = 'never' " lint only on save
 let g:ale_lint_on_enter = 0 " don't lint on enter
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '༅'
 let g:ale_echo_msg_format = '[%linter%] %s'
-" let g:ale_set_highlights = 0
+
+" Language specific
+let g:ale_go_golangci_lint_package = 1
+let g:ale_go_golangci_lint_options = ''
 let g:ale_ruby_rubocop_executable = 'scripts/bin/rubocop-daemon/rubocop'
 let g:ale_javascript_eslint_executable = 'eslint_d'
+
+" for python linters to work properly, `pip3 install pylint myppy` in the venv
+" in the project path
+let g:ale_python_pylint_executable = 'python3 -m pylint'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 "}}}
@@ -316,8 +354,13 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " let g:UltiSnipsUsePythonVersion = 3
 " }}}
 
+" coc.fzf {{{
+" let g:coc_fzf_preview = ''
+" let g:coc_fzf_opts = []
+" }}}
+"
 " fzf.vim {{{
-set rtp+=/usr/local/opt/fzf " fzf is installed using Homebrew
+set rtp+=/opt/homebrew/bin/fzf " fzf is installed using Homebrew
 " - Popup window (center of the screen)
 " let g:fzf_layout = { 'down': '60%' }
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
@@ -362,28 +405,16 @@ endfunction
 
 command! -bang -nargs=? -complete=dir MyFiles
   \ call fzf#vim#files(<q-args>, {'source': s:cache_list_cmd(),
-  \                               'options': '--tiebreak=index'}, <bang>0)
+  \                               'options': ['--tiebreak=index']}, <bang>0)
+command! -bang -nargs=* FilesNoIgnore
+  \ call fzf#run(fzf#wrap({'source': 'fd --hidden --follow --no-ignore --type f', 'width': '90%', 'height': '60%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi' }))
+" Show search results from files and directories that would otherwise be ignored
+" by '.gitignore' files.
+command! -bang -nargs=* FilesNoIgnoreVcs
+  \ call fzf#run(fzf#wrap({'source': 'fd --hidden --follow --no-ignore-vcs --type f', 'width': '90%', 'height': '60%', 'options': '--expect=ctrl-t,ctrl-x,ctrl-v --multi' }))
+
 silent! nnoremap <unique> <silent> <leader>f :MyFiles<CR>
-" let s:ag_opts = {"options": ["-d:"]}
-" let g:fzf_layout = { 'down': '40%' }
-" let g:fzf_preview_window = ['right:50%', 'ctrl-/']
-"
-" if &columns >= 160
-"   let s:horiz_preview_layout = 'right:50%'
-" else
-"   let s:horiz_preview_layout = 'right:50%:hidden'
-" endif
-" command! -bang -nargs=* Ag
-"   \ call fzf#vim#ag(<q-args>,
-"   \                 <bang>0 ? fzf#vim#with_preview(s:ag_opts, 'down:60%')
-"   \                         : fzf#vim#with_preview(s:ag_opts, s:horiz_preview_layout, '?'),
-"   \                 <bang>0)
-" command! -bang -nargs=* Ag
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-"   \   <bang>0 ? fzf#vim#with_preview(s:ag_opts, 'down:50%')
-"   \           : fzf#vim#with_preview(s:ag_opts, s:horiz_preview_layout, '?'),
-"   \   <bang>0)
+silent! nnoremap <unique> <silent> <leader>F :FilesNoIgnore<cr>
 " }}}
 
 " defx.nvim {{{
@@ -496,7 +527,7 @@ let g:lightline = {
       \   'left': [
       \     [ 'mode' ],
       \     [ 'filename' ],
-      \     [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
+      \     [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok', 'cocstatus', 'obsession_status' ],
       \     [ 'ctag' ],
       \   ],
       \   'right': [
@@ -530,46 +561,26 @@ let g:lightline = {
       \   'mode': 'MyMode',
       \   'winnr': 'MyWinnr',
       \   'ctrlpmark': 'CtrlPMark',
+      \   'cocstatus': 'MyCocStatus',
+      \   'obsession_status': 'LightlineObsession',
       \ },
       \ 'component_expand': {
       \   'linter_checking': 'lightline#ale#checking',
       \   'linter_warnings': 'lightline#ale#warnings',
       \   'linter_errors': 'lightline#ale#errors',
       \   'linter_ok': 'lightline#ale#ok',
+      \   'cocstatus': 'MyCocStatus',
       \ },
       \ 'component_type': {
       \  'linter_checking': 'left',
       \  'linter_warnings': 'warning',
       \  'linter_errors': 'error',
       \  'linter_ok': 'left',
+      \  'cocstatus': 'left',
       \ },
       \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
       \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
       \ }
-" Under 'component_function'
-"       \   'ctag': 'GetGutentagsStatus',
-
-" refresh status line after gutentag tag generation
-" augroup MyGutentagsStatusLineRefresher
-"     autocmd!
-"     autocmd User GutentagsUpdating call lightline#update()
-"     autocmd User GutentagsUpdated call lightline#update()
-" augroup END
-"
-" function! s:get_gutentags_status(mods) abort
-"     let l:msg = ''
-"     if index(a:mods, 'ctags') >= 0
-"        let l:msg .= "\uf02c"
-"      endif
-"      if index(a:mods, 'cscope') >= 0
-"        let l:msg .= "\ue222"
-"      endif
-"      return l:msg
-" endfunction
-"
-" function! GetGutentagsStatus()
-"     return gutentags#statusline_cb(function('<SID>get_gutentags_status'))
-" endfunction
 
 function! MyModified()
   return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -583,6 +594,75 @@ function! MyWinnr()
   let fname = expand('%:t')
   let nr = winnr()
   return fname == 'ControlP' ? '' : nr
+endfunction
+
+function! CurrentLspStatus(cocstatus)
+  if len(a:cocstatus) == 0
+    return a:cocstatus
+  endif
+
+  " find the lsp for current file
+  let lsp = &ft == 'ruby' ? 'sorbet' :
+      \ (
+      \   &ft == 'go' ? 'gopls' :
+      \   &ft == 'scala' ? 'metals' :
+      \   &ft =~ 'typescript\|typescriptreact\|typescript.tsx\|typescript.jsx\|javascript\|javascriptreact\|javascript.jsx' ? 'tsserver' :
+      \   &ft == 'json' ? 'json' : ''
+      \ )
+
+  if len(lsp) == 0
+    return ''
+  endif
+
+  " replace json lsp with a shorter name
+  let cocstatus = substitute(a:cocstatus, 'Json language server', 'json', '')
+  let cocstatus = substitute(cocstatus, 'Initializing tsserver [^\s]*', 'tsserver:starting', '')
+  let cocstatus = substitute(cocstatus, 'TSC [^\s]*', "tsserver:running", '')
+  let cocstatus = substitute(cocstatus, 'Metals', "metals:running", '')
+
+  " get a list of lsp status
+  let statuslist = split(cocstatus)
+
+  " return the lsp status
+  for status in statuslist
+    if status =~ lsp
+      return status
+    endif
+  endfor
+
+  " don't return anything if the file doesn't use lsp
+  return ''
+endfunction
+
+function! GetFilename(fname)
+  let fname = a:fname
+  let ufname = fname == 'ControlP' ? g:lightline.ctrlp_item :
+        \ (
+        \   fname =~ 'Tagbar' ? 'Tagbar' :
+        \   fname =~ 'CocTree' ? 'CocTree' :
+        \   fname =~ '__Gundo\|NERD_tree\|\[defx\]' ? 'Explorer' :
+        \   fname =~ ';#FZF' ? '[FZF]' :
+        \   fname =~ '!sh' ? '[FZF]' :
+        \   &ft == 'vimfiler' ? vimfiler#get_status_string() :
+        \   &ft == 'unite' ? unite#get_status_string() :
+        \   &ft == 'vimshell' ? vimshell#get_status_string() :
+        \   ('' != fname ? "\uf0f6 " . fname : '[No Name]')
+        \ )
+  return ufname
+endfunction
+
+function! MyCocStatus()
+  let fname = GetFilename(expand('%:t'))
+  let cocstatus = coc#status()
+  return fname == 'ControlP' ? '' :
+      \ (
+      \   fname =~ 'Tagbar' ? '' :
+      \   fname =~ 'CocTree' ? '' :
+      \   fname =~ 'Explorer' ? '' :
+      \   fname =~ '\[FZF\]' ? '' :
+      \   fname =~ '\[No Name\]' ? '' :
+      \   CurrentLspStatus(cocstatus)
+      \ )
 endfunction
 
 function! MyFilename()
@@ -599,6 +679,10 @@ function! MyFilename()
         \   ('' != MyModified() ? ' ' . MyModified() : '')
         \ )
   return "\uf0f6 ".ufname
+endfunction
+
+function LightlineObsession()
+    return ObsessionStatus("\uf46a", "\ueb9f")
 endfunction
 
 function! LightlineFugitive()
@@ -709,8 +793,8 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("h")': ['<c-d>', '<c-cr>', '<c-e>', '<c-x>'],
     \ 'ToggleByFname()':      ['<c-f>'],
     \}
-nnoremap <c-]> :CtrlPtjump<cr>
-vnoremap <c-]> :CtrlPtjumpVisual<cr>
+" nnoremap <c-]> :CtrlPtjump<cr>
+" vnoremap <c-]> :CtrlPtjumpVisual<cr>
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v(_build|build|bower_components|deps|dist|node_modules|public|tmp|vendor\/bundle|elm-stuff)$',
   \ }
@@ -725,32 +809,22 @@ let g:ctrlp_tjump_only_silent = 1
 "}}}
 
 " fzf-copy-ruby-token
+" <cword> expansion relies on `iskeyword`. This fixes tag jumping.
+augroup RubySpecialKeywordCharacters
+  autocmd!
+  autocmd Filetype ruby setlocal iskeyword+=!
+  autocmd Filetype ruby setlocal iskeyword+=?
+augroup END
 nmap <leader>ry <Plug>(fzf_copy_ruby_token)
 
 " markdown-preview
-let vim_markdown_preview_hotkey='<C-m>'
+" nmap <C-m> <Plug>MarkdownPreview
+nmap <leader>pp <Plug>MarkdownPreview
+" let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
 let g:mkdp_command_for_global = 1
-
-" Gutentags.
-" noremap <Leader>c :GutentagsUpdate!<CR>
-" let g:gutentags_exclude_filetypes = ['gitcommit']
-" let g:gutentags_ctags_exclude = [
-"   \ '.eggs',
-"   \ '.mypy_cache',
-"   \ 'venv',
-"   \ 'tags',
-"   \ 'tags.temp',
-"   \ '.ijwb',
-"   \ 'bazel-*',
-"   \ 'build',
-"   \ 'log',
-"   \ 'node_modules',
-"   \ 'target',
-" \ ]
-" let g:gutentags_ctags_executable_ruby = 'ripper-tags'
 
 """ coc.nvim {{{
 " if hidden is not set, TextEdit might fail.
@@ -769,136 +843,92 @@ set updatetime=300
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+let g:coc_snippet_next = '<tab>'
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+" Disable transparent cursor when CocList is activated.
+let g:coc_disable_transparent_cursor = 1
+
+" coc will install missing extensions after coc.nvim service starts.
+let g:coc_global_extensions = [
+  \ 'coc-json',
+  \ 'coc-go',
+  \ 'coc-omni',
+  \ 'coc-tag',
+  \ ]
+
+" this is commented out because vim-go already does this
+" autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+
+autocmd FileType go nmap <leader>gtj :CocCommand go.tags.add json<cr>
+autocmd FileType go nmap <leader>gty :CocCommand go.tags.add yaml<cr>
+autocmd FileType go nmap <leader>gtx :CocCommand go.tags.clear<cr>
+
+function! ToggleOutline() abort
+  let winid = coc#window#find('cocViewId', 'OUTLINE')
+  if winid == -1
+    call CocActionAsync('showOutline')
+  else
+    call coc#window#close(winid)
+  endif
 endfunction
+autocmd FileType go nnoremap <F3> :call ToggleOutline()<cr>
 
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" Or use `complete_info` if your vim support it, like:
-" inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
+function! g:CocShowDocumentation()
+  " supports jumping to vim documentation as well using built-ins.
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
   else
-    call CocAction('doHover')
+    call CocActionAsync('doHover')
   endif
 endfunction
 
-" Highlight symbol under cursor on CursorHold
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+nnoremap <leader>ci :CocInfo<cr>
+nnoremap <leader>cr :CocRestart<cr>
 
-" Remap for rename current word
-nmap <leader>rn <Plug>(coc-rename)
+" jump to definition(s) of current symbol
+nnoremap <silent> <c-]> :<C-u> TagImposterAnticipateJump <Bar> call CocAction('jumpDefinition', v:false)<cr>
+nnoremap <silent> <leader>gd :<C-u> TagImposterAnticipateJump <Bar> call CocAction('jumpDefinition')<cr>
+nnoremap <silent> <leader>gv :<C-u> TagImposterAnticipateJump <Bar> call CocAction('jumpDefinition', 'vsplit')<cr>
+nnoremap <silent> <leader>gs :<C-u> TagImposterAnticipateJump <Bar> call CocAction('jumpDefinition', 'split')<cr>
+" nnoremap <silent> <leader>gt :<C-u> TagImposterAnticipateJump <Bar> call CocAction('jumpDefinition', 'tabe')<cr>
 
-" Remap for format selected region
-" xmap <leader>f  <Plug>(coc-format-selected)
-" nmap <leader>f  <Plug>(coc-format-selected)
+" let g:coc_enable_locationlist = 0
+" autocmd User CocLocationsChange CocFzfList --normal location
 
-augroup mygroup
+" jump to references of current symbol
+nmap <silent> <leader>gu <Plug>(coc-references)
+" jump to declaration(s) of current symbol
+nmap <silent> <leader>gc <Plug>(coc-declaration)
+" jump to implementation(s) of current symbol
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+" rename symbol under cursor
+nmap <silent> <leader>rn <Plug>(coc-rename)
+" show documentation of  current symbol
+nnoremap <silent> K :call CocShowDocumentation()<cr>
+
+" redraw the status line when coc#status changes
+augroup AutoCocStatus
   autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
-
-" Remap for do codeAction of current line
-nmap <leader>ac  <Plug>(coc-codeaction)
-" Fix autofix problem of current line
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-" Create mappings for function text object, requires document symbols feature of languageserver.
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
-" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-" nmap <silent> <C-d> <Plug>(coc-range-select)
-" xmap <silent> <C-d> <Plug>(coc-range-select)
-
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-" Using CocList
-" Show all diagnostics
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
-" Show commands
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
-" Find symbol of current document
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols
-nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-" Restart coc
-nnoremap <silent> <space>r  :<C-u>CocRestart<CR><CR>
-"}}}
-
-" Neoformat {{{
-autocmd BufWritePre *.js Neoformat prettier
-autocmd BufWritePre *.jsx Neoformat prettier
+  autocmd User CocStatusChange call lightline#update()
+augroup END
 " }}}
 
-" tyru/open-browser.vim
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-open)
-vmap gx <Plug>(openbrowser-open)
+""" vim-auto-save {{{
+let g:auto_save = 0
+augroup ft_markdown
+  au!
+  au FileType markdown let b:auto_save = 1
+augroup END
+" }}}
 
-" IndentLine
-let g:indentLine_char = "\ue621"
-" let g:indentLine_char = '┆'
-nnoremap <leader>i :IndentLinesToggle<cr>
+""" vim-markdown {{{
+" Enable conceal feature
+autocmd FileType markdown setlocal conceallevel=1
+autocmd FileType markdown setlocal concealcursor=nc
 
-" Bind <leader>d to go-to-definition.
-nmap <silent> <leader>d <Plug>(ale_go_to_definition)
+let g:vim_markdown_conceal = 1
+let g:vim_markdown_conceal_code_blocks = 0
+" }}}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -1000,7 +1030,8 @@ endif
 " Add a bit extra margin to the left
 set foldcolumn=0
 
-set synmaxcol=500                          " Syntax coloring lines that are too long just slows down the world
+" Syntax coloring lines that are too long just slows down the world
+set synmaxcol=500
 nnoremap <C-l> <NOP>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1038,18 +1069,17 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
 
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
-" user Cmd+<num> to switch tabs
+" user Alt+<num> to switch tabs
 nnoremap <M-1> 1gt
 nnoremap <M-2> 2gt
 nnoremap <M-3> 3gt
@@ -1141,19 +1171,6 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " Remap VIM 0 to first non-blank character
 map 0 ^
 
-" Move a line of text using ALT+[jk] or Command+[jk] on mac
-" nmap <M-k> mz:m-2<cr>`z
-" nmap <M-j> mz:m+<cr>`z
-" vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-" vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-" if has("mac") || has("macunix")
-"   nmap <D-j> <M-j>
-"   nmap <D-k> <M-k>
-"   vmap <D-j> <M-j>
-"   vmap <D-k> <M-k>
-" endif
-
 " Delete trailing white space on save, useful for some filetypes ;)
 fun! CleanExtraSpaces()
     let save_cursor = getpos(".")
@@ -1186,12 +1203,6 @@ map <leader>s? z=
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-" Quickly open a buffer for scribble
-map <leader>er :e ~/buffer.rb<cr>
-
-" Quickly open a markdown buffer for scribble
-map <leader>em :e ~/buffer.md<cr>
 
 " Copy current filename to system clipboard
 map <leader>cf :let @+=@%<cr>:echo @% "copied to system clipboard"<cr>
@@ -1262,22 +1273,10 @@ hi! GitGutterDelete ctermbg=0
 hi! GitGutterChangeDelete ctermbg=0
 hi! ALEErrorSign ctermbg=0 ctermfg=1
 hi! ALEWarningSign ctermbg=0 ctermfg=3
-"
-" function! s:base16_customize() abort
-"   " call Base16hi("TabLine",     g:base16_gui03, g:base16_gui0D, g:base16_cterm0D, g:base16_cterm00, "", "")
-"   " call Base16hi("TabLineFill",     g:base16_gui03, g:base16_gui0D, g:base16_cterm0D, g:base16_cterm00, "", "")
-"   " call Base16hi("TabLineSel",     g:base16_gui03, g:base16_gui0D, g:base16_cterm0D, g:base16_cterm00, "", "")
-"   call Base16hi('TabLine', '', '', g:base16_cterm03, g:base16_cterm01)
-"   call Base16hi('TabLineFill', '', '', '', g:base16_cterm03)
-"   call Base16hi('TabLineSel', '', '', '', g:base16_cterm06)
-" endfunction
-"
-" augroup on_change_colorschema
-"   autocmd!
-"   autocmd ColorScheme * call s:base16_customize()
-" augroup END
-"
-" hi TabLineSel term=bold cterm=bold ctermfg=6 ctermbg=11
-" hi TabWinNumSel term=bold cterm=bold ctermfg=9 ctermbg=8
-" hi TabNumSel term=bold cterm=bold ctermfg=6 ctermbg=3
+" coc popup menu highlighting overrides
+exe 'hi default CocMenuSel '.coc#highlight#create_bg_command('CocFloating', &background ==# 'dark' ? -20 : 20)
+exe 'hi default CocFloatThumb '.coc#highlight#create_bg_command('CocFloating', &background ==# 'dark' ? -40 : 40)
+hi default link CocFloatSbar CocFloating
+hi default link CocFloating NormalFloat
+
 set noshowmode

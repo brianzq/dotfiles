@@ -13,19 +13,47 @@
 [ -f ~/.stripe/shellinit/bashrc ] && source ~/.stripe/shellinit/bashrc
 ### END STRIPE
 
+### BEGIN HOMEBREW FOR APPLE SILICON
+if [[ $(/usr/bin/uname -m) == "arm64" ]]; then
+  if [[ -f /opt/homebrew/bin/brew ]]; then
+    export HOMEBREW_PREFIX="/opt/homebrew";
+    export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+    export HOMEBREW_REPOSITORY="/opt/homebrew";
+    export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/python/bin${PATH+:$PATH}";
+    export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+    export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+  fi
+else
+  if [[ -f /usr/local/bin/brew ]]; then
+    echo "Hello!!!!!!!!!!!!!!!!!!!!!\n\n\n"
+    export HOMEBREW_PREFIX="/usr/local";
+    export HOMEBREW_CELLAR="/usr/local/Cellar";
+    export HOMEBREW_REPOSITORY="/opt/homebrew";
+    export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/opt/python/bin:$PATH"
+    export MANPATH="/usr/local/share/man${MANPATH+:$MANPATH}:";
+    export INFOPATH="/usr/local/share/info:${INFOPATH:-}";
+  fi
+fi
+### END HOMEBREW FOR APPLE SILICON
+
 # alias
 alias vim='nvim'
 alias ll='ls -l'
 alias grep='grep --color=auto'
 alias fcd='cd $(fzf)'
 alias fvim='nvim $(fzf)'
-alias subl='open -a /Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text'
-alias co="$HOME/.toggle_color.sh"
-alias cor="$HOME/.toggle_color.sh -r"
-alias cof="$HOME/.toggle_color.sh -f"
-alias ta='touch ~/alacritty.yml'
-alias config="/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME"
+alias subl='open -a /Applications/Sublime\ Text'
+alias co='$HOME/.toggle_color.sh'
+alias cor='$HOME/.toggle_color.sh -r'
+alias cof='$HOME/.toggle_color.sh -f'
+alias preview="fzf --preview='bat --color always {}'"
+alias config='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
 alias config-co='curl -L http://bit.do/e3Hqx | /bin/bash'
+
+if [[ -f "$HOMEBREW_PREFIX/bin/bat" ]]; then
+  alias cat='bat'
+  export BAT_THEME='base16'
+fi
 
 # bash-sensible (https://github.com/mrzool/bash-sensible/blob/master/sensible.bash)
 
@@ -119,10 +147,6 @@ export TERM=xterm-256color
 # bash completion
 # [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# colors script
-# shellcheck disable=SC1090
-# [[ -s "$HOME/.colors.bash" ]] && source "$HOME/.colors.bash"
-
 # shellcheck disable=SC1090
 [[ -f ~/.fzf.bash ]] && source ~/.fzf.bash
 
@@ -182,12 +206,15 @@ GIT_PROMPT_DIRTY="\033[0;31m[✗]\033[0;00m"
 GIT_PROMPT_NOSTASH=""
 
 function parse_git_dirty () {
-  echo ""
-  # if [[ $(git diff --stat) != '' ]]; then
-  #   echo -e "$GIT_PROMPT_DIRTY"
-  # else
-  #   echo -e "$GIT_PROMPT_CLEAN"
-  # fi
+  if [[ $PWD =~ .*pay-server.* ]]; then
+    echo ""
+  elif [[ $PWD =~ .*zoolander.* ]]; then
+    echo ""
+  elif [[ $(git diff --stat) != '' ]]; then
+    echo -e "$GIT_PROMPT_DIRTY"
+  else
+    echo -e "$GIT_PROMPT_CLEAN"
+  fi
 }
 
 function git_branch_name() {
@@ -208,16 +235,8 @@ function rbenv_prompt_info() {
   fi
 }
 
-function pyenv_prompt_info() {
-  if which pyenv > /dev/null; then
-    if [ ! -f "$PWD/Gemfile" ] && [ ! -f "$PWD/mix.exs" ] && [ ! -f "$PWD/project.clj" ] ; then
-      echo -e " \033[1;36m\uf81f $(pyenv version-name)\033[0;00m"
-    fi
-  fi
-}
-
 ARROWS="\[\033[0;31m\]"$'\u227b'"\[\033[0;35m\]"$'\u227b'"\[\033[0;34m\]"$'\u227b'
-PS1="\033[1;34m➜ \033[1;33m\w\$(rbenv_prompt_info)\$(pyenv_prompt_info)\$(git_prompt_info)\n${ARROWS} \[\033[0;00m\]"
+PS1="\033[1;34m➜ \033[1;33m\w\$(rbenv_prompt_info)\$(git_prompt_info)\n${ARROWS} \[\033[0;00m\]"
 export PS1
 
 # fzf -------------------------------------------------------------------------
