@@ -25,7 +25,6 @@ if [[ $(/usr/bin/uname -m) == "arm64" ]]; then
   fi
 else
   if [[ -f /usr/local/bin/brew ]]; then
-    echo "Hello!!!!!!!!!!!!!!!!!!!!!\n\n\n"
     export HOMEBREW_PREFIX="/usr/local";
     export HOMEBREW_CELLAR="/usr/local/Cellar";
     export HOMEBREW_REPOSITORY="/opt/homebrew";
