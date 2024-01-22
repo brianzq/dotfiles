@@ -47,8 +47,7 @@ alias co='$HOME/.toggle_color.sh'
 alias cor='$HOME/.toggle_color.sh -r'
 alias cof='$HOME/.toggle_color.sh -f'
 alias preview="fzf --preview='bat --color always {}'"
-alias config='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
-alias config-co='curl -L http://bit.do/e3Hqx | /bin/bash'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 if [[ -f "$HOMEBREW_PREFIX/bin/bat" ]]; then
   alias cat='bat'
