@@ -58,7 +58,7 @@ Plug 'Yggdroot/indentLine'                                                      
 
 " Linter & LSP {{{
 Plug 'dense-analysis/ale'                                                             "  Asynchronous Lint Engine
-Plug 'larrylv/coc.nvim'
+Plug 'larrylv/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'larrylv/vim-tagimposter'                                                        "  populate the tagstack when using coc to jump to definitions
 """ }}}
@@ -133,7 +133,7 @@ function! NewNote()
 endfunction
 
 map <leader>n :call NewNote()<cr>
-map <leader>so :source $MYVIMRC<cr>:call LightlineReload()<cr>
+map <leader>so :source $MYVIMRC <cr>:LightlineReload<cr>
 nnoremap <leader><leader> <c-^>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
@@ -415,6 +415,22 @@ command! -bang -nargs=* FilesNoIgnoreVcs
 
 silent! nnoremap <unique> <silent> <leader>f :MyFiles<CR>
 silent! nnoremap <unique> <silent> <leader>F :FilesNoIgnore<cr>
+" }}}
+
+" copilot {{{
+let g:copilot_enabled = 0
+
+function! ToggleCopilot()
+  if g:copilot_enabled == 0
+    execute 'Copilot enable'
+    echo "Copilot enabled"
+  else
+    execute 'Copilot disable'
+    echo "Copilot disabled"
+  endif
+endfunction
+
+nnoremap <leader>co <CR>:call ToggleCopilot()<CR>
 " }}}
 
 " defx.nvim {{{
@@ -770,6 +786,7 @@ function! LightlineReload()
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()
+  echo "Lightline reloaded"
 endfunction
 " }}}
 
