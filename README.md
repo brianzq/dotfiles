@@ -10,7 +10,7 @@ dotfiles config --local core.fsmonitor false
 ## Setup on a new laptop
 ```
 # clone the repo
-git clone --bare git@github.com:brianzq/cfg.git $HOME/.dotfiles
+git clone --bare git@github.com:brianzq/dotfiles.git $HOME/.dotfiles
 
 # set the alias
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
