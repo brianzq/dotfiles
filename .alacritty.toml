@@ -1,0 +1,4537 @@
+live_config_reload = true
+"window.opacity" = 1.0
+
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.bright]
+black = "0x65737e"
+blue = "0xa7adba"
+cyan = "0xab7967"
+green = "0x343d46"
+magenta = "0xcdd3de"
+red = "0xf99157"
+white = "0xd8dee9"
+yellow = "0x4f5b66"
+
+[colors.cursor]
+cursor = "0xc0c5ce"
+text = "0x1b2b34"
+
+[colors.normal]
+black = "0x1b2b34"
+blue = "0x6699cc"
+cyan = "0x5fb3b3"
+green = "0x99c794"
+magenta = "0xc594c5"
+red = "0xec5f67"
+white = "0xc0c5ce"
+yellow = "0xfac863"
+
+[colors.primary]
+background = "0x1b2b34"
+foreground = "0xc0c5ce"
+
+[colors__3024__dark.bright]
+black = "0x5c5855"
+blue = "0x807d7c"
+cyan = "0xcdab53"
+green = "0x3a3432"
+magenta = "0xd6d5d4"
+red = "0xe8bbd0"
+white = "0xf7f7f7"
+yellow = "0x4a4543"
+
+[colors__3024__dark.cursor]
+cursor = "0xa5a2a2"
+text = "0x090300"
+
+[colors__3024__dark.normal]
+black = "0x090300"
+blue = "0x01a0e4"
+cyan = "0xb5e4f4"
+green = "0x01a252"
+magenta = "0xa16a94"
+red = "0xdb2d20"
+white = "0xa5a2a2"
+yellow = "0xfded02"
+
+[colors__3024__dark.primary]
+background = "0x090300"
+foreground = "0xa5a2a2"
+
+[colors__apathy__dark.bright]
+black = "0x2b685e"
+blue = "0x5f9c92"
+cyan = "0x3e965b"
+green = "0x0b342d"
+magenta = "0xa7cec8"
+red = "0x3e7996"
+white = "0xd2e7e4"
+yellow = "0x184e45"
+
+[colors__apathy__dark.cursor]
+cursor = "0x81b5ac"
+text = "0x031a16"
+
+[colors__apathy__dark.normal]
+black = "0x031a16"
+blue = "0x96883e"
+cyan = "0x963e4c"
+green = "0x883e96"
+magenta = "0x4c963e"
+red = "0x3e9688"
+white = "0x81b5ac"
+yellow = "0x3e4c96"
+
+[colors__apathy__dark.primary]
+background = "0x031a16"
+foreground = "0x81b5ac"
+
+[colors__ashes__dark.bright]
+black = "0x747c84"
+blue = "0xadb3ba"
+cyan = "0xc79595"
+green = "0x393f45"
+magenta = "0xdfe2e5"
+red = "0xc7c795"
+white = "0xf3f4f5"
+yellow = "0x565e65"
+
+[colors__ashes__dark.cursor]
+cursor = "0xc7ccd1"
+text = "0x1c2023"
+
+[colors__ashes__dark.normal]
+black = "0x1c2023"
+blue = "0xae95c7"
+cyan = "0x95aec7"
+green = "0x95c7ae"
+magenta = "0xc795ae"
+red = "0xc7ae95"
+white = "0xc7ccd1"
+yellow = "0xaec795"
+
+[colors__ashes__dark.primary]
+background = "0x1c2023"
+foreground = "0xc7ccd1"
+
+[colors__atelier-cave-light__light.bright]
+black = "0x7e7887"
+blue = "0x655f6d"
+cyan = "0xbf40bf"
+green = "0xe2dfe7"
+magenta = "0x26232a"
+red = "0xaa573c"
+white = "0x19171c"
+yellow = "0x8b8792"
+
+[colors__atelier-cave-light__light.cursor]
+cursor = "0x585260"
+text = "0xefecf4"
+
+[colors__atelier-cave-light__light.normal]
+black = "0xefecf4"
+blue = "0x576ddb"
+cyan = "0x398bc6"
+green = "0x2a9292"
+magenta = "0x955ae7"
+red = "0xbe4678"
+white = "0x585260"
+yellow = "0xa06e3b"
+
+[colors__atelier-cave-light__light.primary]
+background = "0xefecf4"
+foreground = "0x585260"
+
+[colors__atelier-cave__dark.bright]
+black = "0x655f6d"
+blue = "0x7e7887"
+cyan = "0xbf40bf"
+green = "0x26232a"
+magenta = "0xe2dfe7"
+red = "0xaa573c"
+white = "0xefecf4"
+yellow = "0x585260"
+
+[colors__atelier-cave__dark.cursor]
+cursor = "0x8b8792"
+text = "0x19171c"
+
+[colors__atelier-cave__dark.normal]
+black = "0x19171c"
+blue = "0x576ddb"
+cyan = "0x398bc6"
+green = "0x2a9292"
+magenta = "0x955ae7"
+red = "0xbe4678"
+white = "0x8b8792"
+yellow = "0xa06e3b"
+
+[colors__atelier-cave__dark.primary]
+background = "0x19171c"
+foreground = "0x8b8792"
+
+[colors__atelier-dune-light__light.bright]
+black = "0x999580"
+blue = "0x7d7a68"
+cyan = "0xd43552"
+green = "0xe8e4cf"
+magenta = "0x292824"
+red = "0xb65611"
+white = "0x20201d"
+yellow = "0xa6a28c"
+
+[colors__atelier-dune-light__light.cursor]
+cursor = "0x6e6b5e"
+text = "0xfefbec"
+
+[colors__atelier-dune-light__light.normal]
+black = "0xfefbec"
+blue = "0x6684e1"
+cyan = "0x1fad83"
+green = "0x60ac39"
+magenta = "0xb854d4"
+red = "0xd73737"
+white = "0x6e6b5e"
+yellow = "0xae9513"
+
+[colors__atelier-dune-light__light.primary]
+background = "0xfefbec"
+foreground = "0x6e6b5e"
+
+[colors__atelier-dune__dark.bright]
+black = "0x7d7a68"
+blue = "0x999580"
+cyan = "0xd43552"
+green = "0x292824"
+magenta = "0xe8e4cf"
+red = "0xb65611"
+white = "0xfefbec"
+yellow = "0x6e6b5e"
+
+[colors__atelier-dune__dark.cursor]
+cursor = "0xa6a28c"
+text = "0x20201d"
+
+[colors__atelier-dune__dark.normal]
+black = "0x20201d"
+blue = "0x6684e1"
+cyan = "0x1fad83"
+green = "0x60ac39"
+magenta = "0xb854d4"
+red = "0xd73737"
+white = "0xa6a28c"
+yellow = "0xae9513"
+
+[colors__atelier-dune__dark.primary]
+background = "0x20201d"
+foreground = "0xa6a28c"
+
+[colors__atelier-estuary-light__light.bright]
+black = "0x878573"
+blue = "0x6c6b5a"
+cyan = "0x9d6c7c"
+green = "0xe7e6df"
+magenta = "0x302f27"
+red = "0xae7313"
+white = "0x22221b"
+yellow = "0x929181"
+
+[colors__atelier-estuary-light__light.cursor]
+cursor = "0x5f5e4e"
+text = "0xf4f3ec"
+
+[colors__atelier-estuary-light__light.normal]
+black = "0xf4f3ec"
+blue = "0x36a166"
+cyan = "0x5b9d48"
+green = "0x7d9726"
+magenta = "0x5f9182"
+red = "0xba6236"
+white = "0x5f5e4e"
+yellow = "0xa5980d"
+
+[colors__atelier-estuary-light__light.primary]
+background = "0xf4f3ec"
+foreground = "0x5f5e4e"
+
+[colors__atelier-estuary__dark.bright]
+black = "0x6c6b5a"
+blue = "0x878573"
+cyan = "0x9d6c7c"
+green = "0x302f27"
+magenta = "0xe7e6df"
+red = "0xae7313"
+white = "0xf4f3ec"
+yellow = "0x5f5e4e"
+
+[colors__atelier-estuary__dark.cursor]
+cursor = "0x929181"
+text = "0x22221b"
+
+[colors__atelier-estuary__dark.normal]
+black = "0x22221b"
+blue = "0x36a166"
+cyan = "0x5b9d48"
+green = "0x7d9726"
+magenta = "0x5f9182"
+red = "0xba6236"
+white = "0x929181"
+yellow = "0xa5980d"
+
+[colors__atelier-estuary__dark.primary]
+background = "0x22221b"
+foreground = "0x929181"
+
+[colors__atelier-forest-light__light.bright]
+black = "0x9c9491"
+blue = "0x766e6b"
+cyan = "0xc33ff3"
+green = "0xe6e2e0"
+magenta = "0x2c2421"
+red = "0xdf5320"
+white = "0x1b1918"
+yellow = "0xa8a19f"
+
+[colors__atelier-forest-light__light.cursor]
+cursor = "0x68615e"
+text = "0xf1efee"
+
+[colors__atelier-forest-light__light.normal]
+black = "0xf1efee"
+blue = "0x407ee7"
+cyan = "0x3d97b8"
+green = "0x7b9726"
+magenta = "0x6666ea"
+red = "0xf22c40"
+white = "0x68615e"
+yellow = "0xc38418"
+
+[colors__atelier-forest-light__light.primary]
+background = "0xf1efee"
+foreground = "0x68615e"
+
+[colors__atelier-forest__dark.bright]
+black = "0x766e6b"
+blue = "0x9c9491"
+cyan = "0xc33ff3"
+green = "0x2c2421"
+magenta = "0xe6e2e0"
+red = "0xdf5320"
+white = "0xf1efee"
+yellow = "0x68615e"
+
+[colors__atelier-forest__dark.cursor]
+cursor = "0xa8a19f"
+text = "0x1b1918"
+
+[colors__atelier-forest__dark.normal]
+black = "0x1b1918"
+blue = "0x407ee7"
+cyan = "0x3d97b8"
+green = "0x7b9726"
+magenta = "0x6666ea"
+red = "0xf22c40"
+white = "0xa8a19f"
+yellow = "0xc38418"
+
+[colors__atelier-forest__dark.primary]
+background = "0x1b1918"
+foreground = "0xa8a19f"
+
+[colors__atelier-heath-light__light.bright]
+black = "0x9e8f9e"
+blue = "0x776977"
+cyan = "0xcc33cc"
+green = "0xd8cad8"
+magenta = "0x292329"
+red = "0xa65926"
+white = "0x1b181b"
+yellow = "0xab9bab"
+
+[colors__atelier-heath-light__light.cursor]
+cursor = "0x695d69"
+text = "0xf7f3f7"
+
+[colors__atelier-heath-light__light.normal]
+black = "0xf7f3f7"
+blue = "0x516aec"
+cyan = "0x159393"
+green = "0x918b3b"
+magenta = "0x7b59c0"
+red = "0xca402b"
+white = "0x695d69"
+yellow = "0xbb8a35"
+
+[colors__atelier-heath-light__light.primary]
+background = "0xf7f3f7"
+foreground = "0x695d69"
+
+[colors__atelier-heath__dark.bright]
+black = "0x776977"
+blue = "0x9e8f9e"
+cyan = "0xcc33cc"
+green = "0x292329"
+magenta = "0xd8cad8"
+red = "0xa65926"
+white = "0xf7f3f7"
+yellow = "0x695d69"
+
+[colors__atelier-heath__dark.cursor]
+cursor = "0xab9bab"
+text = "0x1b181b"
+
+[colors__atelier-heath__dark.normal]
+black = "0x1b181b"
+blue = "0x516aec"
+cyan = "0x159393"
+green = "0x918b3b"
+magenta = "0x7b59c0"
+red = "0xca402b"
+white = "0xab9bab"
+yellow = "0xbb8a35"
+
+[colors__atelier-heath__dark.primary]
+background = "0x1b181b"
+foreground = "0xab9bab"
+
+[colors__atelier-lakeside-light__light.bright]
+black = "0x7195a8"
+blue = "0x5a7b8c"
+cyan = "0xb72dd2"
+green = "0xc1e4f6"
+magenta = "0x1f292e"
+red = "0x935c25"
+white = "0x161b1d"
+yellow = "0x7ea2b4"
+
+[colors__atelier-lakeside-light__light.cursor]
+cursor = "0x516d7b"
+text = "0xebf8ff"
+
+[colors__atelier-lakeside-light__light.normal]
+black = "0xebf8ff"
+blue = "0x257fad"
+cyan = "0x2d8f6f"
+green = "0x568c3b"
+magenta = "0x6b6bb8"
+red = "0xd22d72"
+white = "0x516d7b"
+yellow = "0x8a8a0f"
+
+[colors__atelier-lakeside-light__light.primary]
+background = "0xebf8ff"
+foreground = "0x516d7b"
+
+[colors__atelier-lakeside__dark.bright]
+black = "0x5a7b8c"
+blue = "0x7195a8"
+cyan = "0xb72dd2"
+green = "0x1f292e"
+magenta = "0xc1e4f6"
+red = "0x935c25"
+white = "0xebf8ff"
+yellow = "0x516d7b"
+
+[colors__atelier-lakeside__dark.cursor]
+cursor = "0x7ea2b4"
+text = "0x161b1d"
+
+[colors__atelier-lakeside__dark.normal]
+black = "0x161b1d"
+blue = "0x257fad"
+cyan = "0x2d8f6f"
+green = "0x568c3b"
+magenta = "0x6b6bb8"
+red = "0xd22d72"
+white = "0x7ea2b4"
+yellow = "0x8a8a0f"
+
+[colors__atelier-lakeside__dark.primary]
+background = "0x161b1d"
+foreground = "0x7ea2b4"
+
+[colors__atelier-plateau-light__light.bright]
+black = "0x7e7777"
+blue = "0x655d5d"
+cyan = "0xbd5187"
+green = "0xe7dfdf"
+magenta = "0x292424"
+red = "0xb45a3c"
+white = "0x1b1818"
+yellow = "0x8a8585"
+
+[colors__atelier-plateau-light__light.cursor]
+cursor = "0x585050"
+text = "0xf4ecec"
+
+[colors__atelier-plateau-light__light.normal]
+black = "0xf4ecec"
+blue = "0x7272ca"
+cyan = "0x5485b6"
+green = "0x4b8b8b"
+magenta = "0x8464c4"
+red = "0xca4949"
+white = "0x585050"
+yellow = "0xa06e3b"
+
+[colors__atelier-plateau-light__light.primary]
+background = "0xf4ecec"
+foreground = "0x585050"
+
+[colors__atelier-plateau__dark.bright]
+black = "0x655d5d"
+blue = "0x7e7777"
+cyan = "0xbd5187"
+green = "0x292424"
+magenta = "0xe7dfdf"
+red = "0xb45a3c"
+white = "0xf4ecec"
+yellow = "0x585050"
+
+[colors__atelier-plateau__dark.cursor]
+cursor = "0x8a8585"
+text = "0x1b1818"
+
+[colors__atelier-plateau__dark.normal]
+black = "0x1b1818"
+blue = "0x7272ca"
+cyan = "0x5485b6"
+green = "0x4b8b8b"
+magenta = "0x8464c4"
+red = "0xca4949"
+white = "0x8a8585"
+yellow = "0xa06e3b"
+
+[colors__atelier-plateau__dark.primary]
+background = "0x1b1818"
+foreground = "0x8a8585"
+
+[colors__atelier-savanna-light__light.bright]
+black = "0x78877d"
+blue = "0x5f6d64"
+cyan = "0x867469"
+green = "0xdfe7e2"
+magenta = "0x232a25"
+red = "0x9f713c"
+white = "0x171c19"
+yellow = "0x87928a"
+
+[colors__atelier-savanna-light__light.cursor]
+cursor = "0x526057"
+text = "0xecf4ee"
+
+[colors__atelier-savanna-light__light.normal]
+black = "0xecf4ee"
+blue = "0x478c90"
+cyan = "0x1c9aa0"
+green = "0x489963"
+magenta = "0x55859b"
+red = "0xb16139"
+white = "0x526057"
+yellow = "0xa07e3b"
+
+[colors__atelier-savanna-light__light.primary]
+background = "0xecf4ee"
+foreground = "0x526057"
+
+[colors__atelier-savanna__dark.bright]
+black = "0x5f6d64"
+blue = "0x78877d"
+cyan = "0x867469"
+green = "0x232a25"
+magenta = "0xdfe7e2"
+red = "0x9f713c"
+white = "0xecf4ee"
+yellow = "0x526057"
+
+[colors__atelier-savanna__dark.cursor]
+cursor = "0x87928a"
+text = "0x171c19"
+
+[colors__atelier-savanna__dark.normal]
+black = "0x171c19"
+blue = "0x478c90"
+cyan = "0x1c9aa0"
+green = "0x489963"
+magenta = "0x55859b"
+red = "0xb16139"
+white = "0x87928a"
+yellow = "0xa07e3b"
+
+[colors__atelier-savanna__dark.primary]
+background = "0x171c19"
+foreground = "0x87928a"
+
+[colors__atelier-seaside-light__light.bright]
+black = "0x809980"
+blue = "0x687d68"
+cyan = "0xe619c3"
+green = "0xcfe8cf"
+magenta = "0x242924"
+red = "0x87711d"
+white = "0x131513"
+yellow = "0x8ca68c"
+
+[colors__atelier-seaside-light__light.cursor]
+cursor = "0x5e6e5e"
+text = "0xf4fbf4"
+
+[colors__atelier-seaside-light__light.normal]
+black = "0xf4fbf4"
+blue = "0x3d62f5"
+cyan = "0x1999b3"
+green = "0x29a329"
+magenta = "0xad2bee"
+red = "0xe6193c"
+white = "0x5e6e5e"
+yellow = "0x98981b"
+
+[colors__atelier-seaside-light__light.primary]
+background = "0xf4fbf4"
+foreground = "0x5e6e5e"
+
+[colors__atelier-seaside__dark.bright]
+black = "0x687d68"
+blue = "0x809980"
+cyan = "0xe619c3"
+green = "0x242924"
+magenta = "0xcfe8cf"
+red = "0x87711d"
+white = "0xf4fbf4"
+yellow = "0x5e6e5e"
+
+[colors__atelier-seaside__dark.cursor]
+cursor = "0x8ca68c"
+text = "0x131513"
+
+[colors__atelier-seaside__dark.normal]
+black = "0x131513"
+blue = "0x3d62f5"
+cyan = "0x1999b3"
+green = "0x29a329"
+magenta = "0xad2bee"
+red = "0xe6193c"
+white = "0x8ca68c"
+yellow = "0x98981b"
+
+[colors__atelier-seaside__dark.primary]
+background = "0x131513"
+foreground = "0x8ca68c"
+
+[colors__atelier-sulphurpool-light__light.bright]
+black = "0x898ea4"
+blue = "0x6b7394"
+cyan = "0x9c637a"
+green = "0xdfe2f1"
+magenta = "0x293256"
+red = "0xc76b29"
+white = "0x202746"
+yellow = "0x979db4"
+
+[colors__atelier-sulphurpool-light__light.cursor]
+cursor = "0x5e6687"
+text = "0xf5f7ff"
+
+[colors__atelier-sulphurpool-light__light.normal]
+black = "0xf5f7ff"
+blue = "0x3d8fd1"
+cyan = "0x22a2c9"
+green = "0xac9739"
+magenta = "0x6679cc"
+red = "0xc94922"
+white = "0x5e6687"
+yellow = "0xc08b30"
+
+[colors__atelier-sulphurpool-light__light.primary]
+background = "0xf5f7ff"
+foreground = "0x5e6687"
+
+[colors__atelier-sulphurpool__dark.bright]
+black = "0x6b7394"
+blue = "0x898ea4"
+cyan = "0x9c637a"
+green = "0x293256"
+magenta = "0xdfe2f1"
+red = "0xc76b29"
+white = "0xf5f7ff"
+yellow = "0x5e6687"
+
+[colors__atelier-sulphurpool__dark.cursor]
+cursor = "0x979db4"
+text = "0x202746"
+
+[colors__atelier-sulphurpool__dark.normal]
+black = "0x202746"
+blue = "0x3d8fd1"
+cyan = "0x22a2c9"
+green = "0xac9739"
+magenta = "0x6679cc"
+red = "0xc94922"
+white = "0x979db4"
+yellow = "0xc08b30"
+
+[colors__atelier-sulphurpool__dark.primary]
+background = "0x202746"
+foreground = "0x979db4"
+
+[colors__atlas__dark.bright]
+black = "0x6c8b91"
+blue = "0x869696"
+cyan = "0xc43060"
+green = "0x00384d"
+magenta = "0xe6e6dc"
+red = "0xf08e48"
+white = "0xfafaf8"
+yellow = "0x517f8d"
+
+[colors__atlas__dark.cursor]
+cursor = "0xa1a19a"
+text = "0x002635"
+
+[colors__atlas__dark.normal]
+black = "0x002635"
+blue = "0x5dd7b9"
+cyan = "0x14747e"
+green = "0x7fc06e"
+magenta = "0x9a70a4"
+red = "0xff5a67"
+white = "0xa1a19a"
+yellow = "0xffcc1b"
+
+[colors__atlas__dark.primary]
+background = "0x002635"
+foreground = "0xa1a19a"
+
+[colors__bespin__dark.bright]
+black = "0x666666"
+blue = "0x797977"
+cyan = "0x937121"
+green = "0x36312e"
+magenta = "0x9d9b97"
+red = "0xcf7d34"
+white = "0xbaae9e"
+yellow = "0x5e5d5c"
+
+[colors__bespin__dark.cursor]
+cursor = "0x8a8986"
+text = "0x28211c"
+
+[colors__bespin__dark.normal]
+black = "0x28211c"
+blue = "0x5ea6ea"
+cyan = "0xafc4db"
+green = "0x54be0d"
+magenta = "0x9b859d"
+red = "0xcf6a4c"
+white = "0x8a8986"
+yellow = "0xf9ee98"
+
+[colors__bespin__dark.primary]
+background = "0x28211c"
+foreground = "0x8a8986"
+
+[colors__black-metal-bathory__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-bathory__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-bathory__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xfbcb97"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0xe78a53"
+
+[colors__black-metal-bathory__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-burzum__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-burzum__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-burzum__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xddeecc"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x99bbaa"
+
+[colors__black-metal-burzum__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-dark-funeral__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-dark-funeral__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-dark-funeral__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xd0dfee"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x5f81a5"
+
+[colors__black-metal-dark-funeral__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-gorgoroth__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-gorgoroth__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-gorgoroth__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0x9b8d7f"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x8c7f70"
+
+[colors__black-metal-gorgoroth__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-immortal__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-immortal__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-immortal__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0x7799bb"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x556677"
+
+[colors__black-metal-immortal__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-khold__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-khold__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-khold__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xeceee3"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x974b46"
+
+[colors__black-metal-khold__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-marduk__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-marduk__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-marduk__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xa5aaa7"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x626b67"
+
+[colors__black-metal-marduk__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-mayhem__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-mayhem__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-mayhem__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xf3ecd4"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0xeecc6c"
+
+[colors__black-metal-mayhem__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-nile__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-nile__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-nile__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xaa9988"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x777755"
+
+[colors__black-metal-nile__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal-venom__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal-venom__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal-venom__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xf8f7f2"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0x79241f"
+
+[colors__black-metal-venom__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__black-metal__dark.bright]
+black = "0x333333"
+blue = "0x999999"
+cyan = "0x444444"
+green = "0x121212"
+magenta = "0x999999"
+red = "0xaaaaaa"
+white = "0xc1c1c1"
+yellow = "0x222222"
+
+[colors__black-metal__dark.cursor]
+cursor = "0xc1c1c1"
+text = "0x000000"
+
+[colors__black-metal__dark.normal]
+black = "0x000000"
+blue = "0x888888"
+cyan = "0xaaaaaa"
+green = "0xdd9999"
+magenta = "0x999999"
+red = "0x5f8787"
+white = "0xc1c1c1"
+yellow = "0xa06666"
+
+[colors__black-metal__dark.primary]
+background = "0x000000"
+foreground = "0xc1c1c1"
+
+[colors__brewer__dark.bright]
+black = "0x737475"
+blue = "0x959697"
+cyan = "0xb15928"
+green = "0x2e2f30"
+magenta = "0xdadbdc"
+red = "0xe6550d"
+white = "0xfcfdfe"
+yellow = "0x515253"
+
+[colors__brewer__dark.cursor]
+cursor = "0xb7b8b9"
+text = "0x0c0d0e"
+
+[colors__brewer__dark.normal]
+black = "0x0c0d0e"
+blue = "0x3182bd"
+cyan = "0x80b1d3"
+green = "0x31a354"
+magenta = "0x756bb1"
+red = "0xe31a1c"
+white = "0xb7b8b9"
+yellow = "0xdca060"
+
+[colors__brewer__dark.primary]
+background = "0x0c0d0e"
+foreground = "0xb7b8b9"
+
+[colors__bright__dark.bright]
+black = "0xb0b0b0"
+blue = "0xd0d0d0"
+cyan = "0xbe643c"
+green = "0x303030"
+magenta = "0xf5f5f5"
+red = "0xfc6d24"
+white = "0xffffff"
+yellow = "0x505050"
+
+[colors__bright__dark.cursor]
+cursor = "0xe0e0e0"
+text = "0x000000"
+
+[colors__bright__dark.normal]
+black = "0x000000"
+blue = "0x6fb3d2"
+cyan = "0x76c7b7"
+green = "0xa1c659"
+magenta = "0xd381c3"
+red = "0xfb0120"
+white = "0xe0e0e0"
+yellow = "0xfda331"
+
+[colors__bright__dark.primary]
+background = "0x000000"
+foreground = "0xe0e0e0"
+
+[colors__brogrammer__dark.bright]
+black = "0xecba0f"
+blue = "0x2a84d2"
+cyan = "0xffffff"
+green = "0xf81118"
+magenta = "0x1081d6"
+red = "0xde352e"
+white = "0xd6dbe5"
+yellow = "0x2dc55e"
+
+[colors__brogrammer__dark.cursor]
+cursor = "0x4e5ab7"
+text = "0x1f1f1f"
+
+[colors__brogrammer__dark.normal]
+black = "0x1f1f1f"
+blue = "0x5350b9"
+cyan = "0x1081d6"
+green = "0xf3bd09"
+magenta = "0x0f7ddb"
+red = "0xd6dbe5"
+white = "0x4e5ab7"
+yellow = "0x1dd361"
+
+[colors__brogrammer__dark.primary]
+background = "0x1f1f1f"
+foreground = "0x4e5ab7"
+
+[colors__brushtrees-dark__dark.bright]
+black = "0x8299a1"
+blue = "0x98afb5"
+cyan = "0xb39f9f"
+green = "0x5a6d7a"
+magenta = "0xc9dbdc"
+red = "0xd8bba2"
+white = "0xe3efef"
+yellow = "0x6d828e"
+
+[colors__brushtrees-dark__dark.cursor]
+cursor = "0xb0c5c8"
+text = "0x485867"
+
+[colors__brushtrees-dark__dark.normal]
+black = "0x485867"
+blue = "0x868cb3"
+cyan = "0x86b3b3"
+green = "0x87b386"
+magenta = "0xb386b2"
+red = "0xb38686"
+white = "0xb0c5c8"
+yellow = "0xaab386"
+
+[colors__brushtrees-dark__dark.primary]
+background = "0x485867"
+foreground = "0xb0c5c8"
+
+[colors__brushtrees__dark.bright]
+black = "0x98afb5"
+blue = "0x8299a1"
+cyan = "0xb39f9f"
+green = "0xc9dbdc"
+magenta = "0x5a6d7a"
+red = "0xd8bba2"
+white = "0x485867"
+yellow = "0xb0c5c8"
+
+[colors__brushtrees__dark.cursor]
+cursor = "0x6d828e"
+text = "0xe3efef"
+
+[colors__brushtrees__dark.normal]
+black = "0xe3efef"
+blue = "0x868cb3"
+cyan = "0x86b3b3"
+green = "0x87b386"
+magenta = "0xb386b2"
+red = "0xb38686"
+white = "0x6d828e"
+yellow = "0xaab386"
+
+[colors__brushtrees__dark.primary]
+background = "0xe3efef"
+foreground = "0x6d828e"
+
+[colors__chalk__dark.bright]
+black = "0x505050"
+blue = "0xb0b0b0"
+cyan = "0xdeaf8f"
+green = "0x202020"
+magenta = "0xe0e0e0"
+red = "0xeda987"
+white = "0xf5f5f5"
+yellow = "0x303030"
+
+[colors__chalk__dark.cursor]
+cursor = "0xd0d0d0"
+text = "0x151515"
+
+[colors__chalk__dark.normal]
+black = "0x151515"
+blue = "0x6fc2ef"
+cyan = "0x12cfc0"
+green = "0xacc267"
+magenta = "0xe1a3ee"
+red = "0xfb9fb1"
+white = "0xd0d0d0"
+yellow = "0xddb26f"
+
+[colors__chalk__dark.primary]
+background = "0x151515"
+foreground = "0xd0d0d0"
+
+[colors__circus__dark.bright]
+black = "0x5f5a60"
+blue = "0x505050"
+cyan = "0xb888e2"
+green = "0x202020"
+magenta = "0x808080"
+red = "0x4bb1a7"
+white = "0xffffff"
+yellow = "0x303030"
+
+[colors__circus__dark.cursor]
+cursor = "0xa7a7a7"
+text = "0x191919"
+
+[colors__circus__dark.normal]
+black = "0x191919"
+blue = "0x639ee4"
+cyan = "0x4bb1a7"
+green = "0x84b97c"
+magenta = "0xb888e2"
+red = "0xdc657d"
+white = "0xa7a7a7"
+yellow = "0xc3ba63"
+
+[colors__circus__dark.primary]
+background = "0x191919"
+foreground = "0xa7a7a7"
+
+[colors__classic-dark__dark.bright]
+black = "0x505050"
+blue = "0xb0b0b0"
+cyan = "0x8f5536"
+green = "0x202020"
+magenta = "0xe0e0e0"
+red = "0xd28445"
+white = "0xf5f5f5"
+yellow = "0x303030"
+
+[colors__classic-dark__dark.cursor]
+cursor = "0xd0d0d0"
+text = "0x151515"
+
+[colors__classic-dark__dark.normal]
+black = "0x151515"
+blue = "0x6a9fb5"
+cyan = "0x75b5aa"
+green = "0x90a959"
+magenta = "0xaa759f"
+red = "0xac4142"
+white = "0xd0d0d0"
+yellow = "0xf4bf75"
+
+[colors__classic-dark__dark.primary]
+background = "0x151515"
+foreground = "0xd0d0d0"
+
+[colors__classic-light__light.bright]
+black = "0xb0b0b0"
+blue = "0x505050"
+cyan = "0x8f5536"
+green = "0xe0e0e0"
+magenta = "0x202020"
+red = "0xd28445"
+white = "0x151515"
+yellow = "0xd0d0d0"
+
+[colors__classic-light__light.cursor]
+cursor = "0x303030"
+text = "0xf5f5f5"
+
+[colors__classic-light__light.normal]
+black = "0xf5f5f5"
+blue = "0x6a9fb5"
+cyan = "0x75b5aa"
+green = "0x90a959"
+magenta = "0xaa759f"
+red = "0xac4142"
+white = "0x303030"
+yellow = "0xf4bf75"
+
+[colors__classic-light__light.primary]
+background = "0xf5f5f5"
+foreground = "0x303030"
+
+[colors__codeschool__dark.bright]
+black = "0x3f4944"
+blue = "0x84898c"
+cyan = "0xc98344"
+green = "0x1c3657"
+magenta = "0xa7cfa3"
+red = "0x43820d"
+white = "0xb5d8f6"
+yellow = "0x2a343a"
+
+[colors__codeschool__dark.cursor]
+cursor = "0x9ea7a6"
+text = "0x232c31"
+
+[colors__codeschool__dark.normal]
+black = "0x232c31"
+blue = "0x484d79"
+cyan = "0xb02f30"
+green = "0x237986"
+magenta = "0xc59820"
+red = "0x2a5491"
+white = "0x9ea7a6"
+yellow = "0xa03b1e"
+
+[colors__codeschool__dark.primary]
+background = "0x232c31"
+foreground = "0x9ea7a6"
+
+[colors__cupcake__dark.bright]
+black = "0xbfb9c6"
+blue = "0xa59daf"
+cyan = "0xbaa58c"
+green = "0xf2f1f4"
+magenta = "0x72677e"
+red = "0xebb790"
+white = "0x585062"
+yellow = "0xd8d5dd"
+
+[colors__cupcake__dark.cursor]
+cursor = "0x8b8198"
+text = "0xfbf1f2"
+
+[colors__cupcake__dark.normal]
+black = "0xfbf1f2"
+blue = "0x7297b9"
+cyan = "0x69a9a7"
+green = "0xa3b367"
+magenta = "0xbb99b4"
+red = "0xd57e85"
+white = "0x8b8198"
+yellow = "0xdcb16c"
+
+[colors__cupcake__dark.primary]
+background = "0xfbf1f2"
+foreground = "0x8b8198"
+
+[colors__cupertino__dark.bright]
+black = "0x808080"
+blue = "0x808080"
+cyan = "0x826b28"
+green = "0xc0c0c0"
+magenta = "0x404040"
+red = "0xeb8500"
+white = "0x5e5e5e"
+yellow = "0xc0c0c0"
+
+[colors__cupertino__dark.cursor]
+cursor = "0x404040"
+text = "0xffffff"
+
+[colors__cupertino__dark.normal]
+black = "0xffffff"
+blue = "0x0000ff"
+cyan = "0x318495"
+green = "0x007400"
+magenta = "0xa90d91"
+red = "0xc41a15"
+white = "0x404040"
+yellow = "0x826b28"
+
+[colors__cupertino__dark.primary]
+background = "0xffffff"
+foreground = "0x404040"
+
+[colors__danqing__dark.bright]
+black = "0x9da8a3"
+blue = "0xcad8d2"
+cyan = "0xca6924"
+green = "0x434846"
+magenta = "0xecf6f2"
+red = "0xb38a61"
+white = "0xfcfefd"
+yellow = "0x5a605d"
+
+[colors__danqing__dark.cursor]
+cursor = "0xe0f0ef"
+text = "0x2d302f"
+
+[colors__danqing__dark.normal]
+black = "0x2d302f"
+blue = "0xb0a4e3"
+cyan = "0x30dff3"
+green = "0x8ab361"
+magenta = "0xcca4e3"
+red = "0xf9906f"
+white = "0xe0f0ef"
+yellow = "0xf0c239"
+
+[colors__danqing__dark.primary]
+background = "0x2d302f"
+foreground = "0xe0f0ef"
+
+[colors__darktooth__dark.bright]
+black = "0x665c54"
+blue = "0x928374"
+cyan = "0xa87322"
+green = "0x32302f"
+magenta = "0xd5c4a1"
+red = "0xfe8625"
+white = "0xfdf4c1"
+yellow = "0x504945"
+
+[colors__darktooth__dark.cursor]
+cursor = "0xa89984"
+text = "0x1d2021"
+
+[colors__darktooth__dark.normal]
+black = "0x1d2021"
+blue = "0x0d6678"
+cyan = "0x8ba59b"
+green = "0x95c085"
+magenta = "0x8f4673"
+red = "0xfb543f"
+white = "0xa89984"
+yellow = "0xfac03b"
+
+[colors__darktooth__dark.primary]
+background = "0x1d2021"
+foreground = "0xa89984"
+
+[colors__decaf__dark.bright]
+black = "0x777777"
+blue = "0xb4b7b4"
+cyan = "0xff93b3"
+green = "0x393939"
+magenta = "0xe0e0e0"
+red = "0xffbf70"
+white = "0xffffff"
+yellow = "0x515151"
+
+[colors__decaf__dark.cursor]
+cursor = "0xcccccc"
+text = "0x2d2d2d"
+
+[colors__decaf__dark.normal]
+black = "0x2d2d2d"
+blue = "0x90bee1"
+cyan = "0xbed6ff"
+green = "0xbeda78"
+magenta = "0xefb3f7"
+red = "0xff7f7b"
+white = "0xcccccc"
+yellow = "0xffd67c"
+
+[colors__decaf__dark.primary]
+background = "0x2d2d2d"
+foreground = "0xcccccc"
+
+[colors__default-dark__dark.bright]
+black = "0x585858"
+blue = "0xb8b8b8"
+cyan = "0xa16946"
+green = "0x282828"
+magenta = "0xe8e8e8"
+red = "0xdc9656"
+white = "0xf8f8f8"
+yellow = "0x383838"
+
+[colors__default-dark__dark.cursor]
+cursor = "0xd8d8d8"
+text = "0x181818"
+
+[colors__default-dark__dark.normal]
+black = "0x181818"
+blue = "0x7cafc2"
+cyan = "0x86c1b9"
+green = "0xa1b56c"
+magenta = "0xba8baf"
+red = "0xab4642"
+white = "0xd8d8d8"
+yellow = "0xf7ca88"
+
+[colors__default-dark__dark.primary]
+background = "0x181818"
+foreground = "0xd8d8d8"
+
+[colors__default-light__light.bright]
+black = "0xb8b8b8"
+blue = "0x585858"
+cyan = "0xa16946"
+green = "0xe8e8e8"
+magenta = "0x282828"
+red = "0xdc9656"
+white = "0x181818"
+yellow = "0xd8d8d8"
+
+[colors__default-light__light.cursor]
+cursor = "0x383838"
+text = "0xf8f8f8"
+
+[colors__default-light__light.normal]
+black = "0xf8f8f8"
+blue = "0x7cafc2"
+cyan = "0x86c1b9"
+green = "0xa1b56c"
+magenta = "0xba8baf"
+red = "0xab4642"
+white = "0x383838"
+yellow = "0xf7ca88"
+
+[colors__default-light__light.primary]
+background = "0xf8f8f8"
+foreground = "0x383838"
+
+[colors__dracula__dark.bright]
+black = "0x626483"
+blue = "0x62d6e8"
+cyan = "0x00f769"
+green = "0x3a3c4e"
+magenta = "0xf1f2f8"
+red = "0xb45bcf"
+white = "0xf7f7fb"
+yellow = "0x4d4f68"
+
+[colors__dracula__dark.cursor]
+cursor = "0xe9e9f4"
+text = "0x282936"
+
+[colors__dracula__dark.normal]
+black = "0x282936"
+blue = "0x62d6e8"
+cyan = "0xa1efe4"
+green = "0xebff87"
+magenta = "0xb45bcf"
+red = "0xea51b2"
+white = "0xe9e9f4"
+yellow = "0x00f769"
+
+[colors__dracula__dark.primary]
+background = "0x282936"
+foreground = "0xe9e9f4"
+
+[colors__eighties__dark.bright]
+black = "0x747369"
+blue = "0xa09f93"
+cyan = "0xd27b53"
+green = "0x393939"
+magenta = "0xe8e6df"
+red = "0xf99157"
+white = "0xf2f0ec"
+yellow = "0x515151"
+
+[colors__eighties__dark.cursor]
+cursor = "0xd3d0c8"
+text = "0x2d2d2d"
+
+[colors__eighties__dark.normal]
+black = "0x2d2d2d"
+blue = "0x6699cc"
+cyan = "0x66cccc"
+green = "0x99cc99"
+magenta = "0xcc99cc"
+red = "0xf2777a"
+white = "0xd3d0c8"
+yellow = "0xffcc66"
+
+[colors__eighties__dark.primary]
+background = "0x2d2d2d"
+foreground = "0xd3d0c8"
+
+[colors__embers__dark.bright]
+black = "0x5a5047"
+blue = "0x8a8075"
+cyan = "0x825757"
+green = "0x2c2620"
+magenta = "0xbeb6ae"
+red = "0x828257"
+white = "0xdbd6d1"
+yellow = "0x433b32"
+
+[colors__embers__dark.cursor]
+cursor = "0xa39a90"
+text = "0x16130f"
+
+[colors__embers__dark.normal]
+black = "0x16130f"
+blue = "0x6d5782"
+cyan = "0x576d82"
+green = "0x57826d"
+magenta = "0x82576d"
+red = "0x826d57"
+white = "0xa39a90"
+yellow = "0x6d8257"
+
+[colors__embers__dark.primary]
+background = "0x16130f"
+foreground = "0xa39a90"
+
+[colors__espresso__dark.bright]
+black = "0x777777"
+blue = "0xb4b7b4"
+cyan = "0xf97394"
+green = "0x393939"
+magenta = "0xe0e0e0"
+red = "0xf9a959"
+white = "0xffffff"
+yellow = "0x515151"
+
+[colors__espresso__dark.cursor]
+cursor = "0xcccccc"
+text = "0x2d2d2d"
+
+[colors__espresso__dark.normal]
+black = "0x2d2d2d"
+blue = "0x6c99bb"
+cyan = "0xbed6ff"
+green = "0xa5c261"
+magenta = "0xd197d9"
+red = "0xd25252"
+white = "0xcccccc"
+yellow = "0xffc66d"
+
+[colors__espresso__dark.primary]
+background = "0x2d2d2d"
+foreground = "0xcccccc"
+
+[colors__flat__dark.bright]
+black = "0x95a5a6"
+blue = "0xbdc3c7"
+cyan = "0xbe643c"
+green = "0x34495e"
+magenta = "0xf5f5f5"
+red = "0xe67e22"
+white = "0xecf0f1"
+yellow = "0x7f8c8d"
+
+[colors__flat__dark.cursor]
+cursor = "0xe0e0e0"
+text = "0x2c3e50"
+
+[colors__flat__dark.normal]
+black = "0x2c3e50"
+blue = "0x3498db"
+cyan = "0x1abc9c"
+green = "0x2ecc71"
+magenta = "0x9b59b6"
+red = "0xe74c3c"
+white = "0xe0e0e0"
+yellow = "0xf1c40f"
+
+[colors__flat__dark.primary]
+background = "0x2c3e50"
+foreground = "0xe0e0e0"
+
+[colors__framer__dark.bright]
+black = "0x747474"
+blue = "0xb9b9b9"
+cyan = "0xb15f4a"
+green = "0x151515"
+magenta = "0xe8e8e8"
+red = "0xfc4769"
+white = "0xeeeeee"
+yellow = "0x464646"
+
+[colors__framer__dark.cursor]
+cursor = "0xd0d0d0"
+text = "0x181818"
+
+[colors__framer__dark.normal]
+black = "0x181818"
+blue = "0x20bcfc"
+cyan = "0xacddfd"
+green = "0x32ccdc"
+magenta = "0xba8cfc"
+red = "0xfd886b"
+white = "0xd0d0d0"
+yellow = "0xfecb6e"
+
+[colors__framer__dark.primary]
+background = "0x181818"
+foreground = "0xd0d0d0"
+
+[colors__fruit-soda__dark.bright]
+black = "0xb5b4b6"
+blue = "0x979598"
+cyan = "0xb16f40"
+green = "0xe0dee0"
+magenta = "0x474545"
+red = "0xfe6d08"
+white = "0x2d2c2c"
+yellow = "0xd8d5d5"
+
+[colors__fruit-soda__dark.cursor]
+cursor = "0x515151"
+text = "0xf1ecf1"
+
+[colors__fruit-soda__dark.normal]
+black = "0xf1ecf1"
+blue = "0x2931df"
+cyan = "0x0f9cfd"
+green = "0x47f74c"
+magenta = "0x611fce"
+red = "0xfe3e31"
+white = "0x515151"
+yellow = "0xf7e203"
+
+[colors__fruit-soda__dark.primary]
+background = "0xf1ecf1"
+foreground = "0x515151"
+
+[colors__github__dark.bright]
+black = "0x969896"
+blue = "0xe8e8e8"
+cyan = "0x333333"
+green = "0xf5f5f5"
+magenta = "0xffffff"
+red = "0x0086b3"
+white = "0xffffff"
+yellow = "0xc8c8fa"
+
+[colors__github__dark.cursor]
+cursor = "0x333333"
+text = "0xffffff"
+
+[colors__github__dark.normal]
+black = "0xffffff"
+blue = "0x795da3"
+cyan = "0x183691"
+green = "0x183691"
+magenta = "0xa71d5d"
+red = "0xed6a43"
+white = "0x333333"
+yellow = "0x795da3"
+
+[colors__github__dark.primary]
+background = "0xffffff"
+foreground = "0x333333"
+
+[colors__google-dark__dark.bright]
+black = "0x969896"
+blue = "0xb4b7b4"
+cyan = "0x3971ed"
+green = "0x282a2e"
+magenta = "0xe0e0e0"
+red = "0xf96a38"
+white = "0xffffff"
+yellow = "0x373b41"
+
+[colors__google-dark__dark.cursor]
+cursor = "0xc5c8c6"
+text = "0x1d1f21"
+
+[colors__google-dark__dark.normal]
+black = "0x1d1f21"
+blue = "0x3971ed"
+cyan = "0x3971ed"
+green = "0x198844"
+magenta = "0xa36ac7"
+red = "0xcc342b"
+white = "0xc5c8c6"
+yellow = "0xfba922"
+
+[colors__google-dark__dark.primary]
+background = "0x1d1f21"
+foreground = "0xc5c8c6"
+
+[colors__google-light__light.bright]
+black = "0xb4b7b4"
+blue = "0x969896"
+cyan = "0x3971ed"
+green = "0xe0e0e0"
+magenta = "0x282a2e"
+red = "0xf96a38"
+white = "0x1d1f21"
+yellow = "0xc5c8c6"
+
+[colors__google-light__light.cursor]
+cursor = "0x373b41"
+text = "0xffffff"
+
+[colors__google-light__light.normal]
+black = "0xffffff"
+blue = "0x3971ed"
+cyan = "0x3971ed"
+green = "0x198844"
+magenta = "0xa36ac7"
+red = "0xcc342b"
+white = "0x373b41"
+yellow = "0xfba922"
+
+[colors__google-light__light.primary]
+background = "0xffffff"
+foreground = "0x373b41"
+
+[colors__grayscale-dark__dark.bright]
+black = "0x525252"
+blue = "0xababab"
+cyan = "0x5e5e5e"
+green = "0x252525"
+magenta = "0xe3e3e3"
+red = "0x999999"
+white = "0xf7f7f7"
+yellow = "0x464646"
+
+[colors__grayscale-dark__dark.cursor]
+cursor = "0xb9b9b9"
+text = "0x101010"
+
+[colors__grayscale-dark__dark.normal]
+black = "0x101010"
+blue = "0x686868"
+cyan = "0x868686"
+green = "0x8e8e8e"
+magenta = "0x747474"
+red = "0x7c7c7c"
+white = "0xb9b9b9"
+yellow = "0xa0a0a0"
+
+[colors__grayscale-dark__dark.primary]
+background = "0x101010"
+foreground = "0xb9b9b9"
+
+[colors__grayscale-light__light.bright]
+black = "0xababab"
+blue = "0x525252"
+cyan = "0x5e5e5e"
+green = "0xe3e3e3"
+magenta = "0x252525"
+red = "0x999999"
+white = "0x101010"
+yellow = "0xb9b9b9"
+
+[colors__grayscale-light__light.cursor]
+cursor = "0x464646"
+text = "0xf7f7f7"
+
+[colors__grayscale-light__light.normal]
+black = "0xf7f7f7"
+blue = "0x686868"
+cyan = "0x868686"
+green = "0x8e8e8e"
+magenta = "0x747474"
+red = "0x7c7c7c"
+white = "0x464646"
+yellow = "0xa0a0a0"
+
+[colors__grayscale-light__light.primary]
+background = "0xf7f7f7"
+foreground = "0x464646"
+
+[colors__greenscreen__dark.bright]
+black = "0x007700"
+blue = "0x009900"
+cyan = "0x005500"
+green = "0x003300"
+magenta = "0x00dd00"
+red = "0x009900"
+white = "0x00ff00"
+yellow = "0x005500"
+
+[colors__greenscreen__dark.cursor]
+cursor = "0x00bb00"
+text = "0x001100"
+
+[colors__greenscreen__dark.normal]
+black = "0x001100"
+blue = "0x009900"
+cyan = "0x005500"
+green = "0x00bb00"
+magenta = "0x00bb00"
+red = "0x007700"
+white = "0x00bb00"
+yellow = "0x007700"
+
+[colors__greenscreen__dark.primary]
+background = "0x001100"
+foreground = "0x00bb00"
+
+[colors__gruvbox-dark-hard__dark.bright]
+black = "0x665c54"
+blue = "0xbdae93"
+cyan = "0xd65d0e"
+green = "0x3c3836"
+magenta = "0xebdbb2"
+red = "0xfe8019"
+white = "0xfbf1c7"
+yellow = "0x504945"
+
+[colors__gruvbox-dark-hard__dark.cursor]
+cursor = "0xd5c4a1"
+text = "0x1d2021"
+
+[colors__gruvbox-dark-hard__dark.normal]
+black = "0x1d2021"
+blue = "0x83a598"
+cyan = "0x8ec07c"
+green = "0xb8bb26"
+magenta = "0xd3869b"
+red = "0xfb4934"
+white = "0xd5c4a1"
+yellow = "0xfabd2f"
+
+[colors__gruvbox-dark-hard__dark.primary]
+background = "0x1d2021"
+foreground = "0xd5c4a1"
+
+[colors__gruvbox-dark-medium__dark.bright]
+black = "0x665c54"
+blue = "0xbdae93"
+cyan = "0xd65d0e"
+green = "0x3c3836"
+magenta = "0xebdbb2"
+red = "0xfe8019"
+white = "0xfbf1c7"
+yellow = "0x504945"
+
+[colors__gruvbox-dark-medium__dark.cursor]
+cursor = "0xd5c4a1"
+text = "0x282828"
+
+[colors__gruvbox-dark-medium__dark.normal]
+black = "0x282828"
+blue = "0x83a598"
+cyan = "0x8ec07c"
+green = "0xb8bb26"
+magenta = "0xd3869b"
+red = "0xfb4934"
+white = "0xd5c4a1"
+yellow = "0xfabd2f"
+
+[colors__gruvbox-dark-medium__dark.primary]
+background = "0x282828"
+foreground = "0xd5c4a1"
+
+[colors__gruvbox-dark-pale__dark.bright]
+black = "0x8a8a8a"
+blue = "0x949494"
+cyan = "0xd65d0e"
+green = "0x3a3a3a"
+magenta = "0xd5c4a1"
+red = "0xff8700"
+white = "0xebdbb2"
+yellow = "0x4e4e4e"
+
+[colors__gruvbox-dark-pale__dark.cursor]
+cursor = "0xdab997"
+text = "0x262626"
+
+[colors__gruvbox-dark-pale__dark.normal]
+black = "0x262626"
+blue = "0x83adad"
+cyan = "0x85ad85"
+green = "0xafaf00"
+magenta = "0xd485ad"
+red = "0xd75f5f"
+white = "0xdab997"
+yellow = "0xffaf00"
+
+[colors__gruvbox-dark-pale__dark.primary]
+background = "0x262626"
+foreground = "0xdab997"
+
+[colors__gruvbox-dark-soft__dark.bright]
+black = "0x665c54"
+blue = "0xbdae93"
+cyan = "0xd65d0e"
+green = "0x3c3836"
+magenta = "0xebdbb2"
+red = "0xfe8019"
+white = "0xfbf1c7"
+yellow = "0x504945"
+
+[colors__gruvbox-dark-soft__dark.cursor]
+cursor = "0xd5c4a1"
+text = "0x32302f"
+
+[colors__gruvbox-dark-soft__dark.normal]
+black = "0x32302f"
+blue = "0x83a598"
+cyan = "0x8ec07c"
+green = "0xb8bb26"
+magenta = "0xd3869b"
+red = "0xfb4934"
+white = "0xd5c4a1"
+yellow = "0xfabd2f"
+
+[colors__gruvbox-dark-soft__dark.primary]
+background = "0x32302f"
+foreground = "0xd5c4a1"
+
+[colors__gruvbox-light-hard__light.bright]
+black = "0xbdae93"
+blue = "0x665c54"
+cyan = "0xd65d0e"
+green = "0xebdbb2"
+magenta = "0x3c3836"
+red = "0xaf3a03"
+white = "0x282828"
+yellow = "0xd5c4a1"
+
+[colors__gruvbox-light-hard__light.cursor]
+cursor = "0x504945"
+text = "0xf9f5d7"
+
+[colors__gruvbox-light-hard__light.normal]
+black = "0xf9f5d7"
+blue = "0x076678"
+cyan = "0x427b58"
+green = "0x79740e"
+magenta = "0x8f3f71"
+red = "0x9d0006"
+white = "0x504945"
+yellow = "0xb57614"
+
+[colors__gruvbox-light-hard__light.primary]
+background = "0xf9f5d7"
+foreground = "0x504945"
+
+[colors__gruvbox-light-medium__light.bright]
+black = "0xbdae93"
+blue = "0x665c54"
+cyan = "0xd65d0e"
+green = "0xebdbb2"
+magenta = "0x3c3836"
+red = "0xaf3a03"
+white = "0x282828"
+yellow = "0xd5c4a1"
+
+[colors__gruvbox-light-medium__light.cursor]
+cursor = "0x504945"
+text = "0xfbf1c7"
+
+[colors__gruvbox-light-medium__light.normal]
+black = "0xfbf1c7"
+blue = "0x076678"
+cyan = "0x427b58"
+green = "0x79740e"
+magenta = "0x8f3f71"
+red = "0x9d0006"
+white = "0x504945"
+yellow = "0xb57614"
+
+[colors__gruvbox-light-medium__light.primary]
+background = "0xfbf1c7"
+foreground = "0x504945"
+
+[colors__gruvbox-light-soft__light.bright]
+black = "0xbdae93"
+blue = "0x665c54"
+cyan = "0xd65d0e"
+green = "0xebdbb2"
+magenta = "0x3c3836"
+red = "0xaf3a03"
+white = "0x282828"
+yellow = "0xd5c4a1"
+
+[colors__gruvbox-light-soft__light.cursor]
+cursor = "0x504945"
+text = "0xf2e5bc"
+
+[colors__gruvbox-light-soft__light.normal]
+black = "0xf2e5bc"
+blue = "0x076678"
+cyan = "0x427b58"
+green = "0x79740e"
+magenta = "0x8f3f71"
+red = "0x9d0006"
+white = "0x504945"
+yellow = "0xb57614"
+
+[colors__gruvbox-light-soft__light.primary]
+background = "0xf2e5bc"
+foreground = "0x504945"
+
+[colors__harmonic-dark__dark.bright]
+black = "0x627e99"
+blue = "0xaabcce"
+cyan = "0xbf5656"
+green = "0x223b54"
+magenta = "0xe5ebf1"
+red = "0xbfbf56"
+white = "0xf7f9fb"
+yellow = "0x405c79"
+
+[colors__harmonic-dark__dark.cursor]
+cursor = "0xcbd6e2"
+text = "0x0b1c2c"
+
+[colors__harmonic-dark__dark.normal]
+black = "0x0b1c2c"
+blue = "0x8b56bf"
+cyan = "0x568bbf"
+green = "0x56bf8b"
+magenta = "0xbf568b"
+red = "0xbf8b56"
+white = "0xcbd6e2"
+yellow = "0x8bbf56"
+
+[colors__harmonic-dark__dark.primary]
+background = "0x0b1c2c"
+foreground = "0xcbd6e2"
+
+[colors__harmonic-light__light.bright]
+black = "0xaabcce"
+blue = "0x627e99"
+cyan = "0xbf5656"
+green = "0xe5ebf1"
+magenta = "0x223b54"
+red = "0xbfbf56"
+white = "0x0b1c2c"
+yellow = "0xcbd6e2"
+
+[colors__harmonic-light__light.cursor]
+cursor = "0x405c79"
+text = "0xf7f9fb"
+
+[colors__harmonic-light__light.normal]
+black = "0xf7f9fb"
+blue = "0x8b56bf"
+cyan = "0x568bbf"
+green = "0x56bf8b"
+magenta = "0xbf568b"
+red = "0xbf8b56"
+white = "0x405c79"
+yellow = "0x8bbf56"
+
+[colors__harmonic-light__light.primary]
+background = "0xf7f9fb"
+foreground = "0x405c79"
+
+[colors__heetch-light__light.bright]
+black = "0x9c92a8"
+blue = "0xddd6e5"
+cyan = "0xdedae2"
+green = "0x392551"
+magenta = "0x470546"
+red = "0xbdb6c5"
+white = "0x190134"
+yellow = "0x7b6d8b"
+
+[colors__heetch-light__light.cursor]
+cursor = "0x5a496e"
+text = "0xfeffff"
+
+[colors__heetch-light__light.normal]
+black = "0xfeffff"
+blue = "0x47f9f5"
+cyan = "0xc33678"
+green = "0xf80059"
+magenta = "0xbd0152"
+red = "0x27d9d5"
+white = "0x5a496e"
+yellow = "0x5ba2b6"
+
+[colors__heetch-light__light.primary]
+background = "0xfeffff"
+foreground = "0x5a496e"
+
+[colors__heetch__dark.bright]
+black = "0x7b6d8b"
+blue = "0x9c92a8"
+cyan = "0x470546"
+green = "0x392551"
+magenta = "0xdedae2"
+red = "0x5ba2b6"
+white = "0xfeffff"
+yellow = "0x5a496e"
+
+[colors__heetch__dark.cursor]
+cursor = "0xbdb6c5"
+text = "0x190134"
+
+[colors__heetch__dark.normal]
+black = "0x190134"
+blue = "0xbd0152"
+cyan = "0xf80059"
+green = "0xc33678"
+magenta = "0x82034c"
+red = "0x27d9d5"
+white = "0xbdb6c5"
+yellow = "0x8f6c97"
+
+[colors__heetch__dark.primary]
+background = "0x190134"
+foreground = "0xbdb6c5"
+
+[colors__helios__dark.bright]
+black = "0x6f7579"
+blue = "0xcdcdcd"
+cyan = "0xc85e0d"
+green = "0x383c3e"
+magenta = "0xdddddd"
+red = "0xeb8413"
+white = "0xe5e5e5"
+yellow = "0x53585b"
+
+[colors__helios__dark.cursor]
+cursor = "0xd5d5d5"
+text = "0x1d2021"
+
+[colors__helios__dark.normal]
+black = "0x1d2021"
+blue = "0x1e8bac"
+cyan = "0x1ba595"
+green = "0x88b92d"
+magenta = "0xbe4264"
+red = "0xd72638"
+white = "0xd5d5d5"
+yellow = "0xf19d1a"
+
+[colors__helios__dark.primary]
+background = "0x1d2021"
+foreground = "0xd5d5d5"
+
+[colors__hopscotch__dark.bright]
+black = "0x797379"
+blue = "0x989498"
+cyan = "0xb33508"
+green = "0x433b42"
+magenta = "0xd5d3d5"
+red = "0xfd8b19"
+white = "0xffffff"
+yellow = "0x5c545b"
+
+[colors__hopscotch__dark.cursor]
+cursor = "0xb9b5b8"
+text = "0x322931"
+
+[colors__hopscotch__dark.normal]
+black = "0x322931"
+blue = "0x1290bf"
+cyan = "0x149b93"
+green = "0x8fc13e"
+magenta = "0xc85e7c"
+red = "0xdd464c"
+white = "0xb9b5b8"
+yellow = "0xfdcc59"
+
+[colors__hopscotch__dark.primary]
+background = "0x322931"
+foreground = "0xb9b5b8"
+
+[colors__horizon-dark__dark.bright]
+black = "0x6f6f70"
+blue = "0x9da0a2"
+cyan = "0xe4a382"
+green = "0x232530"
+magenta = "0xdcdfe4"
+red = "0xe58d7d"
+white = "0xe3e6ee"
+yellow = "0x2e303e"
+
+[colors__horizon-dark__dark.cursor]
+cursor = "0xcbced0"
+text = "0x1c1e26"
+
+[colors__horizon-dark__dark.normal]
+black = "0x1c1e26"
+blue = "0xdf5273"
+cyan = "0x24a8b4"
+green = "0xefaf8e"
+magenta = "0xb072d1"
+red = "0xe93c58"
+white = "0xcbced0"
+yellow = "0xefb993"
+
+[colors__horizon-dark__dark.primary]
+background = "0x1c1e26"
+foreground = "0xcbced0"
+
+[colors__horizon-light__light.bright]
+black = "0xbdb3b1"
+blue = "0x948c8a"
+cyan = "0xe58c92"
+green = "0xfadad1"
+magenta = "0x302c2d"
+red = "0xf6661e"
+white = "0x201c1d"
+yellow = "0xf9cbbe"
+
+[colors__horizon-light__light.cursor]
+cursor = "0x403c3d"
+text = "0xfdf0ed"
+
+[colors__horizon-light__light.normal]
+black = "0xfdf0ed"
+blue = "0xda103f"
+cyan = "0xdc3318"
+green = "0x94e1b0"
+magenta = "0x1d8991"
+red = "0xf7939b"
+white = "0x403c3d"
+yellow = "0xfbe0d9"
+
+[colors__horizon-light__light.primary]
+background = "0xfdf0ed"
+foreground = "0x403c3d"
+
+[colors__horizon-terminal-dark__dark.bright]
+black = "0x6f6f70"
+blue = "0x9da0a2"
+cyan = "0xf09383"
+green = "0x232530"
+magenta = "0xdcdfe4"
+red = "0xfab795"
+white = "0xe3e6ee"
+yellow = "0x2e303e"
+
+[colors__horizon-terminal-dark__dark.cursor]
+cursor = "0xcbced0"
+text = "0x1c1e26"
+
+[colors__horizon-terminal-dark__dark.normal]
+black = "0x1c1e26"
+blue = "0x26bbd9"
+cyan = "0x59e1e3"
+green = "0x29d398"
+magenta = "0xee64ac"
+red = "0xe95678"
+white = "0xcbced0"
+yellow = "0xfac29a"
+
+[colors__horizon-terminal-dark__dark.primary]
+background = "0x1c1e26"
+foreground = "0xcbced0"
+
+[colors__horizon-terminal-light__light.bright]
+black = "0xbdb3b1"
+blue = "0x948c8a"
+cyan = "0xf9cbbe"
+green = "0xfadad1"
+magenta = "0x302c2d"
+red = "0xf9cec3"
+white = "0x201c1d"
+yellow = "0xf9cbbe"
+
+[colors__horizon-terminal-light__light.cursor]
+cursor = "0x403c3d"
+text = "0xfdf0ed"
+
+[colors__horizon-terminal-light__light.normal]
+black = "0xfdf0ed"
+blue = "0x26bbd9"
+cyan = "0x59e1e3"
+green = "0x29d398"
+magenta = "0xee64ac"
+red = "0xe95678"
+white = "0x403c3d"
+yellow = "0xfadad1"
+
+[colors__horizon-terminal-light__light.primary]
+background = "0xfdf0ed"
+foreground = "0x403c3d"
+
+[colors__ia-dark__dark.bright]
+black = "0x767676"
+blue = "0xb8b8b8"
+cyan = "0x8b6c37"
+green = "0x222222"
+magenta = "0xe8e8e8"
+red = "0xd86868"
+white = "0xf8f8f8"
+yellow = "0x1d414d"
+
+[colors__ia-dark__dark.cursor]
+cursor = "0xcccccc"
+text = "0x1a1a1a"
+
+[colors__ia-dark__dark.normal]
+black = "0x1a1a1a"
+blue = "0x8eccdd"
+cyan = "0x7c9cae"
+green = "0x83a471"
+magenta = "0xb98eb2"
+red = "0xd88568"
+white = "0xcccccc"
+yellow = "0xb99353"
+
+[colors__ia-dark__dark.primary]
+background = "0x1a1a1a"
+foreground = "0xcccccc"
+
+[colors__ia-light__light.bright]
+black = "0x898989"
+blue = "0x767676"
+cyan = "0x8b6c37"
+green = "0xdedede"
+magenta = "0xe8e8e8"
+red = "0xc43e18"
+white = "0xf8f8f8"
+yellow = "0xbde5f2"
+
+[colors__ia-light__light.cursor]
+cursor = "0x181818"
+text = "0xf6f6f6"
+
+[colors__ia-light__light.normal]
+black = "0xf6f6f6"
+blue = "0x48bac2"
+cyan = "0x2d6bb1"
+green = "0x38781c"
+magenta = "0xa94598"
+red = "0x9c5a02"
+white = "0x181818"
+yellow = "0xc48218"
+
+[colors__ia-light__light.primary]
+background = "0xf6f6f6"
+foreground = "0x181818"
+
+[colors__icy__dark.bright]
+black = "0x052e34"
+blue = "0x064048"
+cyan = "0x0097a7"
+green = "0x031619"
+magenta = "0x0c7c8c"
+red = "0xb3ebf2"
+white = "0x109cb0"
+yellow = "0x041f23"
+
+[colors__icy__dark.cursor]
+cursor = "0x095b67"
+text = "0x021012"
+
+[colors__icy__dark.normal]
+black = "0x021012"
+blue = "0x00bcd4"
+cyan = "0x26c6da"
+green = "0x4dd0e1"
+magenta = "0x00acc1"
+red = "0x16c1d9"
+white = "0x095b67"
+yellow = "0x80deea"
+
+[colors__icy__dark.primary]
+background = "0x021012"
+foreground = "0x095b67"
+
+[colors__irblack__dark.bright]
+black = "0x6c6c66"
+blue = "0x918f88"
+cyan = "0xb18a3d"
+green = "0x242422"
+magenta = "0xd9d7cc"
+red = "0xe9c062"
+white = "0xfdfbee"
+yellow = "0x484844"
+
+[colors__irblack__dark.cursor]
+cursor = "0xb5b3aa"
+text = "0x000000"
+
+[colors__irblack__dark.normal]
+black = "0x000000"
+blue = "0x96cbfe"
+cyan = "0xc6c5fe"
+green = "0xa8ff60"
+magenta = "0xff73fd"
+red = "0xff6c60"
+white = "0xb5b3aa"
+yellow = "0xffffb6"
+
+[colors__irblack__dark.primary]
+background = "0x000000"
+foreground = "0xb5b3aa"
+
+[colors__isotope__dark.bright]
+black = "0x808080"
+blue = "0xc0c0c0"
+cyan = "0x3300ff"
+green = "0x404040"
+magenta = "0xe0e0e0"
+red = "0xff9900"
+white = "0xffffff"
+yellow = "0x606060"
+
+[colors__isotope__dark.cursor]
+cursor = "0xd0d0d0"
+text = "0x000000"
+
+[colors__isotope__dark.normal]
+black = "0x000000"
+blue = "0x0066ff"
+cyan = "0x00ffff"
+green = "0x33ff00"
+magenta = "0xcc00ff"
+red = "0xff0000"
+white = "0xd0d0d0"
+yellow = "0xff0099"
+
+[colors__isotope__dark.primary]
+background = "0x000000"
+foreground = "0xd0d0d0"
+
+[colors__macintosh__dark.bright]
+black = "0x808080"
+blue = "0x808080"
+cyan = "0x90713a"
+green = "0x404040"
+magenta = "0xc0c0c0"
+red = "0xff6403"
+white = "0xffffff"
+yellow = "0x404040"
+
+[colors__macintosh__dark.cursor]
+cursor = "0xc0c0c0"
+text = "0x000000"
+
+[colors__macintosh__dark.normal]
+black = "0x000000"
+blue = "0x0000d3"
+cyan = "0x02abea"
+green = "0x1fb714"
+magenta = "0x4700a5"
+red = "0xdd0907"
+white = "0xc0c0c0"
+yellow = "0xfbf305"
+
+[colors__macintosh__dark.primary]
+background = "0x000000"
+foreground = "0xc0c0c0"
+
+[colors__marrakesh__dark.bright]
+black = "0x6c6823"
+blue = "0x86813b"
+cyan = "0xb3588e"
+green = "0x302e00"
+magenta = "0xccc37a"
+red = "0xb36144"
+white = "0xfaf0a5"
+yellow = "0x5f5b17"
+
+[colors__marrakesh__dark.cursor]
+cursor = "0x948e48"
+text = "0x201602"
+
+[colors__marrakesh__dark.normal]
+black = "0x201602"
+blue = "0x477ca1"
+cyan = "0x75a738"
+green = "0x18974e"
+magenta = "0x8868b3"
+red = "0xc35359"
+white = "0x948e48"
+yellow = "0xa88339"
+
+[colors__marrakesh__dark.primary]
+background = "0x201602"
+foreground = "0x948e48"
+
+[colors__materia__dark.bright]
+black = "0x707880"
+blue = "0xc9ccd3"
+cyan = "0xec5f67"
+green = "0x2c393f"
+magenta = "0xd5dbe5"
+red = "0xea9560"
+white = "0xffffff"
+yellow = "0x37474f"
+
+[colors__materia__dark.cursor]
+cursor = "0xcdd3de"
+text = "0x263238"
+
+[colors__materia__dark.normal]
+black = "0x263238"
+blue = "0x89ddff"
+cyan = "0x80cbc4"
+green = "0x8bd649"
+magenta = "0x82aaff"
+red = "0xec5f67"
+white = "0xcdd3de"
+yellow = "0xffcc00"
+
+[colors__materia__dark.primary]
+background = "0x263238"
+foreground = "0xcdd3de"
+
+[colors__material-darker__dark.bright]
+black = "0x4a4a4a"
+blue = "0xb2ccd6"
+cyan = "0xff5370"
+green = "0x303030"
+magenta = "0xeeffff"
+red = "0xf78c6c"
+white = "0xffffff"
+yellow = "0x353535"
+
+[colors__material-darker__dark.cursor]
+cursor = "0xeeffff"
+text = "0x212121"
+
+[colors__material-darker__dark.normal]
+black = "0x212121"
+blue = "0x82aaff"
+cyan = "0x89ddff"
+green = "0xc3e88d"
+magenta = "0xc792ea"
+red = "0xf07178"
+white = "0xeeffff"
+yellow = "0xffcb6b"
+
+[colors__material-darker__dark.primary]
+background = "0x212121"
+foreground = "0xeeffff"
+
+[colors__material-lighter__light.bright]
+black = "0xccd7da"
+blue = "0x8796b0"
+cyan = "0xe53935"
+green = "0xe7eaec"
+magenta = "0x80cbc4"
+red = "0xf76d47"
+white = "0xffffff"
+yellow = "0xcceae7"
+
+[colors__material-lighter__light.cursor]
+cursor = "0x80cbc4"
+text = "0xfafafa"
+
+[colors__material-lighter__light.normal]
+black = "0xfafafa"
+blue = "0x6182b8"
+cyan = "0x39adb5"
+green = "0x91b859"
+magenta = "0x7c4dff"
+red = "0xff5370"
+white = "0x80cbc4"
+yellow = "0xffb62c"
+
+[colors__material-lighter__light.primary]
+background = "0xfafafa"
+foreground = "0x80cbc4"
+
+[colors__material-palenight__dark.bright]
+black = "0x676e95"
+blue = "0x8796b0"
+cyan = "0xff5370"
+green = "0x444267"
+magenta = "0x959dcb"
+red = "0xf78c6c"
+white = "0xffffff"
+yellow = "0x32374d"
+
+[colors__material-palenight__dark.cursor]
+cursor = "0x959dcb"
+text = "0x292d3e"
+
+[colors__material-palenight__dark.normal]
+black = "0x292d3e"
+blue = "0x82aaff"
+cyan = "0x89ddff"
+green = "0xc3e88d"
+magenta = "0xc792ea"
+red = "0xf07178"
+white = "0x959dcb"
+yellow = "0xffcb6b"
+
+[colors__material-palenight__dark.primary]
+background = "0x292d3e"
+foreground = "0x959dcb"
+
+[colors__material-vivid__dark.bright]
+black = "0x44464d"
+blue = "0x676c71"
+cyan = "0x8d6e63"
+green = "0x27292c"
+magenta = "0x9e9e9e"
+red = "0xff9800"
+white = "0xffffff"
+yellow = "0x323639"
+
+[colors__material-vivid__dark.cursor]
+cursor = "0x80868b"
+text = "0x202124"
+
+[colors__material-vivid__dark.normal]
+black = "0x202124"
+blue = "0x2196f3"
+cyan = "0x00bcd4"
+green = "0x00e676"
+magenta = "0x673ab7"
+red = "0xf44336"
+white = "0x80868b"
+yellow = "0xffeb3b"
+
+[colors__material-vivid__dark.primary]
+background = "0x202124"
+foreground = "0x80868b"
+
+[colors__material__dark.bright]
+black = "0x546e7a"
+blue = "0xb2ccd6"
+cyan = "0xff5370"
+green = "0x2e3c43"
+magenta = "0xeeffff"
+red = "0xf78c6c"
+white = "0xffffff"
+yellow = "0x314549"
+
+[colors__material__dark.cursor]
+cursor = "0xeeffff"
+text = "0x263238"
+
+[colors__material__dark.normal]
+black = "0x263238"
+blue = "0x82aaff"
+cyan = "0x89ddff"
+green = "0xc3e88d"
+magenta = "0xc792ea"
+red = "0xf07178"
+white = "0xeeffff"
+yellow = "0xffcb6b"
+
+[colors__material__dark.primary]
+background = "0x263238"
+foreground = "0xeeffff"
+
+[colors__mellow-purple__dark.bright]
+black = "0x320f55"
+blue = "0x873582"
+cyan = "0x4d6fff"
+green = "0x1a092d"
+magenta = "0xffeeff"
+red = "0xaa00a3"
+white = "0xf8c0ff"
+yellow = "0x331354"
+
+[colors__mellow-purple__dark.cursor]
+cursor = "0xffeeff"
+text = "0x1e0528"
+
+[colors__mellow-purple__dark.normal]
+black = "0x1e0528"
+blue = "0x550068"
+cyan = "0xb900b1"
+green = "0x05cb0d"
+magenta = "0x8991bb"
+red = "0x00d9e9"
+white = "0xffeeff"
+yellow = "0x955ae7"
+
+[colors__mellow-purple__dark.primary]
+background = "0x1e0528"
+foreground = "0xffeeff"
+
+[colors__mexico-light__light.bright]
+black = "0xb8b8b8"
+blue = "0x585858"
+cyan = "0xa16946"
+green = "0xe8e8e8"
+magenta = "0x282828"
+red = "0xdc9656"
+white = "0x181818"
+yellow = "0xd8d8d8"
+
+[colors__mexico-light__light.cursor]
+cursor = "0x383838"
+text = "0xf8f8f8"
+
+[colors__mexico-light__light.normal]
+black = "0xf8f8f8"
+blue = "0x7cafc2"
+cyan = "0x4b8093"
+green = "0x538947"
+magenta = "0x96609e"
+red = "0xab4642"
+white = "0x383838"
+yellow = "0xf79a0e"
+
+[colors__mexico-light__light.primary]
+background = "0xf8f8f8"
+foreground = "0x383838"
+
+[colors__mocha__dark.bright]
+black = "0x7e705a"
+blue = "0xb8afad"
+cyan = "0xbb9584"
+green = "0x534636"
+magenta = "0xe9e1dd"
+red = "0xd28b71"
+white = "0xf5eeeb"
+yellow = "0x645240"
+
+[colors__mocha__dark.cursor]
+cursor = "0xd0c8c6"
+text = "0x3b3228"
+
+[colors__mocha__dark.normal]
+black = "0x3b3228"
+blue = "0x8ab3b5"
+cyan = "0x7bbda4"
+green = "0xbeb55b"
+magenta = "0xa89bb9"
+red = "0xcb6077"
+white = "0xd0c8c6"
+yellow = "0xf4bc87"
+
+[colors__mocha__dark.primary]
+background = "0x3b3228"
+foreground = "0xd0c8c6"
+
+[colors__monokai__dark.bright]
+black = "0x75715e"
+blue = "0xa59f85"
+cyan = "0xcc6633"
+green = "0x383830"
+magenta = "0xf5f4f1"
+red = "0xfd971f"
+white = "0xf9f8f5"
+yellow = "0x49483e"
+
+[colors__monokai__dark.cursor]
+cursor = "0xf8f8f2"
+text = "0x272822"
+
+[colors__monokai__dark.normal]
+black = "0x272822"
+blue = "0x66d9ef"
+cyan = "0xa1efe4"
+green = "0xa6e22e"
+magenta = "0xae81ff"
+red = "0xf92672"
+white = "0xf8f8f2"
+yellow = "0xf4bf75"
+
+[colors__monokai__dark.primary]
+background = "0x272822"
+foreground = "0xf8f8f2"
+
+[colors__nord__dark.bright]
+black = "0x4c566a"
+blue = "0xd8dee9"
+cyan = "0xb48ead"
+green = "0x3b4252"
+magenta = "0xeceff4"
+red = "0x81a1c1"
+white = "0x8fbcbb"
+yellow = "0x434c5e"
+
+[colors__nord__dark.cursor]
+cursor = "0xe5e9f0"
+text = "0x2e3440"
+
+[colors__nord__dark.normal]
+black = "0x2e3440"
+blue = "0xebcb8b"
+cyan = "0xd08770"
+green = "0xbf616a"
+magenta = "0xa3be8c"
+red = "0x88c0d0"
+white = "0xe5e9f0"
+yellow = "0x5e81ac"
+
+[colors__nord__dark.primary]
+background = "0x2e3440"
+foreground = "0xe5e9f0"
+
+[colors__nova__dark.bright]
+black = "0x899ba6"
+blue = "0x899ba6"
+cyan = "0xf2c38f"
+green = "0x556873"
+magenta = "0x899ba6"
+red = "0x7fc1ca"
+white = "0x556873"
+yellow = "0x6a7d89"
+
+[colors__nova__dark.cursor]
+cursor = "0xc5d4dd"
+text = "0x3c4c55"
+
+[colors__nova__dark.normal]
+black = "0x3c4c55"
+blue = "0x83afe5"
+cyan = "0xf2c38f"
+green = "0x7fc1ca"
+magenta = "0x9a93e1"
+red = "0x83afe5"
+white = "0xc5d4dd"
+yellow = "0xa8ce93"
+
+[colors__nova__dark.primary]
+background = "0x3c4c55"
+foreground = "0xc5d4dd"
+
+[colors__ocean__dark.bright]
+black = "0x65737e"
+blue = "0xa7adba"
+cyan = "0xab7967"
+green = "0x343d46"
+magenta = "0xdfe1e8"
+red = "0xd08770"
+white = "0xeff1f5"
+yellow = "0x4f5b66"
+
+[colors__ocean__dark.cursor]
+cursor = "0xc0c5ce"
+text = "0x2b303b"
+
+[colors__ocean__dark.normal]
+black = "0x2b303b"
+blue = "0x8fa1b3"
+cyan = "0x96b5b4"
+green = "0xa3be8c"
+magenta = "0xb48ead"
+red = "0xbf616a"
+white = "0xc0c5ce"
+yellow = "0xebcb8b"
+
+[colors__ocean__dark.primary]
+background = "0x2b303b"
+foreground = "0xc0c5ce"
+
+[colors__one-light__light.bright]
+black = "0xa0a1a7"
+blue = "0x696c77"
+cyan = "0x986801"
+green = "0xf0f0f1"
+magenta = "0x202227"
+red = "0xd75f00"
+white = "0x090a0b"
+yellow = "0xe5e5e6"
+
+[colors__one-light__light.cursor]
+cursor = "0x383a42"
+text = "0xfafafa"
+
+[colors__one-light__light.normal]
+black = "0xfafafa"
+blue = "0x4078f2"
+cyan = "0x0184bc"
+green = "0x50a14f"
+magenta = "0xa626a4"
+red = "0xca1243"
+white = "0x383a42"
+yellow = "0xc18401"
+
+[colors__one-light__light.primary]
+background = "0xfafafa"
+foreground = "0x383a42"
+
+[colors__onedark__dark.bright]
+black = "0x545862"
+blue = "0x565c64"
+cyan = "0xbe5046"
+green = "0x353b45"
+magenta = "0xb6bdca"
+red = "0xd19a66"
+white = "0xc8ccd4"
+yellow = "0x3e4451"
+
+[colors__onedark__dark.cursor]
+cursor = "0xabb2bf"
+text = "0x282c34"
+
+[colors__onedark__dark.normal]
+black = "0x282c34"
+blue = "0x61afef"
+cyan = "0x56b6c2"
+green = "0x98c379"
+magenta = "0xc678dd"
+red = "0xe06c75"
+white = "0xabb2bf"
+yellow = "0xe5c07b"
+
+[colors__onedark__dark.primary]
+background = "0x282c34"
+foreground = "0xabb2bf"
+
+[colors__outrun-dark__dark.bright]
+black = "0x50507a"
+blue = "0xb0b0da"
+cyan = "0xf003ef"
+green = "0x20204a"
+magenta = "0xe0e0ff"
+red = "0xfc8d28"
+white = "0xf5f5ff"
+yellow = "0x30305a"
+
+[colors__outrun-dark__dark.cursor]
+cursor = "0xd0d0fa"
+text = "0x00002a"
+
+[colors__outrun-dark__dark.normal]
+black = "0x00002a"
+blue = "0x66b0ff"
+cyan = "0x0ef0f0"
+green = "0x59f176"
+magenta = "0xf10596"
+red = "0xff4242"
+white = "0xd0d0fa"
+yellow = "0xf3e877"
+
+[colors__outrun-dark__dark.primary]
+background = "0x00002a"
+foreground = "0xd0d0fa"
+
+[colors__papercolor-dark__dark.bright]
+black = "0xd7af5f"
+blue = "0x5fafd7"
+cyan = "0x5f8787"
+green = "0xaf005f"
+magenta = "0xd7875f"
+red = "0x5faf5f"
+white = "0xd0d0d0"
+yellow = "0x5faf00"
+
+[colors__papercolor-dark__dark.cursor]
+cursor = "0x808080"
+text = "0x1c1c1c"
+
+[colors__papercolor-dark__dark.normal]
+black = "0x1c1c1c"
+blue = "0xff5faf"
+cyan = "0xffaf00"
+green = "0xaf87d7"
+magenta = "0x00afaf"
+red = "0x585858"
+white = "0x808080"
+yellow = "0xafd700"
+
+[colors__papercolor-dark__dark.primary]
+background = "0x1c1c1c"
+foreground = "0x808080"
+
+[colors__papercolor-light__light.bright]
+black = "0x5f8700"
+blue = "0x0087af"
+cyan = "0x005f87"
+green = "0xaf0000"
+magenta = "0x005f87"
+red = "0xd70000"
+white = "0x444444"
+yellow = "0x008700"
+
+[colors__papercolor-light__light.cursor]
+cursor = "0x878787"
+text = "0xeeeeee"
+
+[colors__papercolor-light__light.normal]
+black = "0xeeeeee"
+blue = "0xd75f00"
+cyan = "0xd75f00"
+green = "0x8700af"
+magenta = "0x005faf"
+red = "0xbcbcbc"
+white = "0x878787"
+yellow = "0xd70087"
+
+[colors__papercolor-light__light.primary]
+background = "0xeeeeee"
+foreground = "0x878787"
+
+[colors__paraiso__dark.bright]
+black = "0x776e71"
+blue = "0x8d8687"
+cyan = "0xe96ba8"
+green = "0x41323f"
+magenta = "0xb9b6b0"
+red = "0xf99b15"
+white = "0xe7e9db"
+yellow = "0x4f424c"
+
+[colors__paraiso__dark.cursor]
+cursor = "0xa39e9b"
+text = "0x2f1e2e"
+
+[colors__paraiso__dark.normal]
+black = "0x2f1e2e"
+blue = "0x06b6ef"
+cyan = "0x5bc4bf"
+green = "0x48b685"
+magenta = "0x815ba4"
+red = "0xef6155"
+white = "0xa39e9b"
+yellow = "0xfec418"
+
+[colors__paraiso__dark.primary]
+background = "0x2f1e2e"
+foreground = "0xa39e9b"
+
+[colors__phd__dark.bright]
+black = "0x717885"
+blue = "0x9a99a3"
+cyan = "0xb08060"
+green = "0x2a3448"
+magenta = "0xdbdde0"
+red = "0xf0a000"
+white = "0xffffff"
+yellow = "0x4d5666"
+
+[colors__phd__dark.cursor]
+cursor = "0xb8bbc2"
+text = "0x061229"
+
+[colors__phd__dark.normal]
+black = "0x061229"
+blue = "0x5299bf"
+cyan = "0x72b9bf"
+green = "0x99bf52"
+magenta = "0x9989cc"
+red = "0xd07346"
+white = "0xb8bbc2"
+yellow = "0xfbd461"
+
+[colors__phd__dark.primary]
+background = "0x061229"
+foreground = "0xb8bbc2"
+
+[colors__pico__dark.bright]
+black = "0x008751"
+blue = "0xab5236"
+cyan = "0xffccaa"
+green = "0x1d2b53"
+magenta = "0xc2c3c7"
+red = "0xffa300"
+white = "0xfff1e8"
+yellow = "0x7e2553"
+
+[colors__pico__dark.cursor]
+cursor = "0x5f574f"
+text = "0x000000"
+
+[colors__pico__dark.normal]
+black = "0x000000"
+blue = "0x83769c"
+cyan = "0x29adff"
+green = "0x00e756"
+magenta = "0xff77a8"
+red = "0xff004d"
+white = "0x5f574f"
+yellow = "0xfff024"
+
+[colors__pico__dark.primary]
+background = "0x000000"
+foreground = "0x5f574f"
+
+[colors__pop__dark.bright]
+black = "0x505050"
+blue = "0xb0b0b0"
+cyan = "0x7a2d00"
+green = "0x202020"
+magenta = "0xe0e0e0"
+red = "0xf29333"
+white = "0xffffff"
+yellow = "0x303030"
+
+[colors__pop__dark.cursor]
+cursor = "0xd0d0d0"
+text = "0x000000"
+
+[colors__pop__dark.normal]
+black = "0x000000"
+blue = "0x0e5a94"
+cyan = "0x00aabb"
+green = "0x37b349"
+magenta = "0xb31e8d"
+red = "0xeb008a"
+white = "0xd0d0d0"
+yellow = "0xf8ca12"
+
+[colors__pop__dark.primary]
+background = "0x000000"
+foreground = "0xd0d0d0"
+
+[colors__porple__dark.bright]
+black = "0x65568a"
+blue = "0xb8b8b8"
+cyan = "0x986841"
+green = "0x333344"
+magenta = "0xe8e8e8"
+red = "0xd28e5d"
+white = "0xf8f8f8"
+yellow = "0x474160"
+
+[colors__porple__dark.cursor]
+cursor = "0xd8d8d8"
+text = "0x292c36"
+
+[colors__porple__dark.normal]
+black = "0x292c36"
+blue = "0x8485ce"
+cyan = "0x64878f"
+green = "0x95c76f"
+magenta = "0xb74989"
+red = "0xf84547"
+white = "0xd8d8d8"
+yellow = "0xefa16b"
+
+[colors__porple__dark.primary]
+background = "0x292c36"
+foreground = "0xd8d8d8"
+
+[colors__railscasts__dark.bright]
+black = "0x5a647e"
+blue = "0xd4cfc9"
+cyan = "0xbc9458"
+green = "0x272935"
+magenta = "0xf4f1ed"
+red = "0xcc7833"
+white = "0xf9f7f3"
+yellow = "0x3a4055"
+
+[colors__railscasts__dark.cursor]
+cursor = "0xe6e1dc"
+text = "0x2b2b2b"
+
+[colors__railscasts__dark.normal]
+black = "0x2b2b2b"
+blue = "0x6d9cbe"
+cyan = "0x519f50"
+green = "0xa5c261"
+magenta = "0xb6b3eb"
+red = "0xda4939"
+white = "0xe6e1dc"
+yellow = "0xffc66d"
+
+[colors__railscasts__dark.primary]
+background = "0x2b2b2b"
+foreground = "0xe6e1dc"
+
+[colors__rebecca__dark.bright]
+black = "0x666699"
+blue = "0xa0a0c5"
+cyan = "0xff79c6"
+green = "0x663399"
+magenta = "0xccccff"
+red = "0xefe4a1"
+white = "0x53495d"
+yellow = "0x383a62"
+
+[colors__rebecca__dark.cursor]
+cursor = "0xf1eff8"
+text = "0x292a44"
+
+[colors__rebecca__dark.normal]
+black = "0x292a44"
+blue = "0x2de0a7"
+cyan = "0x8eaee0"
+green = "0x6dfedf"
+magenta = "0x7aa5ff"
+red = "0xa0a0c5"
+white = "0xf1eff8"
+yellow = "0xae81ff"
+
+[colors__rebecca__dark.primary]
+background = "0x292a44"
+foreground = "0xf1eff8"
+
+[colors__sandcastle__dark.bright]
+black = "0x665c54"
+blue = "0x928374"
+cyan = "0xa87322"
+green = "0x2c323b"
+magenta = "0xd5c4a1"
+red = "0xa07e3b"
+white = "0xfdf4c1"
+yellow = "0x3e4451"
+
+[colors__sandcastle__dark.cursor]
+cursor = "0xa89984"
+text = "0x282c34"
+
+[colors__sandcastle__dark.normal]
+black = "0x282c34"
+blue = "0x83a598"
+cyan = "0x83a598"
+green = "0x528b8b"
+magenta = "0xd75f5f"
+red = "0x83a598"
+white = "0xa89984"
+yellow = "0xa07e3b"
+
+[colors__sandcastle__dark.primary]
+background = "0x282c34"
+foreground = "0xa89984"
+
+[colors__seti__dark.bright]
+black = "0x41535b"
+blue = "0x43a5d5"
+cyan = "0x8a553f"
+green = "0x282a2b"
+magenta = "0xeeeeee"
+red = "0xdb7b55"
+white = "0xffffff"
+yellow = "0x3b758c"
+
+[colors__seti__dark.cursor]
+cursor = "0xd6d6d6"
+text = "0x151718"
+
+[colors__seti__dark.normal]
+black = "0x151718"
+blue = "0x55b5db"
+cyan = "0x55dbbe"
+green = "0x9fca56"
+magenta = "0xa074c4"
+red = "0xcd3f45"
+white = "0xd6d6d6"
+yellow = "0xe6cd69"
+
+[colors__seti__dark.primary]
+background = "0x151718"
+foreground = "0xd6d6d6"
+
+[colors__shapeshifter__dark.bright]
+black = "0x555555"
+blue = "0x343434"
+cyan = "0x69542d"
+green = "0xe0e0e0"
+magenta = "0x040404"
+red = "0xe09448"
+white = "0x000000"
+yellow = "0xababab"
+
+[colors__shapeshifter__dark.cursor]
+cursor = "0x102015"
+text = "0xf9f9f9"
+
+[colors__shapeshifter__dark.normal]
+black = "0xf9f9f9"
+blue = "0x3b48e3"
+cyan = "0x23edda"
+green = "0x0ed839"
+magenta = "0xf996e2"
+red = "0xe92f2f"
+white = "0x102015"
+yellow = "0xdddd13"
+
+[colors__shapeshifter__dark.primary]
+background = "0xf9f9f9"
+foreground = "0x102015"
+
+[colors__silk__dark.bright]
+black = "0x587073"
+blue = "0x9dc8cd"
+cyan = "0x9b647b"
+green = "0x1d494e"
+magenta = "0xcbf2f7"
+red = "0xfcab74"
+white = "0xd2faff"
+yellow = "0x2a5054"
+
+[colors__silk__dark.cursor]
+cursor = "0xc7dbdd"
+text = "0x0e3c46"
+
+[colors__silk__dark.normal]
+black = "0x0e3c46"
+blue = "0x46bddd"
+cyan = "0x3fb2b9"
+green = "0x73d8ad"
+magenta = "0x756b8a"
+red = "0xfb6953"
+white = "0xc7dbdd"
+yellow = "0xfce380"
+
+[colors__silk__dark.primary]
+background = "0x0e3c46"
+foreground = "0xc7dbdd"
+
+[colors__snazzy__dark.bright]
+black = "0x78787e"
+blue = "0xa5a5a9"
+cyan = "0xb2643c"
+green = "0x34353e"
+magenta = "0xeff0eb"
+red = "0xff9f43"
+white = "0xf1f1f0"
+yellow = "0x43454f"
+
+[colors__snazzy__dark.cursor]
+cursor = "0xe2e4e5"
+text = "0x282a36"
+
+[colors__snazzy__dark.normal]
+black = "0x282a36"
+blue = "0x57c7ff"
+cyan = "0x9aedfe"
+green = "0x5af78e"
+magenta = "0xff6ac1"
+red = "0xff5c57"
+white = "0xe2e4e5"
+yellow = "0xf3f99d"
+
+[colors__snazzy__dark.primary]
+background = "0x282a36"
+foreground = "0xe2e4e5"
+
+[colors__solarflare__dark.bright]
+black = "0x667581"
+blue = "0x85939e"
+cyan = "0xd73c9a"
+green = "0x222e38"
+magenta = "0xe8e9ed"
+red = "0xe66b2b"
+white = "0xf5f7fa"
+yellow = "0x586875"
+
+[colors__solarflare__dark.cursor]
+cursor = "0xa6afb8"
+text = "0x18262f"
+
+[colors__solarflare__dark.normal]
+black = "0x18262f"
+blue = "0x33b5e1"
+cyan = "0x52cbb0"
+green = "0x7cc844"
+magenta = "0xa363d5"
+red = "0xef5253"
+white = "0xa6afb8"
+yellow = "0xe4b51c"
+
+[colors__solarflare__dark.primary]
+background = "0x18262f"
+foreground = "0xa6afb8"
+
+[colors__solarized-dark__dark.bright]
+black = "0x657b83"
+blue = "0x839496"
+cyan = "0xd33682"
+green = "0x073642"
+magenta = "0xeee8d5"
+red = "0xcb4b16"
+white = "0xfdf6e3"
+yellow = "0x586e75"
+
+[colors__solarized-dark__dark.cursor]
+cursor = "0x93a1a1"
+text = "0x002b36"
+
+[colors__solarized-dark__dark.normal]
+black = "0x002b36"
+blue = "0x268bd2"
+cyan = "0x2aa198"
+green = "0x859900"
+magenta = "0x6c71c4"
+red = "0xdc322f"
+white = "0x93a1a1"
+yellow = "0xb58900"
+
+[colors__solarized-dark__dark.primary]
+background = "0x002b36"
+foreground = "0x93a1a1"
+
+[colors__solarized-light__light.bright]
+black = "0x839496"
+blue = "0x657b83"
+cyan = "0xd33682"
+green = "0xeee8d5"
+magenta = "0x073642"
+red = "0xcb4b16"
+white = "0x002b36"
+yellow = "0x93a1a1"
+
+[colors__solarized-light__light.cursor]
+cursor = "0x586e75"
+text = "0xfdf6e3"
+
+[colors__solarized-light__light.normal]
+black = "0xfdf6e3"
+blue = "0x268bd2"
+cyan = "0x2aa198"
+green = "0x859900"
+magenta = "0x6c71c4"
+red = "0xdc322f"
+white = "0x586e75"
+yellow = "0xb58900"
+
+[colors__solarized-light__light.primary]
+background = "0xfdf6e3"
+foreground = "0x586e75"
+
+[colors__spacemacs__dark.bright]
+black = "0x585858"
+blue = "0xb8b8b8"
+cyan = "0xb03060"
+green = "0x282828"
+magenta = "0xe8e8e8"
+red = "0xffa500"
+white = "0xf8f8f8"
+yellow = "0x444155"
+
+[colors__spacemacs__dark.cursor]
+cursor = "0xa3a3a3"
+text = "0x1f2022"
+
+[colors__spacemacs__dark.normal]
+black = "0x1f2022"
+blue = "0x4f97d7"
+cyan = "0x2d9574"
+green = "0x67b11d"
+magenta = "0xa31db1"
+red = "0xf2241f"
+white = "0xa3a3a3"
+yellow = "0xb1951d"
+
+[colors__spacemacs__dark.primary]
+background = "0x1f2022"
+foreground = "0xa3a3a3"
+
+[colors__summerfruit-dark__dark.bright]
+black = "0x505050"
+blue = "0xb0b0b0"
+cyan = "0xcc6633"
+green = "0x202020"
+magenta = "0xe0e0e0"
+red = "0xfd8900"
+white = "0xffffff"
+yellow = "0x303030"
+
+[colors__summerfruit-dark__dark.cursor]
+cursor = "0xd0d0d0"
+text = "0x151515"
+
+[colors__summerfruit-dark__dark.normal]
+black = "0x151515"
+blue = "0x3777e6"
+cyan = "0x1faaaa"
+green = "0x00c918"
+magenta = "0xad00a1"
+red = "0xff0086"
+white = "0xd0d0d0"
+yellow = "0xaba800"
+
+[colors__summerfruit-dark__dark.primary]
+background = "0x151515"
+foreground = "0xd0d0d0"
+
+[colors__summerfruit-light__light.bright]
+black = "0xb0b0b0"
+blue = "0x000000"
+cyan = "0xcc6633"
+green = "0xe0e0e0"
+magenta = "0x151515"
+red = "0xfd8900"
+white = "0x202020"
+yellow = "0xd0d0d0"
+
+[colors__summerfruit-light__light.cursor]
+cursor = "0x101010"
+text = "0xffffff"
+
+[colors__summerfruit-light__light.normal]
+black = "0xffffff"
+blue = "0x3777e6"
+cyan = "0x1faaaa"
+green = "0x00c918"
+magenta = "0xad00a1"
+red = "0xff0086"
+white = "0x101010"
+yellow = "0xaba800"
+
+[colors__summerfruit-light__light.primary]
+background = "0xffffff"
+foreground = "0x101010"
+
+[colors__synth-midnight-dark__dark.bright]
+black = "0x61507a"
+blue = "0xbfbbbf"
+cyan = "0x9d4d0e"
+green = "0x141414"
+magenta = "0xefebef"
+red = "0xe4600e"
+white = "0xfffbff"
+yellow = "0x242424"
+
+[colors__synth-midnight-dark__dark.cursor]
+cursor = "0xdfdbdf"
+text = "0x040404"
+
+[colors__synth-midnight-dark__dark.normal]
+black = "0x040404"
+blue = "0x03aeff"
+cyan = "0x7cede9"
+green = "0x06ea61"
+magenta = "0xea5ce2"
+red = "0xb53b50"
+white = "0xdfdbdf"
+yellow = "0xdae84d"
+
+[colors__synth-midnight-dark__dark.primary]
+background = "0x040404"
+foreground = "0xdfdbdf"
+
+[colors__tomorrow-night-eighties__dark.bright]
+black = "0x999999"
+blue = "0xb4b7b4"
+cyan = "0xa3685a"
+green = "0x393939"
+magenta = "0xe0e0e0"
+red = "0xf99157"
+white = "0xffffff"
+yellow = "0x515151"
+
+[colors__tomorrow-night-eighties__dark.cursor]
+cursor = "0xcccccc"
+text = "0x2d2d2d"
+
+[colors__tomorrow-night-eighties__dark.normal]
+black = "0x2d2d2d"
+blue = "0x6699cc"
+cyan = "0x66cccc"
+green = "0x99cc99"
+magenta = "0xcc99cc"
+red = "0xf2777a"
+white = "0xcccccc"
+yellow = "0xffcc66"
+
+[colors__tomorrow-night-eighties__dark.primary]
+background = "0x2d2d2d"
+foreground = "0xcccccc"
+
+[colors__tomorrow-night__dark.bright]
+black = "0x969896"
+blue = "0xb4b7b4"
+cyan = "0xa3685a"
+green = "0x282a2e"
+magenta = "0xe0e0e0"
+red = "0xde935f"
+white = "0xffffff"
+yellow = "0x373b41"
+
+[colors__tomorrow-night__dark.cursor]
+cursor = "0xc5c8c6"
+text = "0x1d1f21"
+
+[colors__tomorrow-night__dark.normal]
+black = "0x1d1f21"
+blue = "0x81a2be"
+cyan = "0x8abeb7"
+green = "0xb5bd68"
+magenta = "0xb294bb"
+red = "0xcc6666"
+white = "0xc5c8c6"
+yellow = "0xf0c674"
+
+[colors__tomorrow-night__dark.primary]
+background = "0x1d1f21"
+foreground = "0xc5c8c6"
+
+[colors__tomorrow__dark.bright]
+black = "0x8e908c"
+blue = "0x969896"
+cyan = "0xa3685a"
+green = "0xe0e0e0"
+magenta = "0x282a2e"
+red = "0xf5871f"
+white = "0x1d1f21"
+yellow = "0xd6d6d6"
+
+[colors__tomorrow__dark.cursor]
+cursor = "0x4d4d4c"
+text = "0xffffff"
+
+[colors__tomorrow__dark.normal]
+black = "0xffffff"
+blue = "0x4271ae"
+cyan = "0x3e999f"
+green = "0x718c00"
+magenta = "0x8959a8"
+red = "0xc82829"
+white = "0x4d4d4c"
+yellow = "0xeab700"
+
+[colors__tomorrow__dark.primary]
+background = "0xffffff"
+foreground = "0x4d4d4c"
+
+[colors__tube__dark.bright]
+black = "0x737171"
+blue = "0x959ca1"
+cyan = "0xb06110"
+green = "0x1c3f95"
+magenta = "0xe7e7e8"
+red = "0xf386a1"
+white = "0xffffff"
+yellow = "0x5a5758"
+
+[colors__tube__dark.cursor]
+cursor = "0xd9d8d8"
+text = "0x231f20"
+
+[colors__tube__dark.normal]
+black = "0x231f20"
+blue = "0x009ddc"
+cyan = "0x85cebc"
+green = "0x00853e"
+magenta = "0x98005d"
+red = "0xee2e24"
+white = "0xd9d8d8"
+yellow = "0xffd204"
+
+[colors__tube__dark.primary]
+background = "0x231f20"
+foreground = "0xd9d8d8"
+
+[colors__twilight__dark.bright]
+black = "0x5f5a60"
+blue = "0x838184"
+cyan = "0x9b703f"
+green = "0x323537"
+magenta = "0xc3c3c3"
+red = "0xcda869"
+white = "0xffffff"
+yellow = "0x464b50"
+
+[colors__twilight__dark.cursor]
+cursor = "0xa7a7a7"
+text = "0x1e1e1e"
+
+[colors__twilight__dark.normal]
+black = "0x1e1e1e"
+blue = "0x7587a6"
+cyan = "0xafc4db"
+green = "0x8f9d6a"
+magenta = "0x9b859d"
+red = "0xcf6a4c"
+white = "0xa7a7a7"
+yellow = "0xf9ee98"
+
+[colors__twilight__dark.primary]
+background = "0x1e1e1e"
+foreground = "0xa7a7a7"
+
+[colors__unikitty-dark__dark.bright]
+black = "0x838085"
+blue = "0x9f9da2"
+cyan = "0xc720ca"
+green = "0x4a464d"
+magenta = "0xd8d7da"
+red = "0xd65407"
+white = "0xf5f4f7"
+yellow = "0x666369"
+
+[colors__unikitty-dark__dark.cursor]
+cursor = "0xbcbabe"
+text = "0x2e2a31"
+
+[colors__unikitty-dark__dark.normal]
+black = "0x2e2a31"
+blue = "0x796af5"
+cyan = "0x149bda"
+green = "0x17ad98"
+magenta = "0xbb60ea"
+red = "0xd8137f"
+white = "0xbcbabe"
+yellow = "0xdc8a0e"
+
+[colors__unikitty-dark__dark.primary]
+background = "0x2e2a31"
+foreground = "0xbcbabe"
+
+[colors__unikitty-light__light.bright]
+black = "0xa7a5a8"
+blue = "0x89878b"
+cyan = "0xe013d0"
+green = "0xe1e1e2"
+magenta = "0x4f4b51"
+red = "0xd65407"
+white = "0x322d34"
+yellow = "0xc4c3c5"
+
+[colors__unikitty-light__light.cursor]
+cursor = "0x6c696e"
+text = "0xffffff"
+
+[colors__unikitty-light__light.normal]
+black = "0xffffff"
+blue = "0x775dff"
+cyan = "0x149bda"
+green = "0x17ad98"
+magenta = "0xaa17e6"
+red = "0xd8137f"
+white = "0x6c696e"
+yellow = "0xdc8a0e"
+
+[colors__unikitty-light__light.primary]
+background = "0xffffff"
+foreground = "0x6c696e"
+
+[colors__woodland__dark.bright]
+black = "0x9d8b70"
+blue = "0xb4a490"
+cyan = "0xb49368"
+green = "0x302b25"
+magenta = "0xd7c8bc"
+red = "0xca7f32"
+white = "0xe4d4c8"
+yellow = "0x48413a"
+
+[colors__woodland__dark.cursor]
+cursor = "0xcabcb1"
+text = "0x231e18"
+
+[colors__woodland__dark.normal]
+black = "0x231e18"
+blue = "0x88a4d3"
+cyan = "0x6eb958"
+green = "0xb7ba53"
+magenta = "0xbb90e2"
+red = "0xd35c5c"
+white = "0xcabcb1"
+yellow = "0xe0ac16"
+
+[colors__woodland__dark.primary]
+background = "0x231e18"
+foreground = "0xcabcb1"
+
+[colors__xcode-dusk__dark.bright]
+black = "0x686a71"
+blue = "0x7e8086"
+cyan = "0xc77c48"
+green = "0x3d4048"
+magenta = "0xa9aaae"
+red = "0x786dc5"
+white = "0xbebfc2"
+yellow = "0x53555d"
+
+[colors__xcode-dusk__dark.cursor]
+cursor = "0x939599"
+text = "0x282b35"
+
+[colors__xcode-dusk__dark.normal]
+black = "0x282b35"
+blue = "0x790ead"
+cyan = "0x00a0be"
+green = "0xdf0002"
+magenta = "0xb21889"
+red = "0xb21889"
+white = "0x939599"
+yellow = "0x438288"
+
+[colors__xcode-dusk__dark.primary]
+background = "0x282b35"
+foreground = "0x939599"
+
+[colors__zenburn__dark.bright]
+black = "0x6f6f6f"
+blue = "0x808080"
+cyan = "0x000000"
+green = "0x404040"
+magenta = "0xc0c0c0"
+red = "0xdfaf8f"
+white = "0xffffff"
+yellow = "0x606060"
+
+[colors__zenburn__dark.cursor]
+cursor = "0xdcdccc"
+text = "0x383838"
+
+[colors__zenburn__dark.normal]
+black = "0x383838"
+blue = "0x7cb8bb"
+cyan = "0x93e0e3"
+green = "0x5f7f5f"
+magenta = "0xdc8cc3"
+red = "0xdca3a3"
+white = "0xdcdccc"
+yellow = "0xe0cf9f"
+
+[colors__zenburn__dark.primary]
+background = "0x383838"
+foreground = "0xdcdccc"
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[debug]
+log_level = "Warn"
+persistent_logging = false
+print_events = false
+ref_test = false
+render_timer = false
+
+[font]
+size = 13
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Medium"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Light"
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+
+[[keyboard.bindings]]
+action = "Hide"
+key = "H"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "Q"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "Quit"
+key = "W"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001BOH"
+key = "Home"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[H"
+key = "Home"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOF"
+key = "End"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[F"
+key = "End"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Command"
+
+[[keyboard.bindings]]
+action = "ClearHistory"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[5;2~"
+key = "PageUp"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[5;5~"
+key = "PageUp"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[5~"
+key = "PageUp"
+
+[[keyboard.bindings]]
+chars = "\u001B[6;2~"
+key = "PageDown"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[6;5~"
+key = "PageDown"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[6~"
+key = "PageDown"
+
+[[keyboard.bindings]]
+chars = "\u001B[Z"
+key = "Tab"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u007F"
+key = "Back"
+
+[[keyboard.bindings]]
+chars = "\u001B\u007F"
+key = "Back"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[2~"
+key = "Insert"
+
+[[keyboard.bindings]]
+chars = "\u001B[3~"
+key = "Delete"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2D"
+key = "Left"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5D"
+key = "Left"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3D"
+key = "Left"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[D"
+key = "Left"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOD"
+key = "Left"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2C"
+key = "Right"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5C"
+key = "Right"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3C"
+key = "Right"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[C"
+key = "Right"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOC"
+key = "Right"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2A"
+key = "Up"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5A"
+key = "Up"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3A"
+key = "Up"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[A"
+key = "Up"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOA"
+key = "Up"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2B"
+key = "Down"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5B"
+key = "Down"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3B"
+key = "Down"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[B"
+key = "Down"
+mode = "~AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOB"
+key = "Down"
+mode = "AppCursor"
+
+[[keyboard.bindings]]
+chars = "\u001BOP"
+key = "F1"
+
+[[keyboard.bindings]]
+chars = "\u001BOQ"
+key = "F2"
+
+[[keyboard.bindings]]
+chars = "\u001BOR"
+key = "F3"
+
+[[keyboard.bindings]]
+chars = "\u001BOS"
+key = "F4"
+
+[[keyboard.bindings]]
+chars = "\u001B[15~"
+key = "F5"
+
+[[keyboard.bindings]]
+chars = "\u001B[17~"
+key = "F6"
+
+[[keyboard.bindings]]
+chars = "\u001B[18~"
+key = "F7"
+
+[[keyboard.bindings]]
+chars = "\u001B[19~"
+key = "F8"
+
+[[keyboard.bindings]]
+chars = "\u001B[20~"
+key = "F9"
+
+[[keyboard.bindings]]
+chars = "\u001B[21~"
+key = "F10"
+
+[[keyboard.bindings]]
+chars = "\u001B[23~"
+key = "F11"
+
+[[keyboard.bindings]]
+chars = "\u001B[24~"
+key = "F12"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2P"
+key = "F1"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2Q"
+key = "F2"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2R"
+key = "F3"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;2S"
+key = "F4"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[15;2~"
+key = "F5"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[17;2~"
+key = "F6"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[18;2~"
+key = "F7"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[19;2~"
+key = "F8"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[20;2~"
+key = "F9"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[21;2~"
+key = "F10"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[23;2~"
+key = "F11"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[24;2~"
+key = "F12"
+mods = "Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5P"
+key = "F1"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5Q"
+key = "F2"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5R"
+key = "F3"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;5S"
+key = "F4"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[15;5~"
+key = "F5"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[17;5~"
+key = "F6"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[18;5~"
+key = "F7"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[19;5~"
+key = "F8"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[20;5~"
+key = "F9"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[21;5~"
+key = "F10"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[23;5~"
+key = "F11"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[24;5~"
+key = "F12"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;6P"
+key = "F1"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;6Q"
+key = "F2"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;6R"
+key = "F3"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;6S"
+key = "F4"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[15;6~"
+key = "F5"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[17;6~"
+key = "F6"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[18;6~"
+key = "F7"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[19;6~"
+key = "F8"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[20;6~"
+key = "F9"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[21;6~"
+key = "F10"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[23;6~"
+key = "F11"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[24;6~"
+key = "F12"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3P"
+key = "F1"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3Q"
+key = "F2"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3R"
+key = "F3"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[1;3S"
+key = "F4"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[15;3~"
+key = "F5"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[17;3~"
+key = "F6"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[18;3~"
+key = "F7"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[19;3~"
+key = "F8"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[20;3~"
+key = "F9"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[21;3~"
+key = "F10"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[23;3~"
+key = "F11"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u001B[24;3~"
+key = "F12"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = """
+
+"""
+key = "NumpadEnter"
+
+[[keyboard.bindings]]
+chars = "\u001Bb"
+key = "B"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bf"
+key = "F"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001Bc"
+key = "C"
+mods = "Alt"
+
+[[keyboard.bindings]]
+action = "ToggleSimpleFullscreen"
+key = "P"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B0"
+key = "Key0"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B1"
+key = "Key1"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B2"
+key = "Key2"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B3"
+key = "Key3"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B4"
+key = "Key4"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B5"
+key = "Key5"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B6"
+key = "Key6"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B7"
+key = "Key7"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B8"
+key = "Key8"
+mods = "Alt"
+
+[[keyboard.bindings]]
+chars = "\u001B9"
+key = "Key9"
+mods = "Alt"
+
+[mouse]
+hide_when_typing = false
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+[mouse.double_click]
+threshold = 300
+
+[mouse.hints]
+launcher = "open"
+
+[mouse.triple_click]
+threshold = 300
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[selection]
+save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[window]
+decorations = "none"
+dynamic_padding = false
+startup_mode = "Windowed"
+
+[window.dimensions]
+columns = 140
+lines = 50
+
+[window.padding]
+x = 4
+y = 4
