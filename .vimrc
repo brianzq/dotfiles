@@ -207,7 +207,6 @@ set foldmethod=indent                      " Syntax are used to specify folds
 
 map <leader>cl :set cursorline!<cr>
 set re=1
-set tw=100                          " Line length for gq to split
 
 nnoremap <C-g> :!google-chrome %<CR> " browser preview with ctrl-g
 
@@ -215,7 +214,6 @@ if filereadable($HOME.'/.vimrc.local')
   source $HOME/.vimrc.local
 endif
 
-set textwidth=79
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => language specific configs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
