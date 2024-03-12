@@ -1,11 +1,11 @@
 live_config_reload = true
 
-# [colors] gruvbox-dark-hard (dark)
+# [colors] oceanicnext (dark)
 colors.draw_bold_text_with_bright_colors = false
-# colors__oceanicnext__dark.bright = { black = "0x65737e", blue = "0xa7adba", cyan = "0xab7967", green = "0x343d46", magenta = "0xcdd3de", red = "0xf99157", white = "0xd8dee9", yellow = "0x4f5b66" }
-# colors__oceanicnext__dark.cursor = { cursor = "0xc0c5ce", text = "0x1b2b34" }
-# colors__oceanicnext__dark.normal = { black = "0x1b2b34", blue = "0x6699cc", cyan = "0x5fb3b3", green = "0x99c794", magenta = "0xc594c5", red = "0xec5f67", white = "0xc0c5ce", yellow = "0xfac863" }
-# colors__oceanicnext__dark.primary = { background = "0x1b2b34", foreground = "0xc0c5ce" }
+colors.bright = { black = "0x65737e", blue = "0xa7adba", cyan = "0xab7967", green = "0x343d46", magenta = "0xcdd3de", red = "0xf99157", white = "0xd8dee9", yellow = "0x4f5b66" }
+colors.cursor = { cursor = "0xc0c5ce", text = "0x1b2b34" }
+colors.normal = { black = "0x1b2b34", blue = "0x6699cc", cyan = "0x5fb3b3", green = "0x99c794", magenta = "0xc594c5", red = "0xec5f67", white = "0xc0c5ce", yellow = "0xfac863" }
+colors.primary = { background = "0x1b2b34", foreground = "0xc0c5ce" }
 
 # colors__3024__dark.bright = { black = "0x5c5855", blue = "0x807d7c", cyan = "0xcdab53", green = "0x3a3432", magenta = "0xd6d5d4", red = "0xe8bbd0", white = "0xf7f7f7", yellow = "0x4a4543" }
 # colors__3024__dark.cursor = { cursor = "0xa5a2a2", text = "0x090300" }
@@ -340,10 +340,10 @@ colors.draw_bold_text_with_bright_colors = false
 # colors__greenscreen__dark.normal = { black = "0x001100", blue = "0x009900", cyan = "0x005500", green = "0x00bb00", magenta = "0x00bb00", red = "0x007700", white = "0x00bb00", yellow = "0x007700" }
 # colors__greenscreen__dark.primary = { background = "0x001100", foreground = "0x00bb00" }
 #
-colors.bright = { black = "0x665c54", blue = "0xbdae93", cyan = "0xd65d0e", green = "0x3c3836", magenta = "0xebdbb2", red = "0xfe8019", white = "0xfbf1c7", yellow = "0x504945" }
-colors.cursor = { cursor = "0xd5c4a1", text = "0x1d2021" }
-colors.normal = { black = "0x1d2021", blue = "0x83a598", cyan = "0x8ec07c", green = "0xb8bb26", magenta = "0xd3869b", red = "0xfb4934", white = "0xd5c4a1", yellow = "0xfabd2f" }
-colors.primary = { background = "0x1d2021", foreground = "0xd5c4a1" }
+# colors__gruvbox-dark-hard__dark.bright = { black = "0x665c54", blue = "0xbdae93", cyan = "0xd65d0e", green = "0x3c3836", magenta = "0xebdbb2", red = "0xfe8019", white = "0xfbf1c7", yellow = "0x504945" }
+# colors__gruvbox-dark-hard__dark.cursor = { cursor = "0xd5c4a1", text = "0x1d2021" }
+# colors__gruvbox-dark-hard__dark.normal = { black = "0x1d2021", blue = "0x83a598", cyan = "0x8ec07c", green = "0xb8bb26", magenta = "0xd3869b", red = "0xfb4934", white = "0xd5c4a1", yellow = "0xfabd2f" }
+# colors__gruvbox-dark-hard__dark.primary = { background = "0x1d2021", foreground = "0xd5c4a1" }
 #
 # colors__gruvbox-dark-medium__dark.bright = { black = "0x665c54", blue = "0xbdae93", cyan = "0xd65d0e", green = "0x3c3836", magenta = "0xebdbb2", red = "0xfe8019", white = "0xfbf1c7", yellow = "0x504945" }
 # colors__gruvbox-dark-medium__dark.cursor = { cursor = "0xd5c4a1", text = "0x282828" }
