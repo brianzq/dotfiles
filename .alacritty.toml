@@ -709,7 +709,7 @@ render_timer = false
 size = 13
 
 [font.bold]
-family = "FiraCode Nerd Font"
+family = "Hasklug Nerd Font"
 style = "Medium"
 
 [font.glyph_offset]
@@ -717,11 +717,11 @@ x = 0
 y = 0
 
 [font.italic]
-family = "FiraCode Nerd Font"
+family = "Hasklug Nerd Font"
 style = "Light"
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "Hasklug Nerd Font"
 style = "Regular"
 
 [font.offset]

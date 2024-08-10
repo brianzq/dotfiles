@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
+" Maintainer:
 "       Amir Salihefendic — @amix3k
 "
 " Awesome_version:
@@ -44,7 +44,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " Appearance {{{
 Plug 'drmingdrmer/vim-tabbar'
 Plug 'chriskempson/base16-vim'
-Plug 'itchyny/lightline.vim', {'commit': '6daec38c1da2cbfae43d4d0d67f6a4fa7680c2b5'}  "  commit for base16 color fix
+Plug 'itchyny/lightline.vim'
+Plug 'daviesjamie/vim-base16-lightline'
 Plug 'maximbaz/lightline-ale'
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }                           "  file browser
@@ -61,7 +62,8 @@ Plug 'dense-analysis/ale'                                                       
 Plug 'larrylv/coc.nvim', {'branch': 'release'}
 Plug 'antoinemadec/coc-fzf'
 Plug 'larrylv/vim-tagimposter'                                                        "  populate the tagstack when using coc to jump to definitions
-""" }}}
+Plug 'stevearc/conform.nvim'                                                          " lightweight yet powerful formatter
+" }}}
 
 " Git related {{{
 Plug 'tpope/vim-fugitive'                                                             "  Git wrapper, GBrowse
@@ -82,29 +84,30 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
 " Markdown
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+" Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'preservim/vim-markdown'
 Plug '907th/vim-auto-save'                                                            "  auto save files, I only use it for markdown files for notes
 
 " Yaml
 Plug 'Einenlum/yaml-revealer'                                                         "  shows yaml key hierarchy for current line
 
-" Javascript
-" Plug 'sbdchd/neoformat', {'for': ['javascript', 'javascript.jsx']}
-" Plug 'mattn/emmet-vim'
+" Javascript {{{
+Plug 'sbdchd/neoformat', {'for': ['javascript', 'javascript.jsx']}
+Plug 'mattn/emmet-vim'
 " }}}
-"
-"
-" Legacy {{{
-" Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'ivalkeen/vim-ctrlp-tjump'
-" Plug 'FelikZ/ctrlp-py-matcher'
-"
-" Plug 'AndrewRadev/splitjoin.vim'
-" Plug 'tyru/open-browser.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" Plug 'nvim-treesitter/nvim-treesitter-context'                                      "  show code context
+
+" Legacy {{{
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'FelikZ/ctrlp-py-matcher'
+
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+Plug 'nvim-treesitter/nvim-treesitter-context'                                      "  show code context
 " }}}
 
 call plug#end()
@@ -132,18 +135,21 @@ function! NewNote()
   execute 'edit' l:filename
 endfunction
 
+command! SourceMyVimrc source $MYVIMRC | LightlineReload
+
 map <leader>n :call NewNote()<cr>
-map <leader>so :source $MYVIMRC <cr>:LightlineReload<cr>
+" map <leader>so :source $MYVIMRC <cr>:LightlineReload<cr>
+nnoremap <leader>so :SourceMyVimrc<CR>
 nnoremap <leader><leader> <c-^>
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" colorscheme base16-default-dark
-colorscheme base16-onedark
-" colorscheme base16-one-light
+" colorscheme base16-oceanicnext
+colorscheme base16-oceanicnext
 let g:loaded_matchparen=1
 set signcolumn=yes
 
-let g:python3_host_prog = $HOME . '/.local/venv/nvim/bin/python'
+" let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog=$HOME.'/.pyenv/shims/python'
 
 augroup general_config
   autocmd!
@@ -221,7 +227,6 @@ au BufNewFile,BufRead *.py
 \ set tabstop=4
 \ | set softtabstop=4
 \ | set shiftwidth=4
-\ | set textwidth=120
 \ | set expandtab
 \ | set autoindent
 \ | set fileformat=unix
@@ -231,6 +236,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 autocmd BufNewFile,BufRead,BufEnter,TabEnter,WinEnter,VimEnter,GUIEnter *.rbi set filetype=ruby syntax=ruby
+autocmd BufNewFile,BufRead,BufEnter,TabEnter,WinEnter,VimEnter,GUIEnter *.tfvars set filetype=terraform
 autocmd BufNewFile,BufRead,BufEnter,TabEnter,WinEnter,VimEnter,GUIEnter *.md setlocal textwidth=100
 autocmd Filetype gitcommit setlocal textwidth=100
 autocmd Filetype gitcommit,markdown set colorcolumn=101
@@ -319,10 +325,10 @@ let g:ale_linters = {
       \   'go': ['golangci-lint'],
       \   'javascript': ['eslint'],
       \}
-let g:ale_fixers = {
-      \   'python': ['black'],
-      \}
-let g:ale_fix_on_save = 1
+" let g:ale_fixers = {
+"       \   'python': ['black'],
+"       \}
+let g:ale_fix_on_save = 0
 let g:ale_lint_on_text_changed = 'never' " lint only on save
 let g:ale_lint_on_enter = 0 " don't lint on enter
 let g:ale_sign_column_always = 1
@@ -536,7 +542,7 @@ let g:lightline#ale#indicator_errors = "\uf05e "
 let g:lightline#ale#indicator_ok = "\uf00c"
 
 let g:lightline = {
-      \ 'colorscheme': '16color',
+      \ 'colorscheme': 'base16',
       \ 'active': {
       \   'left': [
       \     [ 'mode' ],
@@ -667,7 +673,8 @@ endfunction
 
 function! MyCocStatus()
   let fname = GetFilename(expand('%:t'))
-  let cocstatus = coc#status()
+  " let cocstatus = coc#status()
+  let cocstatus = g:coc_status
   return fname == 'ControlP' ? '' :
       \ (
       \   fname =~ 'Tagbar' ? '' :
@@ -739,7 +746,7 @@ function! MyMode()
         \ fname == '__Gundo_Preview__' ? 'Gundo Preview' :
         \ fname =~ 'NERD_tree' ? 'NERDTree' :
         \ winwidth(0) > 60 ? lightline#mode() : ''
-  return "\ufcb5 ".mode
+  return "\ue780 ".mode
 
 endfunction
 
@@ -781,6 +788,7 @@ endfunction
 command! LightlineReload call LightlineReload()
 
 function! LightlineReload()
+  source $HOME/.vim/bundle/vim-base16-lightline/autoload/lightline/colorscheme/base16.vim
   call lightline#init()
   call lightline#colorscheme()
   call lightline#update()
@@ -859,6 +867,7 @@ set updatetime=300
 set shortmess+=c
 
 let g:coc_snippet_next = '<tab>'
+autocmd FileType markdown let b:coc_suggest_disable = 1
 
 " Disable transparent cursor when CocList is activated.
 let g:coc_disable_transparent_cursor = 1
@@ -869,6 +878,8 @@ let g:coc_global_extensions = [
   \ 'coc-go',
   \ 'coc-omni',
   \ 'coc-tag',
+  \ 'coc-pyright',
+  \ 'coc-rust-analyzer',
   \ ]
 
 " this is commented out because vim-go already does this
@@ -920,6 +931,8 @@ nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>rn <Plug>(coc-rename)
 " show documentation of  current symbol
 nnoremap <silent> K :call CocShowDocumentation()<cr>
+nmap <silent> <C-j> <Plug>(coc-diagnostic-next)
+nmap <silent> <C-k> <Plug>(coc-diagnostic-prev)
 
 " redraw the status line when coc#status changes
 augroup AutoCocStatus
@@ -1171,6 +1184,39 @@ endtry
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 """"""""""""""""""""""""""""""
+" => Custom functions
+""""""""""""""""""""""""""""""
+function! BoxSelectedText()
+  " Get the start and end of the selected text
+  let s_start_col = getpos("'<")[2]
+  let s_end_col = getpos("'>")[2]
+  let s_line = getpos("'<")[1]
+
+  " Get the selected text
+  let line = getline(s_line)
+  let selected_text = strpart(line, s_start_col - 1, s_end_col - s_start_col + 1)
+
+  " Calculate the box dimensions
+  let len = len(selected_text)
+  let box_top = '+' . repeat('-', len + 2) . '+'
+  let box_middle = '| ' . selected_text . ' |'
+  let box_bottom = box_top
+
+  " Construct the new lines with the boxed text
+  let before_text = strpart(line, 0, s_start_col - 1)
+  let after_text = strpart(line, s_end_col)
+  let new_lines = [box_top, box_middle, box_bottom]
+
+  " Replace the original line with the boxed text and append the remaining text
+  call setline(s_line, before_text)
+  call append(s_line, new_lines)
+  call append(s_line + 3, after_text)
+endfunction
+
+" Map the function to a key in visual mode
+vnoremap <leader>b :<C-U>call BoxSelectedText()<CR>
+
+""""""""""""""""""""""""""""""
 " => Status line
 """"""""""""""""""""""""""""""
 " Always show the status line
@@ -1195,9 +1241,9 @@ fun! CleanExtraSpaces()
     call setreg('/', old_query)
 endfun
 
-if has("autocmd")
-    autocmd BufWritePre *.txt,*.js,*.py,*.rb,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
-endif
+" if has("autocmd")
+"     autocmd BufWritePre *.txt,*.js,*.py,*.rb,*.wiki,*.sh,*.coffee :call CleanExtraSpaces()
+" endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -1256,7 +1302,7 @@ endfunction
 
 function! CmdLine(str)
     call feedkeys(":" . a:str)
-endfunction 
+endfunction
 
 function! VisualSelection(direction, extra_filter) range
     let l:saved_reg = @"
@@ -1275,6 +1321,21 @@ function! VisualSelection(direction, extra_filter) range
     let @" = l:saved_reg
 endfunction
 
+" removing invalid fzf buffers
+function! RemoveInvalidBuffers()
+  " Get a list of all buffer numbers
+  let buffers = range(1, bufnr('$'))
+
+  " Iterate over each buffer
+  for buffer in buffers
+    " Check if the buffer is valid, listed, and if the file exists
+    if buflisted(buffer) && !filereadable(bufname(buffer))
+      " Wipe out the buffer if the file does not exist
+      execute 'bwipeout' buffer
+    endif
+  endfor
+endfunction
+command! RemoveInvalidBuffers call RemoveInvalidBuffers()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Hightlight group overrides

@@ -172,6 +172,7 @@ alias gca='git commit --amend'
 alias gcm='git commit -m'
 alias gs='git status'
 alias gfp='git fetch -p'
+alias gfrp='gfp; gro; gpf'
 alias glg='git lg'
 alias glg1='git lg1'
 alias glg2='git lg2'
@@ -238,6 +239,8 @@ PS1="\033[1;34m➜ \033[1;33m\w\$(rbenv_prompt_info)\$(git_prompt_info)\n${ARROW
 export PS1
 
 # fzf -------------------------------------------------------------------------
+eval "$(fzf --bash)"
+
 ag() {
   if which rg > /dev/null; then
     rg --color always --vimgrep --sort-files "$@" | less

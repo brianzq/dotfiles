@@ -4,7 +4,7 @@
 
 DEFAULT_LIGHT_SCHEME=solarized-light
 DEFAULT_DARK_SCHEME=oceanicnext
-FAVORITE_SCHEMES="gruvbox-dark-hard\nporple\nmateria\nonedark\nhopscotch\natelier-savanna-light\natelier-estuary-light"
+FAVORITE_SCHEMES="sandcastle\nmocha\nporple\nmateria\nonedark\nhopscotch\natelier-savanna-light\natelier-estuary-light"
 ALACRITTY_CONFIG=$HOME/.alacritty.toml
 
 all_schemes() {
@@ -24,13 +24,27 @@ get_target_mode() {
 }
 
 use_scheme() {
+    local current_scheme target_scheme current_mode target_mode
+
     current_scheme=$(get_current_scheme)
-    current_mode=$(get_current_mode)
     target_scheme=$1
+    if [[ $target_scheme == $current_scheme ]]; then
+        echo "already using $target_scheme, no-op"
+        return 0
+    fi
+    current_mode=$(get_current_mode)
     target_mode=$(get_target_mode "$target_scheme")
+
     gsed -i "s/^# \[colors\] \(${current_scheme} (${current_mode})\)$/# [colors] ${target_scheme} (${target_mode})/" "$ALACRITTY_CONFIG"
     gsed -i "s/^colors.\(bright\|cursor\|normal\|primary\) = \(.*\)$/# colors__${current_scheme}__${current_mode}.\1 = \2/" "$ALACRITTY_CONFIG"
     gsed -i "s/^# colors__${target_scheme}__${target_mode}.\(bright\|cursor\|normal\|primary\) = \(.*\)$/colors.\1 = \2/" "$ALACRITTY_CONFIG"
+    # update vim color
+    gsed -i "s/colorscheme .\+/colorscheme base16-${target_scheme}/" "$HOME/.vimrc"
+    # Get the active pane ID
+    active_pane=$(tmux display-message -p '#{pane_id}')
+
+    # Send the command to source the .vimrc file
+    tmux list-panes -a -F '#{pane_id} #{pane_current_command}' | grep vim | awk '{print $1}' | xargs -I {} tmux send-keys -t {} Escape ":SourceMyVimrc" Enter
 }
 
 
@@ -47,11 +61,8 @@ elif [[ $1 == '-f' ]]; then
     target=$(echo -e $FAVORITE_SCHEMES | shuf -n 1)
 else
     valid_schemes=$(all_schemes)
-    if [[ $1 == $(get_current_scheme) ]]; then
-        echo "already using $1, no-op"
-        exit
 
-    elif all_schemes | grep -q "^$1$"; then
+    if all_schemes | grep -q "^$1$"; then
         target=$1
     else
         echo -e "Bad input. Valid schemes: [$(echo "$valid_schemes" | tr ' ' "\n")]"

@@ -2,6 +2,8 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath=&runtimepath
 source ~/.vimrc
 
+luafile ~/.config/nvim/lua/conform.lua
+
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
